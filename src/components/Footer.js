@@ -41,7 +41,11 @@ const Footer = () => {
         {/* Contact Information */}
         <Grid item xs={12} sm={4}>
           <Box display="flex" flexDirection="column">
-            <Link href="tel:+13167396106" variant="inherit" sx={{ mt: 2 }}>
+            <Link
+              href="tel:+13167396106"
+              variant="inherit"
+              sx={{ mt: 2, overflow: "hidden", textOverflow: "ellipsis" }}
+            >
               <Box display="flex" alignItems="center">
                 <PhoneIcon />
                 <Box ml={2}>

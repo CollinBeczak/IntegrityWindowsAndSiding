@@ -8,7 +8,6 @@ import { Box } from "@mui/system";
 const Header = () => {
   const [anchorEl, setAnchorEl] = useState(null);
   const [servicesAnchorEl, setServicesAnchorEl] = useState(null);
-  const location = useLocation();
 
   const handleMenuClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -54,7 +53,8 @@ const Header = () => {
           component={Link}
           to="/"
           sx={{
-            marginTop: { xs: 1, md: 0 },
+            marginTop: { xs: 2, md: 0 },
+            marginBottom: { xs: 0.5, md: 0 },
             fontSize: { xs: 20, sm: 25 },
             textDecoration: "none",
             textAlign: { xs: "center", md: "left" },
@@ -70,7 +70,7 @@ const Header = () => {
           <Button
             sx={{
               color: "text.primary",
-              fontSize: { xs: 10, sm: 15 },
+              fontSize: { xs: 13, sm: 15 },
               "& > span": {
                 marginLeft: 0,
               },
@@ -81,7 +81,7 @@ const Header = () => {
               <KeyboardArrowDownIcon
                 sx={{
                   mb: "1px",
-                  size: { xs: 10, sm: 15 },
+                  size: { xs: 13, sm: 15 },
                   transform: servicesAnchorEl ? "rotate(0deg)" : "rotate(270deg)",
                 }}
               />
@@ -97,8 +97,7 @@ const Header = () => {
               to={menuItem.path}
               sx={{
                 marginLeft: 2,
-                fontSize: { xs: 10, sm: 15 },
-                color: "text.primary",
+                fontSize: { xs: 13, sm: 15 },
               }}
             >
               {menuItem.label}

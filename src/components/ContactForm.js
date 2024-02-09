@@ -16,9 +16,10 @@ import {
 } from "@mui/material";
 
 import backgroundImg from "./../Assets/filler-house-img.jpeg";
+import { auto } from "async";
 
 const ContactForm = () => {
-  const [selectedInquiryTypes, setSelectedInquiryTypes] = useState([]);
+  const [selectedSubjectsTypes, setSelectedSubjectsTypes] = useState([]);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
@@ -27,10 +28,10 @@ const ContactForm = () => {
   const [nameError, setNameError] = useState("");
   const [emailError, setEmailError] = useState("");
   const [phoneError, setPhoneError] = useState("");
-  const [inquiryError, setInquiryError] = useState("");
+  const [subjectsError, setsubjectsError] = useState("");
   const [messageError, setMessageError] = useState("");
 
-  const inquiryTypes = [
+  const subjectsTypes = [
     { value: "Siding", label: "Siding" },
     { value: "Windows", label: "Windows" },
     { value: "Trim", label: "Trim" },
@@ -41,7 +42,7 @@ const ContactForm = () => {
   ];
 
   const isFormValid =
-    selectedInquiryTypes.length > 0 &&
+    selectedSubjectsTypes.length > 0 &&
     name.trim() !== "" &&
     email.trim() !== "" &&
     phoneNumber.trim() !== "" &&
@@ -49,7 +50,7 @@ const ContactForm = () => {
     nameError === "" &&
     emailError === "" &&
     phoneError === "" &&
-    inquiryError === "" &&
+    subjectsError === "" &&
     messageError === "";
 
   const handleSubmit = (e) => {
@@ -86,11 +87,11 @@ const ContactForm = () => {
     }
   };
 
-  const handleInquiryBlur = () => {
-    if (selectedInquiryTypes.length === 0) {
-      setInquiryError("Inquiry type is required");
+  const handlesubjectsBlur = () => {
+    if (selectedSubjectsTypes.length === 0) {
+      setsubjectsError("subjects type is required");
     } else {
-      setInquiryError("");
+      setsubjectsError("");
     }
   };
 
@@ -113,6 +114,7 @@ const ContactForm = () => {
     >
       <Container
         sx={{
+          maxWidth: "95%",
           marginY: { xs: 4, sm: 16 },
           backgroundColor: "rgba(255, 255, 255)",
           padding: "20px",
@@ -124,7 +126,7 @@ const ContactForm = () => {
           variant="h1"
           component="h1"
           sx={{
-            fontSize: { xs: 30, sm: 35 },
+            fontSize: { xs: 25, sm: 35 },
             fontFamily: "Comfortaa, sans-serif",
             fontWeight: "bold",
             color: "text.primary",
@@ -141,7 +143,7 @@ const ContactForm = () => {
             <Grid item xs={12} sm={6}>
               <TextField
                 id="name"
-                label="Name *"
+                label="Name"
                 variant="outlined"
                 required
                 fullWidth
@@ -160,7 +162,7 @@ const ContactForm = () => {
             <Grid item xs={12} sm={6}>
               <TextField
                 id="email"
-                label="Email *"
+                label="Email"
                 type="email"
                 variant="outlined"
                 required
@@ -180,7 +182,7 @@ const ContactForm = () => {
             <Grid item xs={12} sm={6}>
               <TextField
                 id="phoneNumber"
-                label="Phone Number *"
+                label="Phone Number"
                 variant="outlined"
                 required
                 fullWidth
@@ -207,38 +209,38 @@ const ContactForm = () => {
               />
             </Grid>
             <Grid item xs={12} sm={6}>
-              <FormControl fullWidth error={!!inquiryError}>
-                <InputLabel id="inquiry-type-label">Inquiry Type *</InputLabel>
+              <FormControl fullWidth error={!!subjectsError}>
+                <InputLabel id="subjects-type-label">Subjects *</InputLabel>
                 <Select
-                  labelId="inquiry-type-label"
-                  id="inquiry-type"
-                  label="Inquiry Type *"
+                  labelId="subjects-type-label"
+                  id="subjects-type"
+                  label="Subjects"
                   required
                   fullWidth
                   multiple
-                  value={selectedInquiryTypes}
+                  value={selectedSubjectsTypes}
                   onChange={(e) => {
-                    setSelectedInquiryTypes(e.target.value);
-                    setInquiryError("");
+                    setSelectedSubjectsTypes(e.target.value);
+                    setsubjectsError("");
                   }}
-                  onBlur={handleInquiryBlur}
+                  onBlur={handlesubjectsBlur}
                   renderValue={(selected) => selected.join(" - ")}
-                  sx={{ color: "text.secondary", marginBottom: inquiryError ? 0 : "20px" }}
+                  sx={{ color: "text.secondary", marginBottom: subjectsError ? 0 : "20px" }}
                 >
-                  {inquiryTypes.map((type) => (
+                  {subjectsTypes.map((type) => (
                     <MenuItem key={type.value} value={type.value} style={{ color: "black" }}>
-                      <Checkbox checked={selectedInquiryTypes.indexOf(type.value) > -1} />
+                      <Checkbox checked={selectedSubjectsTypes.indexOf(type.value) > -1} />
                       {type.label}
                     </MenuItem>
                   ))}
                 </Select>
-                <FormHelperText>{inquiryError}</FormHelperText>
+                <FormHelperText>{subjectsError}</FormHelperText>
               </FormControl>
             </Grid>
             <Grid item xs={12}>
               <TextField
                 id="message"
-                label="Message *"
+                label="Message"
                 multiline
                 rows={4}
                 variant="outlined"
@@ -270,10 +272,11 @@ const ContactForm = () => {
             </Grid>
             <Grid item xs={12}>
               <Typography
-                p={1}
+                px={1}
+                pt={1}
                 variant="body1"
                 gutterBottom
-                sx={{ color: "text.secondary", textAlign: "center" }}
+                sx={{ color: "text.secondary", textAlign: "center", fontSize: 12 }}
               >
                 Information we are going to provide to the user. What sending the message does, and
                 what they should expect. We will also give a notice that we are going to keep the

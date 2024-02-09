@@ -52,7 +52,7 @@ const App = () => {
           }}
         >
           <Header />
-          <Box sx={{ paddingTop: "50px" }}>
+          <Box sx={{ paddingTop: "64px" }}>
             <ScrollToTop />
             <Routes>
               <Route path="/windows" element={<ContactPage />} />
