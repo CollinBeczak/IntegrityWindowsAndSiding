@@ -45,15 +45,14 @@ const App = () => {
         <CssBaseline />
         <Box
           sx={{
-            minHeight: "110vh",
+            minHeight: "100vh",
             display: "flex",
             flexDirection: "column",
             justifyContent: "space-between",
-            marginTop: { xs: 6, sm: -2 },
           }}
         >
           <Header />
-          <Box sx={{ paddingTop: "64px" }}>
+          <Box sx={{ paddingTop: "50px" }}>
             <ScrollToTop />
             <Routes>
               <Route path="/windows" element={<ContactPage />} />

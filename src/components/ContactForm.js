@@ -12,9 +12,10 @@ import {
   Box,
   Checkbox,
   CircularProgress,
+  FormHelperText,
 } from "@mui/material";
 
-import backgroundImg from "./../Assets/filler-house-img.jpeg"; // Import image directly
+import backgroundImg from "./../Assets/filler-house-img.jpeg";
 
 const ContactForm = () => {
   const [selectedInquiryTypes, setSelectedInquiryTypes] = useState([]);
@@ -23,6 +24,11 @@ const ContactForm = () => {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [message, setMessage] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [nameError, setNameError] = useState("");
+  const [emailError, setEmailError] = useState("");
+  const [phoneError, setPhoneError] = useState("");
+  const [inquiryError, setInquiryError] = useState("");
+  const [messageError, setMessageError] = useState("");
 
   const inquiryTypes = [
     { value: "Siding", label: "Siding" },
@@ -39,33 +45,95 @@ const ContactForm = () => {
     name.trim() !== "" &&
     email.trim() !== "" &&
     phoneNumber.trim() !== "" &&
-    message.trim() !== "";
+    message.trim() !== "" &&
+    nameError === "" &&
+    emailError === "" &&
+    phoneError === "" &&
+    inquiryError === "" &&
+    messageError === "";
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setIsLoading(true);
-    // Your form submission logic here
+    setIsLoading(false);
+  };
+
+  const handleNameBlur = () => {
+    if (name.trim() === "") {
+      setNameError("Name is required");
+    } else {
+      setNameError("");
+    }
+  };
+
+  const handleEmailBlur = () => {
+    if (email.trim() === "") {
+      setEmailError("Email is required");
+    } else if (!/^\S+@\S+\.\S+$/.test(email)) {
+      setEmailError("Invalid email address");
+    } else {
+      setEmailError("");
+    }
+  };
+
+  const handlePhoneBlur = () => {
+    if (phoneNumber.trim() === "") {
+      setPhoneError("Phone number is required");
+    } else if (!/^\d{10}$/.test(phoneNumber.replace(/\D/g, ""))) {
+      setPhoneError("Invalid phone number");
+    } else {
+      setPhoneError("");
+    }
+  };
+
+  const handleInquiryBlur = () => {
+    if (selectedInquiryTypes.length === 0) {
+      setInquiryError("Inquiry type is required");
+    } else {
+      setInquiryError("");
+    }
+  };
+
+  const handleMessageBlur = () => {
+    if (message.trim() === "") {
+      setMessageError("Message is required");
+    } else {
+      setMessageError("");
+    }
   };
 
   return (
     <Box
       sx={{
-        backgroundImage: `url(${backgroundImg})`, // Use imported image directly
-        backgroundSize: "cover",
+        backgroundImage: `url(${backgroundImg})`,
+        backgroundSize: "1800px",
         backgroundPosition: "center",
         width: "100%",
       }}
     >
       <Container
         sx={{
-          marginY: 20,
-          backgroundColor: "rgba(255, 255, 255)", // Semi-transparent white background
-          padding: "20px", // Add padding for better readability
-          borderRadius: "10px", // Add border radius for rounded corners
+          marginY: { xs: 4, sm: 16 },
+          backgroundColor: "rgba(255, 255, 255)",
+          padding: "20px",
+          borderRadius: "10px",
         }}
         maxWidth="md"
       >
-        <Typography variant="h4" align="center" mb={3} gutterBottom>
+        <Typography
+          variant="h1"
+          component="h1"
+          sx={{
+            fontSize: { xs: 30, sm: 35 },
+            fontFamily: "Comfortaa, sans-serif",
+            fontWeight: "bold",
+            color: "text.primary",
+            display: "block",
+            textAlign: "center",
+            mb: 3,
+          }}
+          gutterBottom
+        >
           Get a Free Estimate
         </Typography>
         <form onSubmit={handleSubmit}>
@@ -78,7 +146,14 @@ const ContactForm = () => {
                 required
                 fullWidth
                 value={name}
-                onChange={(e) => setName(e.target.value)}
+                onChange={(e) => {
+                  setName(e.target.value);
+                  setNameError("");
+                }}
+                onBlur={handleNameBlur}
+                error={!!nameError}
+                helperText={nameError}
+                sx={{ marginBottom: nameError ? 0 : "23px" }}
                 InputProps={{ sx: { color: "text.secondary" } }}
               />
             </Grid>
@@ -91,7 +166,14 @@ const ContactForm = () => {
                 required
                 fullWidth
                 value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                onChange={(e) => {
+                  setEmail(e.target.value);
+                  setEmailError("");
+                }}
+                onBlur={handleEmailBlur}
+                error={!!emailError}
+                helperText={emailError}
+                sx={{ marginBottom: emailError ? 0 : "23px" }}
                 InputProps={{ sx: { color: "text.secondary" } }}
               />
             </Grid>
@@ -103,12 +185,29 @@ const ContactForm = () => {
                 required
                 fullWidth
                 value={phoneNumber}
-                onChange={(e) => setPhoneNumber(e.target.value)}
+                onChange={(e) => {
+                  const input = e.target.value.replace(/\D/g, "").substring(0, 10);
+                  let formattedInput = input;
+                  if (input.length > 3) {
+                    formattedInput = `(${input.slice(0, 3)})-${input.slice(3)}`;
+                  }
+                  if (input.length > 6) {
+                    formattedInput = `(${input.slice(0, 3)})-${input.slice(3, 6)}-${input.slice(
+                      6,
+                    )}`;
+                  }
+                  setPhoneNumber(formattedInput);
+                  setPhoneError("");
+                }}
+                onBlur={handlePhoneBlur}
+                error={!!phoneError}
+                helperText={phoneError}
+                sx={{ marginBottom: phoneError ? 0 : "23px" }}
                 InputProps={{ sx: { color: "text.secondary" } }}
               />
             </Grid>
             <Grid item xs={12} sm={6}>
-              <FormControl fullWidth>
+              <FormControl fullWidth error={!!inquiryError}>
                 <InputLabel id="inquiry-type-label">Inquiry Type *</InputLabel>
                 <Select
                   labelId="inquiry-type-label"
@@ -118,9 +217,13 @@ const ContactForm = () => {
                   fullWidth
                   multiple
                   value={selectedInquiryTypes}
-                  onChange={(e) => setSelectedInquiryTypes(e.target.value)}
+                  onChange={(e) => {
+                    setSelectedInquiryTypes(e.target.value);
+                    setInquiryError("");
+                  }}
+                  onBlur={handleInquiryBlur}
                   renderValue={(selected) => selected.join(" - ")}
-                  sx={{ color: "text.secondary" }}
+                  sx={{ color: "text.secondary", marginBottom: inquiryError ? 0 : "20px" }}
                 >
                   {inquiryTypes.map((type) => (
                     <MenuItem key={type.value} value={type.value} style={{ color: "black" }}>
@@ -129,6 +232,7 @@ const ContactForm = () => {
                     </MenuItem>
                   ))}
                 </Select>
+                <FormHelperText>{inquiryError}</FormHelperText>
               </FormControl>
             </Grid>
             <Grid item xs={12}>
@@ -141,17 +245,18 @@ const ContactForm = () => {
                 required
                 fullWidth
                 value={message}
-                onChange={(e) => setMessage(e.target.value)}
+                onChange={(e) => {
+                  setMessage(e.target.value);
+                  setMessageError("");
+                }}
+                onBlur={handleMessageBlur}
+                error={!!messageError}
+                helperText={messageError}
                 InputProps={{ sx: { color: "text.secondary" } }}
+                sx={{ marginBottom: messageError ? 0 : "22px" }}
               />
             </Grid>
-            <Grid item xs={12}>
-              <Typography variant="body1" gutterBottom x={{ color: "text.secondary" }}>
-                Information we are going to provide to the user. What sendibng the message does, and
-                what they should expect. We will also give a notice that we are going to keep the
-                information they submit private.
-              </Typography>
-            </Grid>
+
             <Grid item xs={12}>
               <Button
                 type="submit"
@@ -162,6 +267,18 @@ const ContactForm = () => {
               >
                 {isLoading ? <CircularProgress size={24} /> : "Send Message"}
               </Button>
+            </Grid>
+            <Grid item xs={12}>
+              <Typography
+                p={1}
+                variant="body1"
+                gutterBottom
+                sx={{ color: "text.secondary", textAlign: "center" }}
+              >
+                Information we are going to provide to the user. What sending the message does, and
+                what they should expect. We will also give a notice that we are going to keep the
+                information they submit private.
+              </Typography>
             </Grid>
           </Grid>
         </form>

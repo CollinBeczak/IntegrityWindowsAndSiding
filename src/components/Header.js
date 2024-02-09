@@ -25,7 +25,7 @@ const Header = () => {
 
   const menuItems = [
     { label: "Showcase", path: "/showcase" },
-    { label: "Our Staff", path: "/staff" },
+    { label: "Staff", path: "/staff" },
     { label: "Contact", path: "/contact" },
   ];
 
@@ -42,7 +42,7 @@ const Header = () => {
     <AppBar position="fixed" sx={{ textAlign: "center", backgroundColor: "background.paper" }}>
       <Toolbar
         sx={{
-          display: "flex",
+          display: { xs: "block", md: "flex" },
           justifyContent: "space-between",
           maxWidth: "1400px",
           width: "100%",
@@ -54,19 +54,23 @@ const Header = () => {
           component={Link}
           to="/"
           sx={{
+            marginTop: { xs: 1, md: 0 },
+            fontSize: { xs: 20, sm: 25 },
             textDecoration: "none",
-            textAlign: "left",
+            textAlign: { xs: "center", md: "left" },
             fontFamily: "Comfortaa, sans-serif",
             fontWeight: "w400",
             color: "text.primary",
+            display: "block",
           }}
         >
           Integrity Siding & Windows
         </Typography>
-        <Box sx={{ display: "flex" }}>
+        <Box sx={{ display: "flex", justifyContent: "space-between" }}>
           <Button
             sx={{
               color: "text.primary",
+              fontSize: { xs: 10, sm: 15 },
               "& > span": {
                 marginLeft: 0,
               },
@@ -77,6 +81,7 @@ const Header = () => {
               <KeyboardArrowDownIcon
                 sx={{
                   mb: "1px",
+                  size: { xs: 10, sm: 15 },
                   transform: servicesAnchorEl ? "rotate(0deg)" : "rotate(270deg)",
                 }}
               />
@@ -92,6 +97,7 @@ const Header = () => {
               to={menuItem.path}
               sx={{
                 marginLeft: 2,
+                fontSize: { xs: 10, sm: 15 },
                 color: "text.primary",
               }}
             >
@@ -104,7 +110,15 @@ const Header = () => {
             open={Boolean(servicesAnchorEl)}
             onClose={handleClose}
           >
-            <MenuItem component={Link} to="/services" onClick={handleClose}>
+            <MenuItem
+              component={Link}
+              sx={{
+                fontSize: 16,
+                color: "text.primary",
+              }}
+              to="/services"
+              onClick={handleClose}
+            >
               View All Services
             </MenuItem>
             {Services.map((service) => (
@@ -112,6 +126,10 @@ const Header = () => {
                 key={service.label}
                 component={Link}
                 to={service.path}
+                sx={{
+                  fontSize: 16,
+                  color: "text.primary",
+                }}
                 onClick={handleClose}
               >
                 {service.label}
@@ -120,7 +138,7 @@ const Header = () => {
           </Menu>
         </Box>
         <IconButton
-          sx={{ display: { sm: "none" } }}
+          sx={{ display: { xs: "none" } }}
           edge="end"
           aria-label="menu"
           onClick={handleMenuClick}
