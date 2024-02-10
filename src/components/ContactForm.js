@@ -16,7 +16,6 @@ import {
 } from "@mui/material";
 
 import backgroundImg from "./../Assets/filler-house-img.jpeg";
-import { auto } from "async";
 
 const ContactForm = () => {
   const [selectedSubjectsTypes, setSelectedSubjectsTypes] = useState([]);
@@ -54,8 +53,8 @@ const ContactForm = () => {
     messageError === "";
 
   const handleSubmit = (e) => {
-    e.preventDefault();
     setIsLoading(true);
+
     setIsLoading(false);
   };
 

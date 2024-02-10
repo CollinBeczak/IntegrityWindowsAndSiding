@@ -4,9 +4,17 @@ import { BrowserRouter as Router, Routes, Route, useLocation } from "react-route
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import ContactForm from "./components/ContactForm";
-import ContactPage from "./pages/ContactPage";
 import HomePage from "./pages/HomePage";
 import { Box } from "@mui/system";
+import DoorsPage from "./pages/DoorsPage";
+import RoofingPage from "./pages/RoofingPage";
+import GuttersPage from "./pages/GuttersPage";
+import TrimPage from "./pages/TrimPage";
+import SidingPage from "./pages/SidingPage";
+import WindowsPage from "./pages/WindowsPage";
+import ServicesPage from "./pages/ServicesPage";
+import ShowcasePage from "./pages/ShowcasePage";
+import StaffPage from "./pages/StaffPage";
 
 const App = () => {
   const theme = createTheme({
@@ -55,13 +63,16 @@ const App = () => {
           <Box sx={{ paddingTop: "64px" }}>
             <ScrollToTop />
             <Routes>
-              <Route path="/windows" element={<ContactPage />} />
-              <Route path="/siding" element={<ContactPage />} />
-              <Route path="/trim" element={<ContactPage />} />
-              <Route path="/gutters" element={<ContactPage />} />
-              <Route path="/roofing" element={<ContactPage />} />
-              <Route path="/contact" element={<ContactPage />} />
               <Route path="/" element={<HomePage />} />
+              <Route path="/services" element={<ServicesPage />} />
+              <Route path="/showcase" element={<ShowcasePage />} />
+              <Route path="/staff" element={<StaffPage />} />
+              <Route path="/windows" element={<WindowsPage />} />
+              <Route path="/siding" element={<SidingPage />} />
+              <Route path="/trim" element={<TrimPage />} />
+              <Route path="/gutters" element={<GuttersPage />} />
+              <Route path="/roofing" element={<RoofingPage />} />
+              <Route path="/doors" element={<DoorsPage />} />
             </Routes>
           </Box>
           <ContactForm />
