@@ -61,9 +61,9 @@ const emailTemplate = (
   </head>
   <body>
     <div class="container">
-      <h1>Hello ${name},</h1>
       <p><strong>Contact Details:</strong></p>
       <ul>
+        <li><strong>From:</strong> ${name}</li>
         <li><strong>Email:</strong> ${email}</li>
         <li><strong>Phone Number:</strong> ${phoneNumber}</li>
         <li><strong>Subjects:</strong> ${selectedSubjectsTypes}</li>
@@ -84,7 +84,7 @@ export const sendEmail = async (
 ) => {
   const msg = {
     to: "ctbeczak08@gmail.com",
-    from: "ctbeczak08@gmail.com",
+    from: "integrityhelper1@gmail.com",
     subject: selectedSubjectsTypes,
     html: emailTemplate(name, email, phoneNumber, selectedSubjectsTypes, message),
   };
