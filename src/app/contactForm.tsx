@@ -19,7 +19,7 @@ import Image from "next/image";
 import houseImage from "./assets/windows/Alside_Casement_Beauty4.jpg";
 
 const ContactForm = () => {
-  const [selectedSubjectsTypes, setSelectedSubjectsTypes] = useState([]);
+  const [selectedSubjectsTypes, setSelectedSubjectsTypes]: any = useState([]);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
