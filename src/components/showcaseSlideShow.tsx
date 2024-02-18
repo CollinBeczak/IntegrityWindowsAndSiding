@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Box, Button, Typography } from "@mui/material";
 import Slider from "react-slick";
 import Image from "next/image";
@@ -28,6 +28,10 @@ const services: Service[] = [
 ];
 
 const ServiceCards: React.FC = () => {
+  const [loadedImages, setLoadedImages] = useState<boolean[]>(
+    new Array(services[0].images.length).fill(false),
+  );
+
   const settings = {
     infinite: true,
     accessibility: false,
@@ -39,6 +43,13 @@ const ServiceCards: React.FC = () => {
     autoplaySpeed: 12000,
     slidesToShow: 1,
     slidesToScroll: 1,
+    afterChange: (index: number) => handleSlideChange(index),
+  };
+
+  const handleSlideChange = (index: number) => {
+    const newLoadedImages = [...loadedImages];
+    newLoadedImages[index] = true;
+    setLoadedImages(newLoadedImages);
   };
 
   return (
@@ -71,7 +82,8 @@ const ServiceCards: React.FC = () => {
                         alt="Before"
                         layout="fill"
                         objectFit="cover"
-                        loading="eager"
+                        loading="lazy"
+                        onLoad={() => handleSlideChange(index)}
                       />
                     </Box>
                     <Box
@@ -86,7 +98,7 @@ const ServiceCards: React.FC = () => {
                         alt="After"
                         layout="fill"
                         objectFit="cover"
-                        loading="eager"
+                        loading={loadedImages[index] ? "eager" : "lazy"}
                       />
                     </Box>
                   </Box>

@@ -53,7 +53,13 @@ const ServiceCards: React.FC = () => {
                       height: 400,
                     }}
                   >
-                    <Image src={image} alt={`Image ${index + 1}`} layout="fill" objectFit="cover" />
+                    <Image
+                      src={image}
+                      alt={`Image ${index + 1}`}
+                      layout="fill"
+                      objectFit="cover"
+                      loading="lazy"
+                    />
                   </Box>
                 </Box>
               ))}

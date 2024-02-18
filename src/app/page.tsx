@@ -27,7 +27,7 @@ const Home = () => {
           overflow: "hidden",
         }}
       >
-        <Image src={houseImage} alt="image" layout="fill" objectFit="cover" loading="eager" />
+        <Image src={houseImage} alt="image" layout="fill" objectFit="cover" loading="lazy" />
         <Box
           sx={{
             position: "absolute",
