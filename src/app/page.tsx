@@ -73,7 +73,7 @@ const Home = () => {
           }}
         >
           <Box sx={{ flex: 1, marginBottom: { xs: 5, md: 0 }, marginRight: { xs: 0, md: 3 } }}>
-            <Typography variant="h4" my={2} textAlign={{ xs: "center", md: "left" }}>
+            <Typography variant="h4" mb={2} textAlign={{ xs: "center", md: "left" }}>
               Integrity Siding and window
             </Typography>
             <Typography variant="subtitle1" color="black" textAlign={{ xs: "center", md: "left" }}>
