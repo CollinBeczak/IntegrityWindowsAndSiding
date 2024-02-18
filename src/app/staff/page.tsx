@@ -1,9 +1,9 @@
-'use client'
-import React from 'react'
-import { Box } from '@mui/material'
+"use client";
+import React from "react";
+import { Box } from "@mui/material";
 
 const Staff = () => {
-  return <Box>hihih</Box>
-}
+  return <Box></Box>;
+};
 
-export default Staff
+export default Staff;

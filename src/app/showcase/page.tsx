@@ -1,20 +1,48 @@
-'use client'
-import { Box } from '@mui/material'
-import React from 'react'
+"use client";
 
-const Services = () => {
+import React from "react";
+import { Box, Typography } from "@mui/material";
+import Image from "next/image";
+import houseImage from "../assets/windows/Alside_Awning_Beauty3.jpg";
+
+const Showcase = () => {
   return (
-    <Box
-      sx={{
-        textAlign: 'center',
-        marginY: 20,
-      }}
-    >
-      Our services page has not been build yet, please go directly to another page with the other
-      options in the services dropdown or check out our staff or our showcase of our work. If you
-      are looking to contact use, please use the form or information below to do that.
+    <Box>
+      <Box
+        sx={{
+          position: "relative",
+          height: "50vh",
+          textAlign: "center",
+          color: "white",
+          overflow: "hidden",
+          mb: 80,
+        }}
+      >
+        <Image src={houseImage} alt="image" layout="fill" objectFit="cover" />
+        <Box
+          sx={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            backgroundColor: "rgba(0, 0, 0, 0.3)",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <Typography variant="h2" gutterBottom>
+            Showcase
+          </Typography>
+          <Typography variant="h5" gutterBottom>
+            Specializing in Showcase
+          </Typography>
+        </Box>
+      </Box>
     </Box>
-  )
-}
+  );
+};
 
-export default Services
+export default Showcase;

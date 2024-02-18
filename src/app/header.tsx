@@ -1,17 +1,17 @@
 "use client";
-// components/Header.tsx
+
 import React, { useState } from "react";
 import Link from "next/link";
 import { AppBar, Toolbar, Typography, Button, IconButton, Menu, MenuItem } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import { Box } from "@mui/system";
-import useClient from "../hooks/useClient"; // Import the useClient hook
+import useClient from "../hooks/useClient";
 
 const Header = () => {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const [servicesAnchorEl, setServicesAnchorEl] = useState<null | HTMLElement>(null);
-  const isClient = useClient(); // Use the useClient hook
+  const isClient = useClient();
 
   const handleMenuClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     setAnchorEl(event.currentTarget);
@@ -28,7 +28,7 @@ const Header = () => {
 
   const menuItems = [
     { label: "Showcase", path: "/showcase" },
-    { label: "Staff", path: "/staff" },
+    // { label: "Staff", path: "/staff" },
     { label: "Contact", path: "/contact" },
   ];
 
@@ -69,7 +69,7 @@ const Header = () => {
             display: "block",
           }}
         >
-          Integrity Siding & Windows
+          Integrity Siding & Window
         </Typography>
         <Box sx={{ display: "flex", justifyContent: "space-between" }}>
           <Button

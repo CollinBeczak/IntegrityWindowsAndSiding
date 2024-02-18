@@ -1,14 +1,15 @@
+"use client";
+
 import React from "react";
 import { Box, Typography, Button, Grid, Card, CardContent, Rating } from "@mui/material";
 import Image from "next/image";
-import houseImage from "./assets/filler-house-img.jpeg";
-
-interface Service {
-  name: string;
-  description: string;
-  beforeImage: any;
-  afterImage: any;
-}
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import houseImage from "./assets/siding/Alside_B&B_Beauty.jpg";
+import locationImage from "./assets/companyLocationImage.png";
+import ServiceCards from "./components/servicesSlideshow";
+import ShowcaseCards from "./components/showcaseSlideShow";
+import Link from "next/link";
 
 interface Review {
   name: string;
@@ -26,10 +27,9 @@ const Home = () => {
           textAlign: "center",
           color: "white",
           overflow: "hidden",
-          mb: 20,
         }}
       >
-        <Image src={houseImage} alt="image" layout="fill" objectFit="cover" />
+        <Image src={houseImage} alt="image" layout="fill" objectFit="cover" loading="eager" />
         <Box
           sx={{
             position: "absolute",
@@ -45,7 +45,7 @@ const Home = () => {
           }}
         >
           <Typography variant="h2" gutterBottom>
-            Integrity Siding and Windows
+            Integrity Siding and Window
           </Typography>
           <Typography variant="h5" gutterBottom>
             Located in Kansas, we specialize in replacing siding and windows and other services.
@@ -65,93 +65,92 @@ const Home = () => {
           </Box>
         </Box>
       </Box>
-      <Box>
-        <Typography variant="h3" gutterBottom>
-          About us
-        </Typography>
-        <Typography variant="body1">
-          Welcome to Integrity Siding and Windows! We are a trusted provider of siding and window
-          replacement services in Kansas.
-        </Typography>
+      <Box maxWidth={1200} margin="auto">
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: { xs: "column", md: "row" },
+            alignItems: "center",
+            padding: 3,
+          }}
+        >
+          <Box sx={{ flex: 1, marginBottom: { xs: 5, md: 0 }, marginRight: { xs: 0, md: 3 } }}>
+            <Typography variant="h4" my={2} textAlign={{ xs: "center", md: "left" }}>
+              Integrity Siding and window
+            </Typography>
+            <Typography variant="subtitle1" color="black" textAlign={{ xs: "center", md: "left" }}>
+              We pride ourselves on our highly competitive pricing and devoted approach to
+              accommodate our customers. We identify the needs and improvements that produce greater
+              efficiency – which save energy and money. We pride ourselves on our highly competitive
+              pricing and devoted approach to accommodate our customers. We identify the needs and
+              improvements that produce greater efficiency – which save energy and money. We pride
+              ourselves on our highly competitive pricing and devoted approach to accommodate our
+              customers. We identify the needs and improvements that produce greater efficiency –
+              which save energy and money.
+            </Typography>
+          </Box>
+        </Box>
       </Box>
       <Box>
-        <Typography variant="h3" gutterBottom>
-          Our services
-        </Typography>
-        <Grid container spacing={3}>
-          {services.map((service) => (
-            <Grid key={service.name} item xs={6}>
-              <ServiceCard service={service} />
-            </Grid>
-          ))}
-        </Grid>
+        <ServiceCards />
       </Box>
-      <Box>
-        <Grid container spacing={3}>
-          {reviews.map((review, index) => (
-            <Grid key={index} item xs={12} md={index < 3 ? 4 : 2}>
-              <ReviewCard {...review} />
-            </Grid>
-          ))}
-        </Grid>
-      </Box>
-    </Box>
-  );
-};
 
-const ServiceCard: React.FC<{ service: Service }> = ({ service }) => {
-  return (
-    <Box
-      sx={{
-        position: "relative",
-        textAlign: "center",
-        color: "white",
-        overflow: "hidden",
-        height: 400,
-      }}
-    >
-      <Image
-        src={service.beforeImage}
-        alt={`${service.name} before`}
-        layout="fill"
-        objectFit="cover"
-      />
-      <Typography variant="h4">{service.name} Before</Typography>
-      <Typography variant="body1">{service.description}</Typography>
+      <Box margin="20px 8px 40px">
+        <Box>
+          <Box>
+            <div className="elementor-widget-container">
+              <div className="elementor-custom-embed">
+                <iframe
+                  loading="lazy"
+                  src="https://maps.google.com/maps?q=integrity%20siding%20and%20window%2066062&amp;t=m&amp;z=6&amp;output=embed&amp;iwloc=near"
+                  title="2012 E Prairie Circle A, Olathe, Kansas 66062"
+                  aria-label="2012 E Prairie Circle A, Olathe, Kansas 66062"
+                  style={{ width: "100%", height: "400px", border: "0" }}
+                  allowFullScreen
+                ></iframe>
+              </div>
+            </div>
+          </Box>
+        </Box>
+
+        <Box maxWidth={1200} margin="auto" my={4} textAlign="center">
+          <Grid container justifyContent="center" spacing={3}>
+            {reviews.map((review, index) => (
+              <Grid key={index} item xs={12} md={index < 3 ? 4 : 2}>
+                <ReviewCard {...review} />
+              </Grid>
+            ))}
+          </Grid>
+        </Box>
+
+        <Box>
+          <ShowcaseCards />
+        </Box>
+      </Box>
     </Box>
   );
 };
 
 const ReviewCard: React.FC<Review> = ({ name, rating, text }) => {
   return (
-    <Card variant="outlined" sx={{ maxHeight: 200, overflowY: "auto" }}>
+    <Card
+      sx={{
+        height: { xs: "auto", md: 300 },
+        overflowY: "auto",
+        boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.2)",
+        borderRadius: "12px",
+      }}
+    >
       <CardContent>
         <Typography variant="h6">{name}</Typography>
         <Rating name="read-only" value={rating} readOnly />
-        <Typography variant="body1" gutterBottom>
+        <Typography variant="body1" gutterBottom textAlign={"left"}>
           {text}
         </Typography>
       </CardContent>
     </Card>
   );
 };
-
-const services: Service[] = [
-  {
-    name: "Windows",
-    description: "We offer high-quality window replacement services.",
-    beforeImage: houseImage,
-    afterImage: houseImage,
-  },
-  {
-    name: "Siding",
-    description:
-      "Our siding replacement services can transform the appearance of your home's exterior.",
-    beforeImage: houseImage,
-    afterImage: houseImage,
-  },
-  // Add more services as needed
-];
 
 const reviews: Review[] = [
   {

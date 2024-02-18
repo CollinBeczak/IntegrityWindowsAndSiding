@@ -56,7 +56,6 @@ const ContactForm = () => {
   const handleSubmit = (e: any) => {
     e.preventDefault();
     setIsLoading(true);
-    // Simulate form submission
     setTimeout(() => {
       setIsLoading(false);
     }, 2000);
@@ -129,7 +128,7 @@ const ContactForm = () => {
         sx={{
           maxWidth: "95%",
           marginY: { xs: 4, sm: 16 },
-          backgroundColor: "rgba(255, 255, 255)", // Adjust the opacity as needed
+          backgroundColor: "rgba(255, 255, 255)",
           padding: "20px",
           borderRadius: "10px",
         }}
@@ -149,7 +148,7 @@ const ContactForm = () => {
           }}
           gutterBottom
         >
-          Get a Free Estimate
+          Send us your questions
         </Typography>
         <form onSubmit={handleSubmit}>
           <Grid container spacing={2}>

@@ -19,14 +19,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           rel="icon"
           href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='0' height='0' viewBox='0 0 0 0'%3E%3Crect width='0' height='0' fill='none' /%3E%3C/svg%3E"
         />
-        <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link
           href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap"
           rel="stylesheet"
         />
-        <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
         <title>Integrity Siding and Window, LLC</title>
 
         {/* Open Graph meta tags */}
