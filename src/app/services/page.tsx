@@ -3,7 +3,7 @@
 import React from "react";
 import { Box, Typography } from "@mui/material";
 import Image from "next/image";
-import houseImage from "../assets/windows/Alside_Awning_Beauty3.jpg";
+import houseImage from "../../assets/windows/Alside_Awning_Beauty3.jpg";
 
 const Services = () => {
   return (

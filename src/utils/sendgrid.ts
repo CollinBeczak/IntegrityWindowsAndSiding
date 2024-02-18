@@ -15,6 +15,8 @@ const send = async (msg: any) => {
 
 const emailTemplate = (
   name: string,
+  state: string,
+  city: string,
   email: string,
   phoneNumber: string,
   selectedSubjectsTypes: string,
@@ -65,6 +67,8 @@ const emailTemplate = (
       <ul>
         <li><strong>From:</strong> ${name}</li>
         <li><strong>Email:</strong> ${email}</li>
+        <li><strong>State:</strong> ${state}</li>
+        <li><strong>City:</strong> ${city}</li>
         <li><strong>Phone Number:</strong> ${phoneNumber}</li>
         <li><strong>Subjects:</strong> ${selectedSubjectsTypes}</li>
       </ul>
@@ -77,6 +81,8 @@ const emailTemplate = (
 
 export const sendEmail = async (
   name: string,
+  state: string,
+  city: string,
   email: string,
   phoneNumber: string,
   selectedSubjectsTypes: string,
@@ -86,7 +92,7 @@ export const sendEmail = async (
     to: "ctbeczak08@gmail.com",
     from: "integrityhelper1@gmail.com",
     subject: selectedSubjectsTypes,
-    html: emailTemplate(name, email, phoneNumber, selectedSubjectsTypes, message),
+    html: emailTemplate(name, state, city, email, phoneNumber, selectedSubjectsTypes, message),
   };
 
   return send(msg);
