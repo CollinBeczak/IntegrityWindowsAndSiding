@@ -18,7 +18,7 @@ const Showcase = () => {
           mb: 80,
         }}
       >
-        <Image src={houseImage} alt="image" layout="fill" objectFit="cover" />
+        <Image src={houseImage} alt="image" layout="fill" objectFit="cover" loading="lazy" />
         <Box
           sx={{
             position: "absolute",

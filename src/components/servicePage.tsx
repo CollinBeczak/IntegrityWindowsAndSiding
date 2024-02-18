@@ -26,7 +26,6 @@ interface ServicesPageProps {
 }
 
 const ServicesPage: React.FC<ServicesPageProps> = ({ page }) => {
-  console.log(page);
   const handleClick = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
@@ -65,7 +64,7 @@ const ServicesPage: React.FC<ServicesPageProps> = ({ page }) => {
           mt: { xs: 2, md: 0 },
         }}
       >
-        <Image src={page.titleImage} alt="image" layout="fill" objectFit="cover" />
+        <Image src={page.titleImage} alt="image" layout="fill" objectFit="cover" loading="lazy" />
         <Box
           sx={{
             position: "absolute",
@@ -150,6 +149,7 @@ const ServicesPage: React.FC<ServicesPageProps> = ({ page }) => {
                           src={image}
                           alt={`Image ${index + 1}`}
                           style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                          loading="lazy"
                         />
                       </Box>
                     ))}
