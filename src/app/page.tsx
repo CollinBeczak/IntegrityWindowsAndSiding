@@ -5,9 +5,9 @@ import { Box, Typography, Button, Grid, Card, CardContent, Rating } from "@mui/m
 import Image from "next/image";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import houseImage from "./assets/filler-house-img.jpeg";
-import ServiceCards from "./components/servicesSlideshow";
-import ShowcaseCards from "./components/showcaseSlideShow";
+import houseImage from "../assets/filler-house-img.jpeg";
+import ServiceCards from "../components/servicesSlideshow";
+import ShowcaseCards from "../components/showcaseSlideShow";
 
 interface Review {
   name: string;

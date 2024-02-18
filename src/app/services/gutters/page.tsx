@@ -1,11 +1,11 @@
 "use client";
 
 import React from "react";
-import ServicePage from "../../components/servicePage";
-import windowBefore1 from "../../assets/windows/Alside_Casement_Beauty4.jpg";
-import windowBefore2 from "../../assets/windows/Alside_Casement_Beauty5.jpg";
-import houseImage from "../../assets/windows/Alside_Promenade_ClassicBeauty2.jpg";
-import windowBefore3 from "../../assets/windows/Alside_Casement_Beauty6.jpg";
+import ServicePage from "../../../components/servicePage";
+import windowBefore1 from "../../../assets/windows/Alside_Casement_Beauty4.jpg";
+import windowBefore2 from "../../../assets/windows/Alside_Casement_Beauty5.jpg";
+import houseImage from "../../../assets/windows/Alside_Promenade_ClassicBeauty2.jpg";
+import windowBefore3 from "../../../assets/windows/Alside_Casement_Beauty6.jpg";
 const page = {
   title: "Gutters",
   titleImage: houseImage,

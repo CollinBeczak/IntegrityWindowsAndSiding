@@ -1,12 +1,13 @@
-import { sendEmail } from "@/app/utils/sendgrid";
+import { sendEmail } from "@/utils/sendgrid";
 import { NextApiResponse } from "next";
 
 export async function POST(req: Request, res: NextApiResponse) {
   if (req.method === "POST") {
-    const { name, email, phoneNumber, selectedSubjectsTypes, message } = await req.json();
+    const { name, state, city, email, phoneNumber, selectedSubjectsTypes, message } =
+      await req.json();
 
     try {
-      await sendEmail(name, email, phoneNumber, selectedSubjectsTypes, message);
+      await sendEmail(name, state, city, email, phoneNumber, selectedSubjectsTypes, message);
       return new Response(JSON.stringify("Email sent successfully"), {
         status: 200,
         headers: {

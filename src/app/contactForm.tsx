@@ -1,4 +1,5 @@
 "use client";
+
 import React, { useState } from "react";
 import {
   Container,
@@ -16,7 +17,7 @@ import {
   FormHelperText,
 } from "@mui/material";
 import Image from "next/image";
-import houseImage from "./assets/windows/Alside_Casement_Beauty4.jpg";
+import houseImage from "../assets/windows/Alside_Casement_Beauty4.jpg";
 import axios from "axios";
 
 const ContactForm = () => {
@@ -25,9 +26,13 @@ const ContactForm = () => {
   const [email, setEmail] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [message, setMessage] = useState("");
+  const [state, setState] = useState("");
+  const [city, setCity] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [nameError, setNameError] = useState("");
   const [emailError, setEmailError] = useState("");
+  const [stateError, setStateError] = useState("");
+  const [cityError, setCityError] = useState("");
   const [phoneError, setPhoneError] = useState("");
   const [subjectsError, setSubjectsError] = useState("");
   const [messageError, setMessageError] = useState("");
@@ -42,6 +47,8 @@ const ContactForm = () => {
     { value: "Other", label: "Other" },
   ];
 
+  const states = ["Kansas", "Oklahoma", "Missouri"];
+
   const isFormValid =
     selectedSubjectsTypes.length > 0 &&
     name.trim() !== "" &&
@@ -51,6 +58,8 @@ const ContactForm = () => {
     nameError === "" &&
     emailError === "" &&
     phoneError === "" &&
+    stateError === "" &&
+    cityError === "" &&
     subjectsError === "" &&
     messageError === "";
 
@@ -63,6 +72,8 @@ const ContactForm = () => {
         name,
         email,
         phoneNumber,
+        state,
+        city,
         selectedSubjectsTypes: selectedSubjectsTypes.join(", "),
         message,
       });
@@ -73,6 +84,8 @@ const ContactForm = () => {
       setPhoneNumber("");
       setSelectedSubjectsTypes([]);
       setMessage("");
+      setState("");
+      setCity("");
       setNameError("");
       setEmailError("");
       setPhoneError("");
@@ -113,7 +126,23 @@ const ContactForm = () => {
     }
   };
 
-  const handlesubjectsBlur = () => {
+  const handleStateBlur = () => {
+    if (state.trim() === "") {
+      setStateError("State is required");
+    } else {
+      setStateError("");
+    }
+  };
+
+  const handleCityBlur = () => {
+    if (city.trim() === "") {
+      setCityError("City is required");
+    } else {
+      setCityError("");
+    }
+  };
+
+  const handleSubjectsBlur = () => {
     if (selectedSubjectsTypes.length === 0) {
       setSubjectsError("Subjects type is required");
     } else {
@@ -259,7 +288,7 @@ const ContactForm = () => {
                     setSelectedSubjectsTypes(e.target.value);
                     setSubjectsError("");
                   }}
-                  onBlur={handlesubjectsBlur}
+                  onBlur={handleSubjectsBlur}
                   renderValue={(selected) => selected.join(" - ")}
                   sx={{ color: "text.secondary", marginBottom: subjectsError ? 0 : "20px" }}
                 >
@@ -272,6 +301,43 @@ const ContactForm = () => {
                 </Select>
                 <FormHelperText>{subjectsError}</FormHelperText>
               </FormControl>
+            </Grid>
+            <Grid item xs={12} sm={6}>
+              <FormControl fullWidth sx={{ marginBottom: stateError ? 0 : "23px" }}>
+                <InputLabel id="state-label">State *</InputLabel>
+                <Select
+                  label="state"
+                  id="state"
+                  value={state}
+                  onChange={(e) => setState(e.target.value)}
+                  onBlur={handleStateBlur}
+                >
+                  {states.map((stateOption) => (
+                    <MenuItem key={stateOption} value={stateOption}>
+                      {stateOption}
+                    </MenuItem>
+                  ))}
+                </Select>
+              </FormControl>
+            </Grid>
+            <Grid item xs={12} sm={6}>
+              <TextField
+                id="city"
+                label="City"
+                variant="outlined"
+                required
+                fullWidth
+                value={city}
+                onChange={(e) => {
+                  setCity(e.target.value);
+                  setCityError("");
+                }}
+                onBlur={handleCityBlur}
+                error={!!cityError}
+                helperText={cityError}
+                sx={{ marginBottom: cityError ? 0 : "23px" }}
+                InputProps={{ sx: { color: "text.secondary" } }}
+              />
             </Grid>
             <Grid item xs={12}>
               <TextField
