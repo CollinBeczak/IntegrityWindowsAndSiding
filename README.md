@@ -1,17 +1,29 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+Basic Dependencies:
+Node 18 LTS
+
 ## Getting Started
 
-First, run the development server:
+Step 1:
+Ensure you are on Node 18, then install node modules with npm install:
+
+```bash
+npm install
+```
+
+Step 2:
+Create a .env.local file on the same level as the src folder and fill out the required fields below:
+
+```bash
+SENDGRID_API_KEY=""
+```
+
+Step 3:
+Start up the development application using this command:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
