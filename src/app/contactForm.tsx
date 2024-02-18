@@ -17,6 +17,7 @@ import {
 } from "@mui/material";
 import Image from "next/image";
 import houseImage from "./assets/windows/Alside_Casement_Beauty4.jpg";
+import axios from "axios";
 
 const ContactForm = () => {
   const [selectedSubjectsTypes, setSelectedSubjectsTypes]: any = useState([]);
@@ -28,7 +29,7 @@ const ContactForm = () => {
   const [nameError, setNameError] = useState("");
   const [emailError, setEmailError] = useState("");
   const [phoneError, setPhoneError] = useState("");
-  const [subjectsError, setsubjectsError] = useState("");
+  const [subjectsError, setSubjectsError] = useState("");
   const [messageError, setMessageError] = useState("");
 
   const subjectsTypes = [
@@ -53,12 +54,35 @@ const ContactForm = () => {
     subjectsError === "" &&
     messageError === "";
 
-  const handleSubmit = (e: any) => {
+  const handleSubmit = async (e: any) => {
     e.preventDefault();
     setIsLoading(true);
-    setTimeout(() => {
+
+    try {
+      await axios.post("/api/send-email", {
+        name,
+        email,
+        phoneNumber,
+        selectedSubjectsTypes: selectedSubjectsTypes.join(", "),
+        message,
+      });
+
+      // Reset form state
+      setName("");
+      setEmail("");
+      setPhoneNumber("");
+      setSelectedSubjectsTypes([]);
+      setMessage("");
+      setNameError("");
+      setEmailError("");
+      setPhoneError("");
+      setSubjectsError("");
+      setMessageError("");
+    } catch (error) {
+      console.error("Error sending email:", error);
+    } finally {
       setIsLoading(false);
-    }, 2000);
+    }
   };
 
   const handleNameBlur = () => {
@@ -91,9 +115,9 @@ const ContactForm = () => {
 
   const handlesubjectsBlur = () => {
     if (selectedSubjectsTypes.length === 0) {
-      setsubjectsError("Subjects type is required");
+      setSubjectsError("Subjects type is required");
     } else {
-      setsubjectsError("");
+      setSubjectsError("");
     }
   };
 
@@ -233,7 +257,7 @@ const ContactForm = () => {
                   value={selectedSubjectsTypes}
                   onChange={(e: any) => {
                     setSelectedSubjectsTypes(e.target.value);
-                    setsubjectsError("");
+                    setSubjectsError("");
                   }}
                   onBlur={handlesubjectsBlur}
                   renderValue={(selected) => selected.join(" - ")}
