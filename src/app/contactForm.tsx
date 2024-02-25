@@ -78,7 +78,6 @@ const ContactForm = () => {
         message,
       });
 
-      // Reset form state
       setName("");
       setEmail("");
       setPhoneNumber("");

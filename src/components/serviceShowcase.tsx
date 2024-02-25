@@ -137,7 +137,7 @@ const ServiceCards = () => {
       {services.map((service, serviceIndex) => (
         <Box key={serviceIndex}>
           <Divider sx={{ marginTop: 2 }} />
-          <Typography variant="h3" sx={{ textAlign: "center", marginY: 5 }}>
+          <Typography variant="h4" sx={{ textAlign: "center", marginY: 2 }}>
             Integrity&apos;s {service.name}
           </Typography>
           <Box position="relative" m={2}>
@@ -249,6 +249,7 @@ const ServiceCards = () => {
                     alt="Additional"
                     layout="fill"
                     objectFit="cover"
+                    loading="lazy"
                     style={{
                       borderRadius: "8px",
                       cursor: "pointer",
@@ -272,7 +273,7 @@ const ServiceCards = () => {
           >
             <Box position="relative">
               <Box p={1} maxWidth={800} onClick={handleImageClick}>
-                <Image src={selectedImage} alt="Selected" layout="responsive" />
+                <Image src={selectedImage} alt="Selected" layout="responsive" loading="lazy" />
               </Box>
               <IconButton
                 onClick={closeModal}
