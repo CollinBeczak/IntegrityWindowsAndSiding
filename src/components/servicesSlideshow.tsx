@@ -88,7 +88,7 @@ const ServiceCards: React.FC = () => {
                   backgroundColor: "rgba(255, 255, 255, 0.6)",
                   width: "100%",
                   height: "100%",
-                  maxWidth: 1200,
+                  maxWidth: 1000,
                   padding: 3,
                   borderRadius: "20px",
                   textAlign: "center",
@@ -98,15 +98,33 @@ const ServiceCards: React.FC = () => {
                 }}
               >
                 <Box>
-                  <Typography variant="h3" color="primary" mb={2} textAlign="center">
+                  <Typography
+                    sx={{
+                      fontSize: { xs: "h5.fontSize", sm: "h4.fontSize" },
+                      fontWeight: { xs: "h5.fontWeight", sm: "h4.fontWeight" },
+                    }}
+                    color="primary"
+                    mb={2}
+                    textAlign="center"
+                  >
                     {service.name}
                   </Typography>
-                  <Typography variant="h6" color="black">
+                  <Typography
+                    sx={{
+                      fontSize: { xs: "subtitle1.fontSize", sm: "h6.fontSize", md: "h5.fontSize" },
+                      fontWeight: {
+                        xs: "subtitle1.fontWeight",
+                        sm: "h6.fontWeight",
+                        md: "h5.fontSize",
+                      },
+                    }}
+                    color="black"
+                  >
                     {service.description}
                   </Typography>
                 </Box>
                 <Box>
-                  <Box sx={{ marginBottom: 2 }}>
+                  <Box sx={{ marginY: 2 }}>
                     <Button variant="contained" sx={{ color: "white" }}>
                       Learn More
                     </Button>

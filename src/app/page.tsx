@@ -55,9 +55,7 @@ const Home = () => {
               textShadow: "4px 4px 8px rgba(0,0,0,0.5)",
             }}
           >
-            {" "}
-            {/* Making text bold */}
-            Integrity Siding And Window
+            Integrity Siding and Window
           </Typography>
           <Typography
             textAlign="center"

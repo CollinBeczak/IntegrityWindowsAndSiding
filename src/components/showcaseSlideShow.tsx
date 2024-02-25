@@ -112,32 +112,38 @@ const ServiceCards: React.FC = () => {
                 alignItems: "center",
                 padding: 4,
                 paddingX: { xs: 2, md: 4 },
-                paddingBottom: 6,
                 zIndex: 1,
               }}
             >
               <Box
                 sx={{
                   backgroundColor: "rgba(255, 255, 255, 0.6)",
-                  width: "100%",
-                  height: "100%",
-                  maxWidth: 1200,
+                  width: "auto",
+                  maxWidth: "auto",
                   padding: 3,
                   borderRadius: "20px",
                   textAlign: "center",
                   display: "flex",
                   flexDirection: "column",
-                  justifyContent: "space-between",
+                  justifyContent: "center",
                 }}
               >
                 <Box>
-                  <Typography variant="h3" color="primary" mb={2} textAlign="center">
+                  <Typography
+                    color="primary"
+                    mb={2}
+                    mx={2}
+                    sx={{
+                      fontSize: { xs: "h5.fontSize", sm: "h3.fontSize" },
+                      fontWeight: "bold",
+                      fontFamily: "Comfortaa, sans-serif",
+                    }}
+                    textAlign="center"
+                  >
                     {service.name}
                   </Typography>
-                </Box>
-                <Box>
-                  <Box sx={{ marginBottom: 2 }}>
-                    <Button variant="contained" sx={{ color: "white" }}>
+                  <Box>
+                    <Button variant="contained" sx={{ color: "white", paddingX: 3, paddingY: 1 }}>
                       Check out our work
                     </Button>
                   </Box>
