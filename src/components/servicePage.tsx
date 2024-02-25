@@ -29,7 +29,7 @@ const ServicesPage: React.FC<ServicesPageProps> = ({ page }) => {
   const handleClick = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
-      const offsetTop = element.offsetTop - 180;
+      const offsetTop = element.offsetTop - 100;
       window.scrollTo({
         top: offsetTop,
         behavior: "smooth",
@@ -62,6 +62,9 @@ const ServicesPage: React.FC<ServicesPageProps> = ({ page }) => {
           overflow: "hidden",
           mb: 10,
           mt: { xs: 2, md: 0 },
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
         }}
       >
         <Image src={page.titleImage} alt="image" layout="fill" objectFit="cover" loading="lazy" />
@@ -71,13 +74,13 @@ const ServicesPage: React.FC<ServicesPageProps> = ({ page }) => {
             top: 0,
             left: 0,
             width: "100%",
-
             height: "100%",
             backgroundColor: "rgba(0, 0, 0, 0.3)",
             display: "flex",
             flexDirection: "column",
             justifyContent: "center",
             alignItems: "center",
+            padding: "0 20px",
           }}
         >
           <Box maxWidth={1200}>
@@ -88,7 +91,16 @@ const ServicesPage: React.FC<ServicesPageProps> = ({ page }) => {
               {page.description}
             </Typography>
           </Box>
-          <Box sx={{ display: { xs: "block", md: "flex" } }}>
+          {/* <Box
+            sx={{
+              overflowX: "auto",
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "flex-start",
+              alignItems: "center",
+              marginTop: 2,
+            }}
+          >
             {page.types.map((service, index) => (
               <Button
                 key={index}
@@ -96,20 +108,20 @@ const ServicesPage: React.FC<ServicesPageProps> = ({ page }) => {
                 onClick={() => handleClick(service.name.replace(/\s+/g, "-").toLowerCase())}
                 sx={{
                   display: "flex",
-                  marginY: 2,
-                  margin: { md: 4 },
+                  my: 2,
                   color: "white",
-                  width: "220px",
+                  minWidth: "200px",
                   alignItems: "center",
+                  marginRight: 2,
                 }}
               >
-                <Typography component="span" style={{ textDecoration: "none", color: "inherit" }}>
+                <Typography component="span" sx={{ textDecoration: "none", color: "inherit" }}>
                   {service.name}
                 </Typography>
                 <ArrowDropDownIcon />
               </Button>
             ))}
-          </Box>
+          </Box> */}
         </Box>
       </Box>
 

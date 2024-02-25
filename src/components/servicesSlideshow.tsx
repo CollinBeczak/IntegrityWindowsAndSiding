@@ -17,9 +17,10 @@ interface Service {
 
 const services: Service[] = [
   {
-    name: "Our Services",
+    name: "Premium Services",
     description:
-      "We specialize in siding and window replacement. But we also replace doors, gutters, roofs, and trim.",
+      "Exclusive Alside dealer offering lifetime warranty custom measured-to-fit Premium Vinyl Window & Patio door installation" +
+      "Premium Vinyl Siding installation, Premium Roofing, decking, and patio Builds.",
     images: [windowBefore1, windowBefore2, windowBefore3, windowAfter1, windowAfter2, windowAfter3],
   },
 ];

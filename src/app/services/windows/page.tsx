@@ -17,21 +17,51 @@ const page = {
     "If you’re looking to add more natural light to your home, our picture windows and bay windows are perfect for providing an unobstructed view of the outdoors while letting in plenty of sunlight. Our awning windows are ideal for adding ventilation and improving air circulation in your home. We also offer garden windows for those who enjoy indoor gardening, and hopper windows for those looking to add a unique touch to their home’s interior. For those who value functionality, our slider windows and double hung windows are designed to open and close easily, providing great ventilation and an unobstructed view of the outdoors. Our casement windows are perfect for homeowners looking to maximize natural light and ventilation in their homes while improving energy efficiency. We are committed to providing top-notch service and expertise to our customers. Our team of professionals is equipped to guide you through the selection process and ensure that your new windows are installed properly and efficiently. With our exceptional products and services, you can trust that your new windows will enhance your home’s aesthetic appeal, security, and energy efficiency for years to come.",
   types: [
     {
-      name: "Bay Windows",
+      name: "DOUBLE HUNG WINDOWS",
       description:
-        "Bay windows are a combination of three or more windows projecting outward from a home’s exterior wall in a square or polygonal design forming a “bay” inside the room. Traditionally, they were associated with the Victorian era and became an architectural staple in the congested city of San Francisco because of their illusion of added.",
+        "Built for everyday wear and tear, the expertly constructed sashes raise and lower easily on a constant force balance " +
+        "system eliminating the need for sash cords, weights, and pulleys. These windows are such a simple pleasure, with their " +
+        "smooth day to day operation as well as the tilt-in feature for cleaning both sides of the glass from inside your home " +
+        "making them one of our most popular window options. (Single-hung windows are also available with tilt-in bottom sash only)",
       images: [windowBefore1, windowBefore2, windowBefore3],
     },
     {
-      name: "Bow Windows",
+      name: "SLIDING WINDOWS",
       description:
-        "Bow windows are similar to bay windows but have a more circular appearance, creating a curved projection from the wall. They provide a panoramic view and allow more light into the room. Bow windows can add architectural interest to both the interior and exterior of a home, enhancing its curb appeal and value.",
+        "Known for their sleek and slim silhouette, these windows have ample glass area with quiet and smooth side-gliding action " +
+        "for both opening and closing horizontally, as well as tilt out easy cleaning all on a precision-engeneered nylon-encased" +
+        "dual brass rolling system. These windows are made with heavy-duty construction and installed with weathertight fit to ensure " +
+        "the best performance and protection.",
       images: [windowBefore1, windowBefore2, windowBefore3],
     },
     {
-      name: "Slider Windows",
+      name: "PICTURE WINDOWS & UNIQUE SHAPES",
       description:
-        "Slider windows, also known as sliding windows, feature sashes that glide horizontally along tracks. They offer a contemporary look and are ideal for spaces where a projecting window could interfere with walkways, patios, or decks. Slider windows provide excellent ventilation and are easy to operate, making them a popular choice for modern homes.",
+        "The true beauty of these windows lie in their pure versatility. These windows invite true design and creativity while " +
+        "designing your custom window-system. Big or small, alone or in combination with other widow styles these windows will always " +
+        "make a statement of quality, and offer the ease of creating a dramatic focal point. Full glass expose with narrow frame offer " +
+        "an unobstructed viewwiyh the ability to choose from a variety of architectural styles never feeling limited.",
+      images: [windowBefore1, windowBefore2, windowBefore3],
+    },
+    {
+      name: "CASEMENT & AWNING WINDOWS",
+      description:
+        "More than meets the eye while merging history and the practicality of old-world craftsmanship. Our casement" +
+        "windows combine positive crank machanism handles and modern advanced window technologies, our casement sashes" +
+        "open gentle outward on a state-of-art hinge system providing multi-directional ventilation and easy cleaning" +
+        "from inside the home. Our awning windows feature multiple lite comfigurations available in a single majnframe" +
+        "and provide refreshing airflow. Beveled exterior sash design provide this window with the appearance of larger" +
+        "glass all while maintaining a modern attractive slimline look",
+      images: [windowBefore1, windowBefore2, windowBefore3],
+    },
+    {
+      name: "BAY, BOW, AND GARDEN WINDOWS",
+      description:
+        "Transform your room with these stunning windows that really bring out the character you want in your home! Be that" +
+        "be a cozy reading nook, a striking focal point, or bright display of your prized plants and flowers. Available in a" +
+        'variety of colors and finishes bay and bow windows feature a 1- 1/4"  furniture grade veneer standard construction in' +
+        'the head, seatboard, and jams. Garden windows are a clear 1" thick insulated glass unit with fully welded mainframe' +
+        "for greater strength and stability.",
       images: [windowBefore1, windowBefore2, windowBefore3],
     },
   ],

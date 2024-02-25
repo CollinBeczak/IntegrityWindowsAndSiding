@@ -9,16 +9,9 @@ import windowAfter1 from "../assets/windows/Alside_Mezzo_Slider_Beauty2.jpg";
 import windowAfter2 from "../assets/windows/Alside_Promenade_ClassicBeauty2.jpg";
 import windowAfter3 from "../assets/windows/Alside_Promenade_ContemporaryBeauty.jpg";
 
-interface Service {
-  name: string;
-  description: string;
-  images: { before: any; after: any }[];
-}
-
-const services: Service[] = [
+const services = [
   {
-    name: "Showcase",
-    description: "High-quality window replacement services.",
+    name: "OUR SHOWCASE",
     images: [
       { before: windowBefore1, after: windowAfter1 },
       { before: windowBefore2, after: windowAfter2 },
@@ -141,14 +134,11 @@ const ServiceCards: React.FC = () => {
                   <Typography variant="h3" color="primary" mb={2} textAlign="center">
                     {service.name}
                   </Typography>
-                  <Typography variant="h6" color="black">
-                    {service.description}
-                  </Typography>
                 </Box>
                 <Box>
                   <Box sx={{ marginBottom: 2 }}>
                     <Button variant="contained" sx={{ color: "white" }}>
-                      Learn More
+                      Check out our work
                     </Button>
                   </Box>
                 </Box>
