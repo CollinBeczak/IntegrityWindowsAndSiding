@@ -138,7 +138,7 @@ const ServiceCards = () => {
         <Box key={serviceIndex}>
           <Divider sx={{ marginTop: 2 }} />
           <Typography variant="h3" sx={{ textAlign: "center", marginY: 5 }}>
-            Integrity's {service.name}
+            Integrity&apos;s {service.name}
           </Typography>
           <Box position="relative" m={2}>
             <Slider {...settings}>
