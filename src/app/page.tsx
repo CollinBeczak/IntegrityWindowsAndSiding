@@ -5,7 +5,7 @@ import { Box, Typography, Button, Grid, Card, CardContent, Rating } from "@mui/m
 import Image from "next/image";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import houseImage from "../assets/filler-house-img.jpeg";
+import homeImage from "../assets/landing_page_image.jpg";
 import ServiceCards from "../components/servicesSlideshow";
 import ShowcaseCards from "../components/showcaseSlideShow";
 
@@ -22,12 +22,11 @@ const Home = () => {
         sx={{
           position: "relative",
           height: "85vh",
-          textAlign: "center",
           color: "white",
           overflow: "hidden",
         }}
       >
-        <Image src={houseImage} alt="image" layout="fill" objectFit="cover" loading="lazy" />
+        <Image src={homeImage} alt="image" layout="fill" objectFit="cover" loading="lazy" />
         <Box
           sx={{
             position: "absolute",
@@ -42,22 +41,73 @@ const Home = () => {
             alignItems: "center",
           }}
         >
-          <Typography variant="h2" gutterBottom>
-            Integrity Siding and Window
+          <Typography
+            width={"100%"}
+            maxWidth={1000}
+            textAlign="center"
+            variant="h4"
+            gutterBottom
+            sx={{
+              marginTop: 1,
+              marginBottom: 5,
+              fontFamily: "Comfortaa, sans-serif",
+              fontWeight: "bold",
+              textShadow: "4px 4px 8px rgba(0,0,0,0.5)",
+            }}
+          >
+            {" "}
+            {/* Making text bold */}
+            Integrity Siding And Window
           </Typography>
-          <Typography variant="h5" gutterBottom>
-            Located in Kansas, we specialize in replacing siding and windows and other services.
+          <Typography
+            textAlign="center"
+            variant="h5"
+            maxWidth={1000}
+            mb={5}
+            gutterBottom
+            sx={{
+              fontFamily: "Comfortaa, sans-serif",
+              fontWeight: "bold",
+              textShadow: "4px 4px 8px rgba(0,0,0,0.5)",
+            }}
+          >
+            Local family-owned company with over 30 years of construction, and remodel experience
+            with commercial and residential properties. Commercial class-A contractor proudly
+            serving all of Kansas, Oklahoma, and Missouri.
           </Typography>
-          <Box sx={{ margin: 1, display: "flex" }}>
+          <Box
+            sx={{
+              fontFamily: "Comfortaa, sans-serif",
+              fontWeight: "bold",
+              width: "100%",
+              maxWidth: 1000,
+              textAlign: "center",
+            }}
+          >
             <Button
               href="/services"
-              variant="outlined"
+              variant="contained"
               color="primary"
-              sx={{ margin: 1, display: "flex" }}
+              sx={{
+                fontFamily: "Comfortaa, sans-serif",
+                fontWeight: 900,
+                margin: 1,
+                color: "white",
+              }}
             >
               View all services
             </Button>
-            <Button href="/contact" variant="contained" color="primary" sx={{ margin: 1 }}>
+            <Button
+              href="/contact"
+              variant="contained"
+              color="inherit"
+              sx={{
+                fontFamily: "Comfortaa, sans-serif",
+                fontWeight: 900,
+                margin: 1,
+                color: "text.primary",
+              }}
+            >
               Contact Us
             </Button>
           </Box>
@@ -69,10 +119,11 @@ const Home = () => {
             display: "flex",
             flexDirection: { xs: "column", md: "row" },
             alignItems: "center",
-            padding: 3,
+            paddingX: 3,
+            paddingY: { xs: 3, md: 6 },
           }}
         >
-          <Box sx={{ flex: 1, marginBottom: { xs: 5, md: 0 }, marginRight: { xs: 0, md: 3 } }}>
+          <Box sx={{ flex: 1, marginBottom: { xs: 5, md: 0 } }}>
             <Typography variant="h4" mb={2} textAlign={{ xs: "center", md: "left" }}>
               Integrity Siding and window
             </Typography>
@@ -93,23 +144,18 @@ const Home = () => {
         <ServiceCards />
       </Box>
 
-      <Box margin="20px 8px 40px">
-        <Box>
-          <Box>
-            <div className="elementor-widget-container">
-              <div className="elementor-custom-embed">
-                <iframe
-                  loading="lazy"
-                  src="https://maps.google.com/maps?q=integrity%20siding%20and%20window%2066062&amp;t=m&amp;z=6&amp;output=embed&amp;iwloc=near"
-                  title="2012 E Prairie Circle A, Olathe, Kansas 66062"
-                  aria-label="2012 E Prairie Circle A, Olathe, Kansas 66062"
-                  style={{ width: "100%", height: "400px", border: "0" }}
-                  allowFullScreen
-                ></iframe>
-              </div>
-            </div>
-          </Box>
-        </Box>
+      <Box margin="30px 10px 40px">
+        <div className="elementor-widget-container">
+          <div className="elementor-custom-embed">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1639108.802772688!2d-97.42347040198965!3d36.64120250408655!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87bae1ff91ad00ff%3A0x5e36118f71c67f8a!2sIntegrity%20Siding%20%26%20Window!5e0!3m2!1sen!2sus!4v1708289182931!5m2!1sen!2sus"
+              width="600"
+              height="450"
+              style={{ width: "100%", border: "0" }}
+              loading="lazy"
+            ></iframe>
+          </div>
+        </div>
 
         <Box maxWidth={1200} margin="auto" my={4} textAlign="center">
           <Grid container justifyContent="center" spacing={3}>
@@ -120,10 +166,9 @@ const Home = () => {
             ))}
           </Grid>
         </Box>
-
-        <Box>
-          <ShowcaseCards />
-        </Box>
+      </Box>
+      <Box mb={5}>
+        <ShowcaseCards />
       </Box>
     </Box>
   );

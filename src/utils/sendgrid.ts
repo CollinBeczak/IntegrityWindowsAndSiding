@@ -65,10 +65,9 @@ const emailTemplate = (
     <div class="container">
       <p><strong>Contact Details:</strong></p>
       <ul>
-        <li><strong>From:</strong> ${name}</li>
+        <li><strong>Client:</strong> ${name}</li>
+        <li><strong>Location:</strong> ${city}, ${state}</li>
         <li><strong>Email:</strong> ${email}</li>
-        <li><strong>State:</strong> ${state}</li>
-        <li><strong>City:</strong> ${city}</li>
         <li><strong>Phone Number:</strong> ${phoneNumber}</li>
         <li><strong>Subjects:</strong> ${selectedSubjectsTypes}</li>
       </ul>
