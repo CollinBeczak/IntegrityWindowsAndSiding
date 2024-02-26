@@ -134,7 +134,7 @@ const ServiceCards: React.FC = () => {
                     mb={2}
                     mx={2}
                     sx={{
-                      fontSize: { xs: "h5.fontSize", sm: "h3.fontSize" },
+                      fontSize: { xs: "h5.fontSize", sm: "h4.fontSize" },
                       fontWeight: "bold",
                       fontFamily: "Comfortaa, sans-serif",
                     }}
