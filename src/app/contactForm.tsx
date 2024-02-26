@@ -15,6 +15,7 @@ import {
   Checkbox,
   CircularProgress,
   FormHelperText,
+  Divider,
 } from "@mui/material";
 import Image from "next/image";
 import houseImage from "../assets/windows/Alside_Casement_Beauty4.jpg";
@@ -186,13 +187,79 @@ const ContactForm = () => {
       <Container
         sx={{
           maxWidth: "95%",
-          marginY: { xs: 4, sm: 16 },
+          marginY: { xs: 4, sm: 4 },
           backgroundColor: "rgba(255, 255, 255)",
           padding: "20px",
           borderRadius: "10px",
         }}
         maxWidth="md"
       >
+        <Box sx={{ textAlign: "center", my: 1 }}>
+          <Typography
+            variant="h5"
+            component="h5"
+            sx={{
+              fontSize: { xs: 25 },
+              fontFamily: "Comfortaa, sans-serif",
+              fontWeight: "bold",
+              color: "text.primary",
+              display: "block",
+              textAlign: "center",
+              mb: 0,
+            }}
+            gutterBottom
+          >
+            Want to call us now?
+          </Typography>
+          <Typography
+            px={1}
+            pt={1}
+            variant="body1"
+            gutterBottom
+            sx={{ color: "text.secondary", textAlign: "center", fontSize: 12 }}
+          >
+            Our business hours 8:00 AM – 8:00 PM Monday through Friday, 8:00 AM – 3:00 PM Saturday,
+            and we are closed on Sundays.
+          </Typography>
+
+          <Button
+            type="submit"
+            fullWidth
+            variant="contained"
+            href="tel:+13167396106"
+            sx={{ maxWidth: 160, my: 1, px: 0, py: 0, color: "white" }}
+          >
+            Call now
+          </Button>
+        </Box>
+        <Box>
+          <Divider
+            sx={{
+              mt: 2,
+            }}
+          />
+          <Typography
+            variant="h1"
+            component="h1"
+            sx={{
+              fontSize: { xs: 20 },
+              fontFamily: "Comfortaa, sans-serif",
+              color: "grey",
+              display: "block",
+              textAlign: "center",
+              mt: 1.2,
+              mb: 1,
+            }}
+            gutterBottom
+          >
+            OR
+          </Typography>
+          <Divider
+            sx={{
+              mb: 2,
+            }}
+          />
+        </Box>
         <Typography
           variant="h1"
           component="h1"
@@ -386,9 +453,10 @@ const ContactForm = () => {
                 gutterBottom
                 sx={{ color: "text.secondary", textAlign: "center", fontSize: 12 }}
               >
-                Information we are going to provide to the user. What sending the message does, and
-                what they should expect. We will also give a notice that we are going to keep the
-                information they submit private.
+                We value your privacy and vow to never sell your information. Our business hours
+                8:00 AM – 8:00 PM Monday through Friday, 8:00 AM – 3:00 PM Saturday, and we are
+                closed on Sundays. We are excited to meet you and will contact you as soon as we
+                can.
               </Typography>
             </Grid>
           </Grid>
