@@ -125,7 +125,7 @@ const ServiceCards: React.FC = () => {
                 </Box>
                 <Box>
                   <Box sx={{ marginY: 2 }}>
-                    <Button variant="contained" sx={{ color: "white" }}>
+                    <Button href="/services" variant="contained" sx={{ color: "white" }}>
                       Learn More
                     </Button>
                   </Box>

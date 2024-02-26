@@ -143,7 +143,11 @@ const ServiceCards: React.FC = () => {
                     {service.name}
                   </Typography>
                   <Box>
-                    <Button variant="contained" sx={{ color: "white", paddingX: 3, paddingY: 1 }}>
+                    <Button
+                      href="/showcase"
+                      variant="contained"
+                      sx={{ color: "white", paddingX: 3, paddingY: 1 }}
+                    >
                       Check out our work
                     </Button>
                   </Box>

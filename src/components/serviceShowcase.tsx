@@ -192,6 +192,10 @@ const ServiceCards = () => {
     }
   };
 
+  const handleMenuClose = () => {
+    setAnchorEl(null);
+  };
+
   return (
     <>
       <Box
@@ -221,12 +225,15 @@ const ServiceCards = () => {
           id="services-menu"
           anchorEl={anchorEl}
           open={Boolean(anchorEl)}
-          onClose={() => setAnchorEl(null)}
+          onClose={handleMenuClose}
         >
           {services.map((service, index) => (
             <MenuItem
               key={index}
-              onClick={() => handleMenuItemClick(service.name.replace(/\s+/g, "-").toLowerCase())}
+              onClick={() => {
+                handleMenuItemClick(service.name.replace(/\s+/g, "-").toLowerCase());
+                handleMenuClose();
+              }}
             >
               {service.name}
             </MenuItem>
