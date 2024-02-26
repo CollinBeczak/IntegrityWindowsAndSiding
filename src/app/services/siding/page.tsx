@@ -15,6 +15,7 @@ const page = {
   subtitle: "Integrity's Siding",
   subDescription:
     "If you’re looking to add more natural light to your home, our picture Siding and bay Siding are perfect for providing an unobstructed view of the outdoors while letting in plenty of sunlight. Our awning Siding are ideal for adding ventilation and improving air circulation in your home. We also offer garden Siding for those who enjoy indoor gardening, and hopper Siding for those looking to add a unique touch to their home’s interior. For those who value functionality, our slider Siding and double hung Siding are designed to open and close easily, providing great ventilation and an unobstructed view of the outdoors. Our casement Siding are perfect for homeowners looking to maximize natural light and ventilation in their homes while improving energy efficiency. We are committed to providing top-notch service and expertise to our customers. Our team of professionals is equipped to guide you through the selection process and ensure that your new Siding are installed properly and efficiently. With our exceptional products and services, you can trust that your new Siding will enhance your home’s aesthetic appeal, security, and energy efficiency for years to come.",
+  learnMore: false,
   types: [
     {
       name: "Bay Siding",

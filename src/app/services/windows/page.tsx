@@ -8,7 +8,7 @@ import houseImage from "../../../assets/windows/Alside_Awning_Beauty3.jpg";
 import windowBefore3 from "../../../assets/windows/Alside_Casement_Beauty6.jpg";
 
 const page = {
-  title: "Windows",
+  title: "Window",
   titleImage: houseImage,
   description:
     "At Integrity siding & window, we offer an extensive selection of high-quality windows to suit every need and style. Our windows are " +
@@ -25,6 +25,7 @@ const page = {
     "to our customers. Our team of professionals is equipped to guide you through the selection process and ensure that your new windows are installed " +
     "properly and efficiently. With our exceptional products and services, you can trust that your new windows will enhance your home’s aesthetic  " +
     "appeal, security, and energy efficiency for years to come.",
+  learnMore: false,
   types: [
     {
       name: "DOUBLE HUNG WINDOWS",
