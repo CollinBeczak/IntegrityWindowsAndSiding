@@ -35,8 +35,8 @@ const page = {
   ],
 };
 
-const Roofing = () => {
+const Decking = () => {
   return <ServicePage page={page} />;
 };
 
-export default Roofing;
+export default Decking;

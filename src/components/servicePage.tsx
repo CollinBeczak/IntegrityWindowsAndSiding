@@ -52,7 +52,6 @@ const ServicesPage: React.FC<ServicesPageProps> = ({ page }) => {
           color: "white",
           overflow: "hidden",
           mb: 2,
-          mt: { xs: 0, md: 0 },
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
@@ -98,7 +97,7 @@ const ServicesPage: React.FC<ServicesPageProps> = ({ page }) => {
                 id={service.name.toLowerCase().replace(/[^a-zA-Z0-9#]+/g, "_")}
                 sx={{
                   position: "relative",
-                  top: "-124px", // Adjust this value to change the offset
+                  top: "-124px",
                 }}
               ></Box>
               <Box
