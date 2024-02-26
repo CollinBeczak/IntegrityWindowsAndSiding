@@ -20,7 +20,6 @@ interface Page {
   description: string;
   subtitle: string;
   subDescription: string;
-  learnMore: boolean;
   types: Service[];
 }
 
@@ -42,12 +41,11 @@ const ServicesPage: React.FC<ServicesPageProps> = ({ page }) => {
   const handleMenuItemClick = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
-      const offsetTop = element.offsetTop - 80;
+      const offsetTop = element.offsetTop - 100;
       window.scrollTo({
         top: offsetTop,
         behavior: "smooth",
       });
-      handleClose();
     }
   };
 
@@ -56,6 +54,7 @@ const ServicesPage: React.FC<ServicesPageProps> = ({ page }) => {
     accessibility: false,
     arrows: false,
     autoplay: true,
+    swipeToSlide: false,
     dots: false,
     sync: true,
     speed: 3000,
@@ -110,13 +109,18 @@ const ServicesPage: React.FC<ServicesPageProps> = ({ page }) => {
           overflow: "hidden",
           mb: 10,
           mt: { xs: 2, md: 0 },
-
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
         }}
       >
-        <Image src={page.titleImage} alt="image" layout="fill" objectFit="cover" priority={true} />
+        <Image
+          src={page.titleImage}
+          alt="image"
+          fill
+          style={{ objectFit: "cover" }}
+          priority={true}
+        />
         <Box
           sx={{
             position: "absolute",
@@ -142,83 +146,71 @@ const ServicesPage: React.FC<ServicesPageProps> = ({ page }) => {
           </Box>
         </Box>
       </Box>
-      <Box px={2}>
-        <Box margin="auto" marginY={10} maxWidth={1200}>
-          <Typography variant="h4" gutterBottom>
-            {page.subtitle}
-          </Typography>
-          <Typography variant="body1" color="black">
-            {page.subDescription}
-          </Typography>
-        </Box>
 
-        <Box>
-          {page.types.map((service, index) => (
-            <Box key={index} width={1} mb={5}>
-              <Box
-                id={service.name.replace(/\s+/g, "-").toLowerCase()}
-                data-testid={service.name.replace(/\s+/g, "-").toLowerCase()}
-                margin="auto"
-                marginY={10}
-                maxWidth={1200}
-                sx={{ textAlign: { xs: "center", md: "left" } }}
-              >
-                <Box sx={{ display: { md: "flex" } }}>
-                  <Box width={"100%"} maxWidth={500} height={300} margin={"auto"}>
-                    <Slider {...settings}>
-                      {service.images.map((image: any, index: any) => (
-                        <Box
-                          key={index}
-                          sx={{
-                            position: "relative",
-                            width: "100%",
-                            height: 300,
-                          }}
-                        >
-                          <Image
-                            src={image}
-                            alt={`Image ${index + 1}`}
-                            style={{ width: "100%", height: "100%", objectFit: "cover" }}
-                            loading="lazy"
-                          />
-                        </Box>
-                      ))}
-                    </Slider>
-                  </Box>
-                  <Box
-                    textAlign="center"
-                    sx={{ ml: { md: 2 }, textAlign: { xs: "center", md: "left" } }}
-                  >
-                    <Typography
-                      sx={{
-                        fontSize: { xs: "h5.fontSize", sm: "h4.fontSize" },
-                        marginTop: { xs: 2, md: 0 },
-                        textAlign: { xs: "center", md: "left" },
-                      }}
-                      gutterBottom
-                    >
-                      {service.name}
-                    </Typography>
-                    <Typography variant="h6" color="textSecondary">
-                      {service.description}
-                    </Typography>
-                    {page.learnMore && (
-                      <Box sx={{ marginY: 2 }}>
-                        <Button
-                          href={`/services/${service.name.toLowerCase()}`}
-                          variant="contained"
-                          sx={{ color: "white" }}
-                        >
-                          Learn More
-                        </Button>
+      <Box margin="auto" marginY={10} maxWidth={1200}>
+        <Typography variant="h4" gutterBottom>
+          {page.subtitle}
+        </Typography>
+        <Typography variant="body1" color="black">
+          {page.subDescription}
+        </Typography>
+      </Box>
+
+      <Box>
+        {page.types.map((service, index) => (
+          <Box key={index} width={1} mb={5}>
+            <Box
+              id={service.name.replace(/\s+/g, "-").toLowerCase()}
+              data-testid={service.name.replace(/\s+/g, "-").toLowerCase()}
+              margin="auto"
+              marginY={10}
+              maxWidth={1200}
+              sx={{ textAlign: { xs: "center", md: "left" } }}
+            >
+              <Box sx={{ display: { md: "flex" } }}>
+                <Box width={"100%"} maxWidth={500} height={300} margin={"auto"}>
+                  <Slider {...settings}>
+                    {service.images.map((image: any, index: any) => (
+                      <Box
+                        key={index}
+                        sx={{
+                          position: "relative",
+                          width: "100%",
+                          height: 300,
+                        }}
+                      >
+                        <Image
+                          src={image}
+                          alt={`Image ${index + 1}`}
+                          style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                          loading="lazy"
+                        />
                       </Box>
-                    )}
-                  </Box>
+                    ))}
+                  </Slider>
+                </Box>
+                <Box
+                  textAlign="center"
+                  sx={{ ml: { md: 2 }, textAlign: { xs: "center", md: "left" } }}
+                >
+                  <Typography
+                    sx={{
+                      fontSize: { xs: "h5.fontSize", sm: "h4.fontSize" },
+                      marginTop: { xs: 2, md: 0 },
+                      textAlign: { xs: "center", md: "left" },
+                    }}
+                    gutterBottom
+                  >
+                    {service.name}
+                  </Typography>
+                  <Typography variant="h6" color="textSecondary">
+                    {service.description}
+                  </Typography>
                 </Box>
               </Box>
             </Box>
-          ))}
-        </Box>
+          </Box>
+        ))}
       </Box>
     </Box>
   );
