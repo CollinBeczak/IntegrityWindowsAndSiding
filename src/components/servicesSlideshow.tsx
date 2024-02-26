@@ -2,12 +2,9 @@ import React from "react";
 import { Box, Button, Typography } from "@mui/material";
 import Slider from "react-slick";
 import Image from "next/image";
-import windowBefore1 from "../assets/windows/Alside_Casement_Beauty4.jpg";
-import windowBefore2 from "../assets/windows/Alside_Casement_Beauty5.jpg";
-import windowBefore3 from "../assets/windows/Alside_Casement_Beauty6.jpg";
-import windowAfter1 from "../assets/windows/Alside_Mezzo_Slider_Beauty2.jpg";
-import windowAfter2 from "../assets/windows/Alside_Promenade_ClassicBeauty2.jpg";
-import windowAfter3 from "../assets/windows/Alside_Promenade_ContemporaryBeauty.jpg";
+import slide1 from "../assets//Alside_Promenade_ContemporaryBeauty.jpg";
+import slide2 from "../assets/Alside_SatinwoodSelect_Beauty3.jpg";
+import slide3 from "../assets/deck.jpg";
 
 interface Service {
   name: string;
@@ -21,7 +18,7 @@ const services: Service[] = [
     description:
       "Exclusive Alside dealer offering lifetime warranty custom measured-to-fit Premium Vinyl Window & Patio door installation, " +
       "Premium Vinyl Siding installation, Premium Roofing, decking, and patio Builds.",
-    images: [windowBefore1, windowBefore2, windowBefore3, windowAfter1, windowAfter2, windowAfter3],
+    images: [slide1, slide2, slide3],
   },
 ];
 
@@ -33,6 +30,7 @@ const ServiceCards: React.FC = () => {
     autoplay: true,
     swipeToSlide: false,
     dots: false,
+    draggable: false,
     sync: true,
     speed: 3000,
     autoplaySpeed: 12000,
@@ -78,9 +76,8 @@ const ServiceCards: React.FC = () => {
                 flexDirection: "column",
                 justifyContent: "center",
                 alignItems: "center",
-                padding: 4,
+                padding: 6,
                 paddingX: { xs: 2, md: 4 },
-                paddingBottom: 6,
                 zIndex: 1,
               }}
             >

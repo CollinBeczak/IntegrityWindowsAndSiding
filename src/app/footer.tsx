@@ -13,7 +13,7 @@ const Footer = () => {
           {/* Company title */}
           <Grid item xs={12} sm={4}>
             <Typography variant="h5" align="left">
-              Integrity Siding & Window
+              Integrity Siding and Window
             </Typography>
           </Grid>
 
@@ -98,7 +98,7 @@ const Footer = () => {
           alignItems="center"
         >
           <Typography variant="body2" align="center" color="text.secondary">
-            &copy; 2024 Integrity Siding & Window. All rights reserved.
+            &copy; 2024 Integrity Siding and Window. All rights reserved.
           </Typography>
         </Box>
       </Box>

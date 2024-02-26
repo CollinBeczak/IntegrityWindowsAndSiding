@@ -60,7 +60,7 @@ const Header = () => {
           sx={{
             marginTop: { xs: 2, md: 0 },
             marginBottom: { xs: 0.5, md: 0 },
-            fontSize: { xs: 20, sm: 25 },
+            fontSize: { xs: 19, sm: 25 },
             textDecoration: "none",
             textAlign: { xs: "center", md: "left" },
             fontFamily: "Comfortaa, sans-serif",
@@ -69,7 +69,7 @@ const Header = () => {
             display: "block",
           }}
         >
-          Integrity Siding & Window
+          Integrity Siding and Window
         </Typography>
         <Box sx={{ display: "flex", justifyContent: "space-between" }}>
           <Button

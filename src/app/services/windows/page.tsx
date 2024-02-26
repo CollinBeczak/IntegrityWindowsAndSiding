@@ -11,7 +11,7 @@ const page = {
   title: "Window",
   titleImage: houseImage,
   description:
-    "At Integrity siding & window, we offer an extensive selection of high-quality windows to suit every need and style. Our windows are " +
+    "At Integrity Siding and Window, we offer an extensive selection of high-quality windows to suit every need and style. Our windows are " +
     "designed to provide maximum energy efficiency, security, and durability while enhancing the aesthetic appeal of your home. From awning " +
     "windows and bay windows to picture windows and slider windows, we have the perfect window solution for you.",
   subtitle: "Integrity's windows",
