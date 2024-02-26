@@ -20,7 +20,7 @@ const Showcase = () => {
           overflow: "hidden",
         }}
       >
-        <Image src={houseImage} alt="image" layout="fill" objectFit="cover" loading="lazy" />
+        <Image src={houseImage} alt="image" fill style={{ objectFit: "cover" }} loading="lazy" />
         <Box
           sx={{
             position: "absolute",

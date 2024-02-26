@@ -164,6 +164,7 @@ const ServiceCards = () => {
     autoplaySpeed: 12000,
     slidesToShow: 1,
     slidesToScroll: 1,
+    swipeToSlide: false,
     afterChange: (index: number) => handleSlideChange(index),
   };
 
@@ -277,8 +278,8 @@ const ServiceCards = () => {
                       <Image
                         src={image.before}
                         alt="Before"
-                        layout="fill"
-                        objectFit="cover"
+                        fill
+                        style={{ objectFit: "cover" }}
                         loading="lazy"
                         onLoad={() => handleSlideChange(index)}
                       />
@@ -313,8 +314,8 @@ const ServiceCards = () => {
                       <Image
                         src={image.after}
                         alt="After"
-                        layout="fill"
-                        objectFit="cover"
+                        fill
+                        style={{ objectFit: "cover" }}
                         loading={loadedImages[index] ? "eager" : "lazy"}
                       />
                       <Typography
@@ -358,11 +359,11 @@ const ServiceCards = () => {
                   <Image
                     src={image}
                     alt="Additional"
-                    layout="fill"
-                    objectFit="cover"
+                    fill
                     loading="lazy"
                     style={{
                       borderRadius: "8px",
+                      objectFit: "cover",
                       cursor: "pointer",
                     }}
                   />

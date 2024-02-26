@@ -30,6 +30,7 @@ const ServiceCards: React.FC = () => {
     accessibility: false,
     arrows: false,
     autoplay: true,
+    swipeToSlide: false,
     dots: false,
     sync: true,
     speed: 3000,
@@ -73,8 +74,8 @@ const ServiceCards: React.FC = () => {
                       <Image
                         src={image.before}
                         alt="Before"
-                        layout="fill"
-                        objectFit="cover"
+                        fill
+                        style={{ objectFit: "cover" }}
                         loading="lazy"
                         onLoad={() => handleSlideChange(index)}
                       />
@@ -89,8 +90,8 @@ const ServiceCards: React.FC = () => {
                       <Image
                         src={image.after}
                         alt="After"
-                        layout="fill"
-                        objectFit="cover"
+                        fill
+                        style={{ objectFit: "cover" }}
                         loading={loadedImages[index] ? "eager" : "lazy"}
                       />
                     </Box>
@@ -117,7 +118,7 @@ const ServiceCards: React.FC = () => {
             >
               <Box
                 sx={{
-                  backgroundColor: "rgba(255, 255, 255, 0.6)",
+                  backgroundColor: "rgba(255, 255, 255, 0.8)",
                   width: "auto",
                   maxWidth: "auto",
                   padding: 3,

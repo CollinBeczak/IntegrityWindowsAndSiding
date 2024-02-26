@@ -36,6 +36,7 @@ const ContactForm = () => {
   const [phoneError, setPhoneError] = useState("");
   const [subjectsError, setSubjectsError] = useState("");
   const [messageError, setMessageError] = useState("");
+  const [buttonText, setButtonText] = useState("Send Message");
 
   const subjectsTypes = [
     { value: "Siding", label: "Siding" },
@@ -78,6 +79,12 @@ const ContactForm = () => {
         message,
       });
 
+      setButtonText("Message Sent!");
+      setTimeout(() => {
+        setButtonText("Send Message");
+      }, 3000);
+
+      // Clear form fields and errors
       setName("");
       setEmail("");
       setPhoneNumber("");
@@ -174,7 +181,7 @@ const ContactForm = () => {
           zIndex: -1,
         }}
       >
-        <Image src={houseImage} alt="image" layout="fill" objectFit="cover" loading="lazy" />
+        <Image src={houseImage} alt="image" fill style={{ objectFit: "cover" }} loading="lazy" />
       </Box>
       <Container
         sx={{
@@ -368,7 +375,7 @@ const ContactForm = () => {
                 disabled={!isFormValid || isLoading}
                 sx={{ color: "white" }}
               >
-                {isLoading ? <CircularProgress size={24} /> : "Send Message"}
+                {isLoading ? <CircularProgress size={24} /> : buttonText}
               </Button>
             </Grid>
             <Grid item xs={12}>

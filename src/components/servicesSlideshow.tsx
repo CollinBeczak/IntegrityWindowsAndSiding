@@ -19,7 +19,7 @@ const services: Service[] = [
   {
     name: "Premium Services",
     description:
-      "Exclusive Alside dealer offering lifetime warranty custom measured-to-fit Premium Vinyl Window & Patio door installation" +
+      "Exclusive Alside dealer offering lifetime warranty custom measured-to-fit Premium Vinyl Window & Patio door installation, " +
       "Premium Vinyl Siding installation, Premium Roofing, decking, and patio Builds.",
     images: [windowBefore1, windowBefore2, windowBefore3, windowAfter1, windowAfter2, windowAfter3],
   },
@@ -31,6 +31,7 @@ const ServiceCards: React.FC = () => {
     accessibility: false,
     arrows: false,
     autoplay: true,
+    swipeToSlide: false,
     dots: false,
     sync: true,
     speed: 3000,
@@ -57,8 +58,8 @@ const ServiceCards: React.FC = () => {
                     <Image
                       src={image}
                       alt={`Image ${index + 1}`}
-                      layout="fill"
-                      objectFit="cover"
+                      fill
+                      style={{ objectFit: "cover" }}
                       loading="lazy"
                     />
                   </Box>
@@ -85,7 +86,7 @@ const ServiceCards: React.FC = () => {
             >
               <Box
                 sx={{
-                  backgroundColor: "rgba(255, 255, 255, 0.6)",
+                  backgroundColor: "rgba(255, 255, 255, 0.7)",
                   width: "100%",
                   height: "100%",
                   maxWidth: 1000,

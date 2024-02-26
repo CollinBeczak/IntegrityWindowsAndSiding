@@ -1,15 +1,10 @@
 import React from "react";
-import { Metadata } from "next";
 
 import ThemeProvider from "../components/themeProvider";
 import Header from "./header";
 import { Box } from "@mui/material";
 import ContactForm from "./contactForm";
 import Footer from "./footer";
-
-export const metadata: Metadata = {
-  viewport: "initial-scale=1, width=device-width",
-};
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
