@@ -1,9 +1,8 @@
 "use client";
 
-import React, { useState } from "react";
-import { Box, Typography, Button, Menu, MenuItem } from "@mui/material";
+import React, { useEffect } from "react";
+import { Box, Typography, Button } from "@mui/material";
 import Image from "next/image";
-import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -18,8 +17,6 @@ interface Page {
   title: string;
   titleImage: any;
   description: string;
-  subtitle: string;
-  subDescription: string;
   learnMore: boolean;
   types: Service[];
 }
@@ -29,28 +26,6 @@ interface ServicesPageProps {
 }
 
 const ServicesPage: React.FC<ServicesPageProps> = ({ page }) => {
-  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
-
-  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-    setAnchorEl(event.currentTarget);
-  };
-
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
-
-  const handleMenuItemClick = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      const offsetTop = element.offsetTop - 100;
-      window.scrollTo({
-        top: offsetTop,
-        behavior: "smooth",
-      });
-      handleClose();
-    }
-  };
-
   const settings = {
     infinite: true,
     accessibility: false,
@@ -69,40 +44,6 @@ const ServicesPage: React.FC<ServicesPageProps> = ({ page }) => {
   return (
     <Box>
       <Box
-        sx={{
-          position: "fixed",
-          top: { xs: 82, sm: 92, md: 64 },
-          right: 0,
-          zIndex: 999,
-          textAlign: "center",
-          borderRadius: "0 0 10px 10px",
-        }}
-      >
-        <Button
-          variant="contained"
-          onClick={handleClick}
-          sx={{
-            color: "black",
-            minWidth: "160px",
-            alignItems: "center",
-            display: "flex",
-          }}
-        >
-          <Typography sx={{ ml: 2, textDecoration: "none", color: "white" }}>Jump to</Typography>
-          <ArrowDropDownIcon sx={{ color: "white" }} />
-        </Button>
-        <Menu id="services-menu" anchorEl={anchorEl} open={Boolean(anchorEl)} onClose={handleClose}>
-          {page.types.map((service, index) => (
-            <MenuItem
-              key={index}
-              onClick={() => handleMenuItemClick(service.name.replace(/\s+/g, "-").toLowerCase())}
-            >
-              {service.name}
-            </MenuItem>
-          ))}
-        </Menu>
-      </Box>
-      <Box
         id="top"
         sx={{
           position: "relative",
@@ -110,8 +51,8 @@ const ServicesPage: React.FC<ServicesPageProps> = ({ page }) => {
           textAlign: "center",
           color: "white",
           overflow: "hidden",
-          mb: 10,
-          mt: { xs: 2, md: 0 },
+          mb: 2,
+          mt: { xs: 0, md: 0 },
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
@@ -150,18 +91,16 @@ const ServicesPage: React.FC<ServicesPageProps> = ({ page }) => {
         </Box>
       </Box>
       <Box px={2}>
-        <Box margin="auto" marginY={10} maxWidth={1200}>
-          <Typography variant="h4" gutterBottom>
-            {page.subtitle}
-          </Typography>
-          <Typography variant="body1" color="black">
-            {page.subDescription}
-          </Typography>
-        </Box>
-
         <Box>
           {page.types.map((service, index) => (
             <Box key={index} width={1} mb={5}>
+              <Box
+                id={service.name.toLowerCase().replace(/[^a-zA-Z0-9#]+/g, "_")}
+                sx={{
+                  position: "relative",
+                  top: "-124px", // Adjust this value to change the offset
+                }}
+              ></Box>
               <Box
                 id={service.name.replace(/\s+/g, "-").toLowerCase()}
                 data-testid={service.name.replace(/\s+/g, "-").toLowerCase()}
@@ -212,7 +151,10 @@ const ServicesPage: React.FC<ServicesPageProps> = ({ page }) => {
                     {page.learnMore && (
                       <Box sx={{ marginY: 2 }}>
                         <Button
-                          href={`/services/${service.name.toLowerCase()}`}
+                          href={`/services/${service.name
+                            .toLowerCase()
+                            .replace(/- /g, "premium_vinyl_siding#")
+                            .replace(/[^a-zA-Z0-9#]+/g, "_")}`}
                           variant="contained"
                           sx={{ color: "white" }}
                         >

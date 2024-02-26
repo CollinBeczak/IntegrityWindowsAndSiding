@@ -155,7 +155,7 @@ const ServiceCards = () => {
 
   const settings = {
     infinite: true,
-    accessibility: true,
+    accessibility: false,
     arrows: false,
     autoplay: true,
     dots: true,

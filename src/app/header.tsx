@@ -28,18 +28,17 @@ const Header = () => {
 
   const menuItems = [
     { label: "Showcase", path: "/showcase" },
-    // { label: "Staff", path: "/staff" },
     { label: "Contact", path: "/contact" },
   ];
 
   const Services = [
-    { label: "View All Services", path: "" },
-    { label: "Windows", path: "/windows" },
-    { label: "Siding", path: "/siding" },
-    { label: "Trim", path: "/trim" },
-    { label: "Doors", path: "/doors" },
-    { label: "Gutters", path: "/gutters" },
-    { label: "Roofing", path: "/roofing" },
+    { label: "View All Services", path: "/" },
+    { label: "Premium Vinyl Window", path: "/premium_vinyl_window" },
+    { label: "Premium Vinyl Siding", path: "/premium_vinyl_siding" },
+    { label: "- LP SmartSide", path: "/premium_vinyl_siding#lp_smartside" },
+    { label: "- Hardie Board", path: "/premium_vinyl_siding#hardie_board" },
+    { label: "Premium Roofing", path: "/premium_roofing" },
+    { label: "Premium Decking & Patio", path: "/premium_decking_and_patio" },
   ];
 
   return (
@@ -118,7 +117,11 @@ const Header = () => {
               <MenuItem
                 key={service.label}
                 component={Link}
-                href={`/services/${service.path}`}
+                href={
+                  service.path.startsWith("/")
+                    ? `/services${service.path}`
+                    : service.path.replace(/- /g, "#")
+                }
                 sx={{
                   fontSize: 16,
                   color: "text.primary",
