@@ -12,42 +12,40 @@ const page = {
   titleImage: houseImage,
   description:
     "At Integrity siding and window, we offer an extensive selection of high-quality windows to suit every need and style. Our windows are designed to provide maximum energy efficiency, security, and durability while enhancing the aesthetic appeal of your home. From awning windows and bay windows to picture windows and slider windows, we have the perfect window solution for you.",
-  subtitle: "",
-  subDescription: "",
   learnMore: true,
   types: [
     {
-      name: "Windows",
+      name: "Premium Vinyl Window",
       description:
         "Bay windows are a combination of three or more windows projecting outward from a home’s exterior wall in a square or polygonal design forming a “bay” inside the room. Traditionally, they were associated with the Victorian era and became an architectural staple in the congested city of San Francisco because of their illusion of added.",
       images: [windowBefore1, windowBefore2, windowBefore3],
     },
     {
-      name: "Siding",
+      name: "Premium Vinyl Siding",
       description:
         "Bow windows are similar to bay windows but have a more circular appearance, creating a curved projection from the wall. They provide a panoramic view and allow more light into the room. Bow windows can add architectural interest to both the interior and exterior of a home, enhancing its curb appeal and value.",
       images: [windowBefore1, windowBefore2, windowBefore3],
     },
     {
-      name: "Trim",
+      name: "- LP Smartside",
       description:
         "Slider windows, also known as sliding windows, feature sashes that glide horizontally along tracks. They offer a contemporary look and are ideal for spaces where a projecting window could interfere with walkways, patios, or decks. Slider windows provide excellent ventilation and are easy to operate, making them a popular choice for modern homes.",
       images: [windowBefore1, windowBefore2, windowBefore3],
     },
     {
-      name: "Doors",
+      name: "- Hardie Board",
       description:
         "Slider windows, also known as sliding windows, feature sashes that glide horizontally along tracks. They offer a contemporary look and are ideal for spaces where a projecting window could interfere with walkways, patios, or decks. Slider windows provide excellent ventilation and are easy to operate, making them a popular choice for modern homes.",
       images: [windowBefore1, windowBefore2, windowBefore3],
     },
     {
-      name: "Gutters",
+      name: "Premium Roofing",
       description:
         "Slider windows, also known as sliding windows, feature sashes that glide horizontally along tracks. They offer a contemporary look and are ideal for spaces where a projecting window could interfere with walkways, patios, or decks. Slider windows provide excellent ventilation and are easy to operate, making them a popular choice for modern homes.",
       images: [windowBefore1, windowBefore2, windowBefore3],
     },
     {
-      name: "Roofing",
+      name: "Premium Decking and Patio",
       description:
         "Slider windows, also known as sliding windows, feature sashes that glide horizontally along tracks. They offer a contemporary look and are ideal for spaces where a projecting window could interfere with walkways, patios, or decks. Slider windows provide excellent ventilation and are easy to operate, making them a popular choice for modern homes.",
       images: [windowBefore1, windowBefore2, windowBefore3],

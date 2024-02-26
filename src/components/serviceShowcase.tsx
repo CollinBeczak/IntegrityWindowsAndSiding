@@ -24,7 +24,7 @@ import windowAfter3 from "../assets/windows/Alside_Promenade_ContemporaryBeauty.
 
 const services = [
   {
-    name: "Windows",
+    name: "Premium Vinyl Window",
     description: "High-quality window replacement services.",
     progressImages: [
       { before: windowBefore1, after: windowAfter1 },
@@ -43,7 +43,7 @@ const services = [
     ],
   },
   {
-    name: "Siding",
+    name: "Premium Vinyl Siding",
     description: "High-quality window replacement services.",
     progressImages: [
       { before: windowBefore1, after: windowAfter1 },
@@ -62,7 +62,7 @@ const services = [
     ],
   },
   {
-    name: "Gutters",
+    name: "Premium Roofing",
     description: "High-quality window replacement services.",
     progressImages: [
       { before: windowBefore1, after: windowAfter1 },
@@ -81,45 +81,7 @@ const services = [
     ],
   },
   {
-    name: "Trim",
-    description: "High-quality window replacement services.",
-    progressImages: [
-      { before: windowBefore1, after: windowAfter1 },
-      { before: windowBefore2, after: windowAfter2 },
-      { before: windowBefore3, after: windowAfter3 },
-    ],
-    images: [
-      windowBefore1,
-      windowAfter1,
-      windowBefore2,
-      windowAfter2,
-      windowAfter2,
-      windowBefore3,
-      windowBefore3,
-      windowAfter3,
-    ],
-  },
-  {
-    name: "Doors",
-    description: "High-quality window replacement services.",
-    progressImages: [
-      { before: windowBefore1, after: windowAfter1 },
-      { before: windowBefore2, after: windowAfter2 },
-      { before: windowBefore3, after: windowAfter3 },
-    ],
-    images: [
-      windowBefore1,
-      windowAfter1,
-      windowBefore2,
-      windowAfter2,
-      windowAfter2,
-      windowBefore3,
-      windowBefore3,
-      windowAfter3,
-    ],
-  },
-  {
-    name: "Roofing",
+    name: "Premium Decking and Patio",
     description: "High-quality window replacement services.",
     progressImages: [
       { before: windowBefore1, after: windowAfter1 },
@@ -145,7 +107,6 @@ const ServiceCards = () => {
   );
   const [modalOpen, setModalOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState("");
-  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
 
   const handleSlideChange = (index: number) => {
     const newLoadedImages = [...loadedImages];
@@ -155,7 +116,7 @@ const ServiceCards = () => {
 
   const settings = {
     infinite: true,
-    accessibility: true,
+    accessibility: false,
     arrows: false,
     autoplay: true,
     dots: true,
@@ -182,66 +143,8 @@ const ServiceCards = () => {
     event.stopPropagation();
   };
 
-  const handleMenuItemClick = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      const offsetTop = element.offsetTop - 115;
-      window.scrollTo({
-        top: offsetTop,
-        behavior: "smooth",
-      });
-      setAnchorEl(null);
-    }
-  };
-
-  const handleMenuClose = () => {
-    setAnchorEl(null);
-  };
-
   return (
     <>
-      <Box
-        sx={{
-          position: "fixed",
-          top: { xs: 82, sm: 92, md: 64 },
-          right: 0,
-          zIndex: 999,
-          textAlign: "center",
-          borderRadius: "0 0 10px 10px",
-        }}
-      >
-        <Button
-          variant="contained"
-          onClick={(event) => setAnchorEl(event.currentTarget)}
-          sx={{
-            color: "black",
-            minWidth: "160px",
-            alignItems: "center",
-            display: "flex",
-          }}
-        >
-          <Typography sx={{ ml: 2, textDecoration: "none", color: "white" }}>Jump to</Typography>
-          <ArrowDropDownIcon sx={{ color: "white" }} />
-        </Button>
-        <Menu
-          id="services-menu"
-          anchorEl={anchorEl}
-          open={Boolean(anchorEl)}
-          onClose={handleMenuClose}
-        >
-          {services.map((service, index) => (
-            <MenuItem
-              key={index}
-              onClick={() => {
-                handleMenuItemClick(service.name.replace(/\s+/g, "-").toLowerCase());
-                handleMenuClose();
-              }}
-            >
-              {service.name}
-            </MenuItem>
-          ))}
-        </Menu>
-      </Box>
       {services.map((service, serviceIndex) => (
         <Box key={serviceIndex} id={service.name.replace(/\s+/g, "-").toLowerCase()}>
           <Divider
