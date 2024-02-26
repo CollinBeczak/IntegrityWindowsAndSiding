@@ -184,7 +184,7 @@ const ServiceCards = () => {
   const handleMenuItemClick = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
-      const offsetTop = element.offsetTop - 64;
+      const offsetTop = element.offsetTop - 115;
       window.scrollTo({
         top: offsetTop,
         behavior: "smooth",
@@ -274,6 +274,7 @@ const ServiceCards = () => {
                         paddingRight: { xs: 0, sm: 1 },
                         paddingTop: { xs: 1, sm: 0 },
                       }}
+                      onClick={() => openModal(image.before)}
                     >
                       <Image
                         src={image.before}
@@ -310,6 +311,7 @@ const ServiceCards = () => {
                         paddingBottom: { xs: 1, sm: 0 },
                         borderBottomLeftRadius: { sm: "4px" },
                       }}
+                      onClick={() => openModal(image.after)}
                     >
                       <Image
                         src={image.after}
