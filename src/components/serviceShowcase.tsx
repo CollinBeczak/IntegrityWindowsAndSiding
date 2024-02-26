@@ -1,9 +1,20 @@
 import React, { useState } from "react";
-import { Box, Grid, Divider, Typography, Modal, Backdrop, Fade } from "@mui/material";
+import {
+  Box,
+  Grid,
+  Divider,
+  Typography,
+  Modal,
+  Fade,
+  IconButton,
+  Menu,
+  MenuItem,
+  Button,
+} from "@mui/material";
 import Slider from "react-slick";
-import { IconButton } from "@mui/material";
-import CloseIcon from "@mui/icons-material/Close";
 import Image from "next/image";
+import CloseIcon from "@mui/icons-material/Close";
+import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import windowBefore1 from "../assets/windows/Alside_Casement_Beauty4.jpg";
 import windowBefore2 from "../assets/windows/Alside_Casement_Beauty5.jpg";
 import windowBefore3 from "../assets/windows/Alside_Casement_Beauty6.jpg";
@@ -134,6 +145,7 @@ const ServiceCards = () => {
   );
   const [modalOpen, setModalOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState("");
+  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
 
   const handleSlideChange = (index: number) => {
     const newLoadedImages = [...loadedImages];
@@ -168,11 +180,67 @@ const ServiceCards = () => {
     event.stopPropagation();
   };
 
+  const handleMenuItemClick = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      const offsetTop = element.offsetTop - 64;
+      window.scrollTo({
+        top: offsetTop,
+        behavior: "smooth",
+      });
+      setAnchorEl(null);
+    }
+  };
+
   return (
     <>
+      <Box
+        sx={{
+          position: "fixed",
+          top: { xs: 82, sm: 92, md: 64 },
+          right: 0,
+          zIndex: 999,
+          textAlign: "center",
+          borderRadius: "0 0 10px 10px",
+        }}
+      >
+        <Button
+          variant="contained"
+          onClick={(event) => setAnchorEl(event.currentTarget)}
+          sx={{
+            color: "black",
+            minWidth: "160px",
+            alignItems: "center",
+            display: "flex",
+          }}
+        >
+          <Typography sx={{ ml: 2, textDecoration: "none", color: "white" }}>Jump to</Typography>
+          <ArrowDropDownIcon sx={{ color: "white" }} />
+        </Button>
+        <Menu
+          id="services-menu"
+          anchorEl={anchorEl}
+          open={Boolean(anchorEl)}
+          onClose={() => setAnchorEl(null)}
+        >
+          {services.map((service, index) => (
+            <MenuItem
+              key={index}
+              onClick={() => handleMenuItemClick(service.name.replace(/\s+/g, "-").toLowerCase())}
+            >
+              {service.name}
+            </MenuItem>
+          ))}
+        </Menu>
+      </Box>
       {services.map((service, serviceIndex) => (
-        <Box key={serviceIndex}>
-          <Divider sx={{ marginTop: 2 }} />
+        <Box key={serviceIndex} id={service.name.replace(/\s+/g, "-").toLowerCase()}>
+          <Divider
+            sx={{
+              marginBottom: 1,
+              boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.4)",
+            }}
+          />
           <Typography variant="h4" sx={{ textAlign: "center", marginY: 2 }}>
             Integrity&apos;s {service.name}
           </Typography>
