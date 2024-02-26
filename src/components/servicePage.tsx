@@ -1,5 +1,7 @@
-import React from "react";
-import { Box, Typography, Button } from "@mui/material";
+"use client";
+
+import React, { useState } from "react";
+import { Box, Typography, Button, Menu, MenuItem } from "@mui/material";
 import Image from "next/image";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import Slider from "react-slick";
@@ -26,10 +28,20 @@ interface ServicesPageProps {
 }
 
 const ServicesPage: React.FC<ServicesPageProps> = ({ page }) => {
-  const handleClick = (id: string) => {
+  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
+
+  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
+  const handleMenuItemClick = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
-      const offsetTop = element.offsetTop - 100;
+      const offsetTop = element.offsetTop - 80;
       window.scrollTo({
         top: offsetTop,
         behavior: "smooth",
@@ -37,7 +49,7 @@ const ServicesPage: React.FC<ServicesPageProps> = ({ page }) => {
     }
   };
 
-  const settings: SliderSettings = {
+  const settings = {
     infinite: true,
     accessibility: false,
     arrows: false,
@@ -53,6 +65,40 @@ const ServicesPage: React.FC<ServicesPageProps> = ({ page }) => {
   return (
     <Box>
       <Box
+        sx={{
+          position: "fixed",
+          top: { xs: 82, sm: 92, md: 64 },
+          right: 0,
+          zIndex: 999,
+          textAlign: "center",
+          borderRadius: "0 0 10px 10px",
+        }}
+      >
+        <Button
+          variant="contained"
+          onClick={handleClick}
+          sx={{
+            color: "black",
+            minWidth: "160px",
+            alignItems: "center",
+            display: "flex",
+          }}
+        >
+          <Typography sx={{ ml: 2, textDecoration: "none", color: "white" }}>Jump to</Typography>
+          <ArrowDropDownIcon sx={{ color: "white" }} />
+        </Button>
+        <Menu id="services-menu" anchorEl={anchorEl} open={Boolean(anchorEl)} onClose={handleClose}>
+          {page.types.map((service, index) => (
+            <MenuItem
+              key={index}
+              onClick={() => handleMenuItemClick(service.name.replace(/\s+/g, "-").toLowerCase())}
+            >
+              {service.name}
+            </MenuItem>
+          ))}
+        </Menu>
+      </Box>
+      <Box
         id="top"
         sx={{
           position: "relative",
@@ -67,7 +113,7 @@ const ServicesPage: React.FC<ServicesPageProps> = ({ page }) => {
           alignItems: "center",
         }}
       >
-        <Image src={page.titleImage} alt="image" layout="fill" objectFit="cover" loading="lazy" />
+        <Image src={page.titleImage} alt="image" layout="fill" objectFit="cover" priority={true} />
         <Box
           sx={{
             position: "absolute",
@@ -91,37 +137,6 @@ const ServicesPage: React.FC<ServicesPageProps> = ({ page }) => {
               {page.description}
             </Typography>
           </Box>
-          {/* <Box
-            sx={{
-              overflowX: "auto",
-              display: "flex",
-              flexDirection: "row",
-              justifyContent: "flex-start",
-              alignItems: "center",
-              marginTop: 2,
-            }}
-          >
-            {page.types.map((service, index) => (
-              <Button
-                key={index}
-                variant="contained"
-                onClick={() => handleClick(service.name.replace(/\s+/g, "-").toLowerCase())}
-                sx={{
-                  display: "flex",
-                  my: 2,
-                  color: "white",
-                  minWidth: "200px",
-                  alignItems: "center",
-                  marginRight: 2,
-                }}
-              >
-                <Typography component="span" sx={{ textDecoration: "none", color: "inherit" }}>
-                  {service.name}
-                </Typography>
-                <ArrowDropDownIcon />
-              </Button>
-            ))}
-          </Box> */}
         </Box>
       </Box>
 
@@ -172,8 +187,11 @@ const ServicesPage: React.FC<ServicesPageProps> = ({ page }) => {
                   sx={{ ml: { md: 2 }, textAlign: { xs: "center", md: "left" } }}
                 >
                   <Typography
-                    variant="h4"
-                    sx={{ marginTop: { xs: 2, md: 0 }, textAlign: { xs: "center", md: "left" } }}
+                    sx={{
+                      fontSize: { xs: "h5.fontSize", sm: "h4.fontSize" },
+                      marginTop: { xs: 2, md: 0 },
+                      textAlign: { xs: "center", md: "left" },
+                    }}
                     gutterBottom
                   >
                     {service.name}
@@ -192,16 +210,3 @@ const ServicesPage: React.FC<ServicesPageProps> = ({ page }) => {
 };
 
 export default ServicesPage;
-
-interface SliderSettings {
-  infinite: boolean;
-  accessibility: boolean;
-  arrows: boolean;
-  autoplay: boolean;
-  dots: boolean;
-  speed: number;
-  sync: boolean;
-  autoplaySpeed: number;
-  slidesToShow: number;
-  slidesToScroll: number;
-}

@@ -29,8 +29,6 @@ const services = [
       windowAfter3,
       windowAfter2,
       windowBefore3,
-      windowAfter2,
-      windowBefore3,
     ],
   },
   {
@@ -73,6 +71,44 @@ const services = [
   },
   {
     name: "Trim",
+    description: "High-quality window replacement services.",
+    progressImages: [
+      { before: windowBefore1, after: windowAfter1 },
+      { before: windowBefore2, after: windowAfter2 },
+      { before: windowBefore3, after: windowAfter3 },
+    ],
+    images: [
+      windowBefore1,
+      windowAfter1,
+      windowBefore2,
+      windowAfter2,
+      windowAfter2,
+      windowBefore3,
+      windowBefore3,
+      windowAfter3,
+    ],
+  },
+  {
+    name: "Doors",
+    description: "High-quality window replacement services.",
+    progressImages: [
+      { before: windowBefore1, after: windowAfter1 },
+      { before: windowBefore2, after: windowAfter2 },
+      { before: windowBefore3, after: windowAfter3 },
+    ],
+    images: [
+      windowBefore1,
+      windowAfter1,
+      windowBefore2,
+      windowAfter2,
+      windowAfter2,
+      windowBefore3,
+      windowBefore3,
+      windowAfter3,
+    ],
+  },
+  {
+    name: "Roofing",
     description: "High-quality window replacement services.",
     progressImages: [
       { before: windowBefore1, after: windowAfter1 },
