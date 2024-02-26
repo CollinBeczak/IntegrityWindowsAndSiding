@@ -20,6 +20,7 @@ interface Page {
   description: string;
   subtitle: string;
   subDescription: string;
+  learnMore: boolean;
   types: Service[];
 }
 
@@ -46,6 +47,7 @@ const ServicesPage: React.FC<ServicesPageProps> = ({ page }) => {
         top: offsetTop,
         behavior: "smooth",
       });
+      handleClose();
     }
   };
 
@@ -207,6 +209,17 @@ const ServicesPage: React.FC<ServicesPageProps> = ({ page }) => {
                     <Typography variant="h6" color="textSecondary">
                       {service.description}
                     </Typography>
+                    {page.learnMore && (
+                      <Box sx={{ marginY: 2 }}>
+                        <Button
+                          href={`/services/${service.name.toLowerCase()}`}
+                          variant="contained"
+                          sx={{ color: "white" }}
+                        >
+                          Learn More
+                        </Button>
+                      </Box>
+                    )}
                   </Box>
                 </Box>
               </Box>
