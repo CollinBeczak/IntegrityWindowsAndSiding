@@ -39,6 +39,7 @@ const ServicesPage: React.FC<ServicesPageProps> = ({ page }) => {
     slidesToShow: 1,
     slidesToScroll: 1,
     draggable: false,
+    swipe: false,
   };
 
   return (
