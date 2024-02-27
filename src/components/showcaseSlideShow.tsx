@@ -34,6 +34,7 @@ const ServiceCards: React.FC = () => {
     dots: false,
     sync: true,
     draggable: false,
+    swipe: false,
     speed: 3000,
     autoplaySpeed: 12000,
     slidesToShow: 1,

@@ -127,6 +127,7 @@ const ServiceCards = () => {
     slidesToScroll: 1,
     swipeToSlide: false,
     draggable: false,
+    swipe: false,
     afterChange: (index: number) => handleSlideChange(index),
   };
 
