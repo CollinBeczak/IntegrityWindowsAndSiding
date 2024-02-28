@@ -13,6 +13,7 @@ const page = {
   description:
     "At Integrity Siding and Window, we offer an extensive selection of high-quality Siding to suit every need and style. Our Siding are designed to provide maximum energy efficiency, security, and durability while enhancing the aesthetic appeal of your home. From awning Siding and bay Siding to picture Siding and slider Siding, we have the perfect window solution for you.",
   learnMore: false,
+  route: "premium_vinyl_siding",
   types: [
     {
       name: "Bay Siding",
@@ -23,13 +24,13 @@ const page = {
     {
       name: "LP SmartSide",
       description:
-        "Bow Siding are similar to bay Siding but have a more circular appearance, creating a curved projection from the wall. They provide a panoramic view and allow more light into the room. Bow Siding can add architectural interest to both the interior and exterior of a home, enhancing its curb appeal and value.",
+        " One of the most durable siding solutions on the market today thanks to the proprietary SmartGuard® process. Feature engineered wood strand technology that offers superior protection against hail, wind, moisture, fungal decay and termites. Available in 16 versatile refinished colors",
       images: [windowBefore1, windowBefore2, windowBefore3],
     },
     {
       name: "Hardie Board",
       description:
-        "Slider Siding, also known as sliding Siding, feature sashes that glide horizontally along tracks. They offer a contemporary look and are ideal for spaces where a projecting window could interfere with walkways, patios, or decks. Slider Siding provide excellent ventilation and are easy to operate, making them a popular choice for modern homes.",
+        "Traditional and timeless. Sleek and strong cement siding. Hardie® Plank lap siding, shingle,  trim boards, trim boards, verticle panels... the possibilities are endless. It’s the most popular brand of concrete siding in North America, protecting and beautifying more homes from coast to coast.",
       images: [windowBefore1, windowBefore2, windowBefore3],
     },
   ],

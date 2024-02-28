@@ -1,6 +1,4 @@
-"use client";
-
-import React, { useEffect } from "react";
+import React, { useState } from "react";
 import { Box, Typography, Button } from "@mui/material";
 import Image from "next/image";
 import Slider from "react-slick";
@@ -18,6 +16,7 @@ interface Page {
   titleImage: any;
   description: string;
   learnMore: boolean;
+  route: string;
   types: Service[];
 }
 
@@ -26,29 +25,29 @@ interface ServicesPageProps {
 }
 
 const ServicesPage: React.FC<ServicesPageProps> = ({ page }) => {
+  const [currentSlideshowIndex, setCurrentSlideshowIndex] = useState(0);
+
   const settings = {
     infinite: true,
-    accessibility: false,
     arrows: false,
     autoplay: true,
     swipeToSlide: false,
-    dots: false,
+    dots: true,
     sync: true,
-    speed: 3000,
+    speed: 2400,
     autoplaySpeed: 12000,
     slidesToShow: 1,
     slidesToScroll: 1,
     draggable: false,
     swipe: false,
+    afterChange: (currentIndex: number) => setCurrentSlideshowIndex(currentIndex),
   };
 
   return (
     <Box>
       <Box
-        id="top"
         sx={{
           position: "relative",
-          height: "650px",
           textAlign: "center",
           color: "white",
           overflow: "hidden",
@@ -56,15 +55,10 @@ const ServicesPage: React.FC<ServicesPageProps> = ({ page }) => {
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
+          width: "100%",
+          minHeight: { xs: "auto", sm: "650px" },
         }}
       >
-        <Image
-          src={page.titleImage}
-          alt="image"
-          fill
-          style={{ objectFit: "cover" }}
-          priority={true}
-        />
         <Box
           sx={{
             position: "absolute",
@@ -72,24 +66,50 @@ const ServicesPage: React.FC<ServicesPageProps> = ({ page }) => {
             left: 0,
             width: "100%",
             height: "100%",
-            backgroundColor: "rgba(0, 0, 0, 0.3)",
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            alignItems: "center",
-            padding: "0 20px",
+            zIndex: -1,
           }}
         >
-          <Box maxWidth={1200}>
-            <Typography variant="h3" gutterBottom>
-              {page.title}
-            </Typography>
-            <Typography variant="h6" gutterBottom>
-              {page.description}
-            </Typography>
-          </Box>
+          <Image
+            src={page.titleImage}
+            alt="image"
+            fill
+            style={{ objectFit: "cover" }}
+            loading="lazy"
+          />
+        </Box>
+        <Box
+          sx={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            backgroundColor: "rgba(0, 0, 0, 0.2)",
+            zIndex: -1,
+          }}
+        />
+        <Box
+          sx={{
+            position: "relative",
+            zIndex: 1,
+            maxWidth: 1200,
+            paddingY: 6,
+            paddingX: 3,
+            width: "100%",
+            "& > *": {
+              textShadow: "2px 2px 4px rgba(0, 0, 0, 1)",
+            },
+          }}
+        >
+          <Typography sx={{ fontSize: { xs: 25, sm: 46 } }} gutterBottom>
+            {page.title}
+          </Typography>
+          <Typography sx={{ fontSize: { xs: 17, sm: 24 } }} gutterBottom>
+            {page.description}
+          </Typography>
         </Box>
       </Box>
+
       <Box px={2}>
         <Box>
           {page.types.map((service, index) => (
@@ -105,11 +125,10 @@ const ServicesPage: React.FC<ServicesPageProps> = ({ page }) => {
                 id={service.name.replace(/\s+/g, "-").toLowerCase()}
                 data-testid={service.name.replace(/\s+/g, "-").toLowerCase()}
                 margin="auto"
-                marginY={10}
                 maxWidth={1200}
-                sx={{ textAlign: { xs: "center", md: "left" } }}
+                sx={{ marginY: { xs: 5, sm: 10 }, textAlign: { xs: "center", lg: "left" } }}
               >
-                <Box sx={{ display: { md: "flex" } }}>
+                <Box sx={{ display: { lg: "flex" } }}>
                   <Box width={"100%"} maxWidth={500} height={300} margin={"auto"}>
                     <Slider {...settings}>
                       {service.images.map((image: any, index: any) => (
@@ -125,7 +144,7 @@ const ServicesPage: React.FC<ServicesPageProps> = ({ page }) => {
                             src={image}
                             alt={`Image ${index + 1}`}
                             style={{ width: "100%", height: "100%", objectFit: "cover" }}
-                            loading="lazy"
+                            loading={currentSlideshowIndex === index ? "eager" : "lazy"}
                           />
                         </Box>
                       ))}
@@ -133,19 +152,24 @@ const ServicesPage: React.FC<ServicesPageProps> = ({ page }) => {
                   </Box>
                   <Box
                     textAlign="center"
-                    sx={{ ml: { md: 2 }, textAlign: { xs: "center", md: "left" } }}
+                    sx={{ ml: { lg: 2 }, textAlign: { xs: "center", lg: "left" } }}
                   >
                     <Typography
                       sx={{
                         fontSize: { xs: "h5.fontSize", sm: "h4.fontSize" },
-                        marginTop: { xs: 2, md: 0 },
-                        textAlign: { xs: "center", md: "left" },
+                        marginTop: { xs: 4, lg: 0 },
+                        textAlign: { xs: "center", lg: "left" },
                       }}
                       gutterBottom
                     >
                       {service.name}
                     </Typography>
-                    <Typography variant="h6" color="textSecondary">
+                    <Typography
+                      variant="h6"
+                      color="textSecondary"
+                      maxWidth={"700px"}
+                      margin={"auto"}
+                    >
                       {service.description}
                     </Typography>
                     {page.learnMore && (
@@ -153,7 +177,7 @@ const ServicesPage: React.FC<ServicesPageProps> = ({ page }) => {
                         <Button
                           href={`/services/${service.name
                             .toLowerCase()
-                            .replace(/- /g, "premium_vinyl_siding#")
+                            .replace(/- /g, `${page.route}#`)
                             .replace(/[^a-zA-Z0-9#]+/g, "_")}`}
                           variant="contained"
                           sx={{ color: "white" }}

@@ -33,8 +33,9 @@ const Header = () => {
 
   const Services = [
     { label: "View All Services", path: "/" },
-    { label: "Premium Vinyl Window", path: "/premium_vinyl_window" },
-    { label: "Premium Vinyl Siding", path: "/premium_vinyl_siding" },
+    { label: "Premium Vinyl Windows", path: "/premium_vinyl_window" },
+    { label: "- Patio Doors", path: "/premium_vinyl_window#patio_doors" },
+    { label: "Premium Vinyl Siding and Others", path: "/premium_vinyl_siding" },
     { label: "- LP SmartSide", path: "/premium_vinyl_siding#lp_smartside" },
     { label: "- Hardie Board", path: "/premium_vinyl_siding#hardie_board" },
     { label: "Premium Roofing", path: "/premium_roofing" },
