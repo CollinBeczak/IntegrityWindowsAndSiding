@@ -160,6 +160,7 @@ const ContactForm = () => {
   const handleMessageBlur = () => {
     if (message.trim() === "") {
       setMessageError("Message is required");
+      console.log();
     } else {
       setMessageError("");
     }

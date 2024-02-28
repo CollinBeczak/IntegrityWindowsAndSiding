@@ -1,20 +1,8 @@
 import React, { useState } from "react";
-import {
-  Box,
-  Grid,
-  Divider,
-  Typography,
-  Modal,
-  Fade,
-  IconButton,
-  Menu,
-  MenuItem,
-  Button,
-} from "@mui/material";
+import { Box, Grid, Divider, Typography, Modal, Fade, IconButton } from "@mui/material";
 import Slider from "react-slick";
 import Image from "next/image";
 import CloseIcon from "@mui/icons-material/Close";
-import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import windowBefore1 from "../assets/windows/Alside_Casement_Beauty4.jpg";
 import windowBefore2 from "../assets/windows/Alside_Casement_Beauty5.jpg";
 import windowBefore3 from "../assets/windows/Alside_Casement_Beauty6.jpg";
@@ -121,7 +109,7 @@ const ServiceCards = () => {
     autoplay: true,
     dots: true,
     sync: true,
-    speed: 3000,
+    speed: 2400,
     autoplaySpeed: 12000,
     slidesToShow: 1,
     slidesToScroll: 1,
