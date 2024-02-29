@@ -152,7 +152,7 @@ const ServicesPage: React.FC<ServicesPageProps> = ({ page }) => {
                   </Box>
                   <Box
                     textAlign="center"
-                    sx={{ ml: { lg: 2 }, textAlign: { xs: "center", lg: "left" } }}
+                    sx={{ ml: { lg: 3 }, textAlign: { xs: "center", lg: "left" } }}
                   >
                     <Typography
                       sx={{
@@ -164,12 +164,7 @@ const ServicesPage: React.FC<ServicesPageProps> = ({ page }) => {
                     >
                       {service.name}
                     </Typography>
-                    <Typography
-                      variant="h6"
-                      color="textSecondary"
-                      maxWidth={"700px"}
-                      margin={"auto"}
-                    >
+                    <Typography variant="subtitle1" color="textSecondary" margin={"auto"}>
                       {service.description}
                     </Typography>
                     {page.learnMore && (

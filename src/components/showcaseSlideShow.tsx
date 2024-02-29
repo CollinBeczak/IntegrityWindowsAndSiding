@@ -77,6 +77,7 @@ const ServiceCards: React.FC = () => {
                         src={image.before}
                         alt="Before"
                         fill
+                        sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 300px"
                         style={{ objectFit: "cover" }}
                         loading="lazy"
                         onLoad={() => handleSlideChange(index)}
@@ -93,6 +94,7 @@ const ServiceCards: React.FC = () => {
                         src={image.after}
                         alt="After"
                         fill
+                        sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 300px"
                         style={{ objectFit: "cover" }}
                         loading={loadedImages[index] ? "eager" : "lazy"}
                       />

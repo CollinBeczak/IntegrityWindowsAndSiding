@@ -18,25 +18,20 @@ const page = {
     {
       name: "Premium Vinyl Window",
       description:
-        "Bay windows are a combination of three or more windows projecting outward from a home’s exterior wall in a square or polygonal design forming a “bay” inside the room. Traditionally, they were associated with the Victorian era and became an architectural staple in the congested city of San Francisco because of their illusion of added.",
+        "There is so much more to the windows in your home than the frame, sashes, and glass. " +
+        "The true substance is the quality and expertise built into every step of the design and  " +
+        "manufacturing process. Choosing Integrity Siding And Window for your new windows, you can  " +
+        "rest assured that every window is measured, custom- made, and installed to fit your windows  " +
+        'precisely. We take pride is Alside\'s exceptional "custom-crafted" made in America quality. ' +
+        "Our MEZZO windows are all ENERGY STAR certified meaning they are a positive choice for energy  " +
+        "efficiency, fuel savings, and the environment. Dual-paned, double-strength insulated glass with  " +
+        "energy-engineered frame and sash and low-conductive composite reinforcements.",
       images: [windowBefore1, windowBefore2, windowBefore3],
     },
     {
       name: "Premium Vinyl Siding",
       description:
-        "Bow windows are similar to bay windows but have a more circular appearance, creating a curved projection from the wall. They provide a panoramic view and allow more light into the room. Bow windows can add architectural interest to both the interior and exterior of a home, enhancing its curb appeal and value.",
-      images: [windowBefore1, windowBefore2, windowBefore3],
-    },
-    {
-      name: "- LP Smartside",
-      description:
-        "Slider windows, also known as sliding windows, feature sashes that glide horizontally along tracks. They offer a contemporary look and are ideal for spaces where a projecting window could interfere with walkways, patios, or decks. Slider windows provide excellent ventilation and are easy to operate, making them a popular choice for modern homes.",
-      images: [windowBefore1, windowBefore2, windowBefore3],
-    },
-    {
-      name: "- Hardie Board",
-      description:
-        "Slider windows, also known as sliding windows, feature sashes that glide horizontally along tracks. They offer a contemporary look and are ideal for spaces where a projecting window could interfere with walkways, patios, or decks. Slider windows provide excellent ventilation and are easy to operate, making them a popular choice for modern homes.",
+        "Set the stage for your home with our versatile options for vinyl siding. They are all performance-engineered to protect your home from all of the elements; including pouring rain, high winds, and extreme heat cold. It only makes sense that vinyl siding wins America's popular choice with its superior durability, easy upkeep, green benefits, excellent value, and luxurious appearance. Our vinyl siding recreated the beauty of freshly pained wood siding without the negatives of chipping, splitting, rotting, or insect damage. It NEVER needs to be painted and only requires a rinse with a garden hose to remove most dirt and dust, restoring it to its like-new beauty and luxurious finish.",
       images: [windowBefore1, windowBefore2, windowBefore3],
     },
     {
