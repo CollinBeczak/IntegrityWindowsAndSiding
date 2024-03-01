@@ -183,7 +183,14 @@ const ContactForm = () => {
           zIndex: -1,
         }}
       >
-        <Image src={houseImage} alt="image" fill style={{ objectFit: "cover" }} loading="lazy" />
+        <Image
+          src={houseImage}
+          placeholder="blur"
+          alt="image"
+          fill
+          style={{ objectFit: "cover" }}
+          loading="lazy"
+        />
       </Box>
       <Container
         sx={{

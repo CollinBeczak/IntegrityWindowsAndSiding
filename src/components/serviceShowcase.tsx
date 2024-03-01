@@ -3,12 +3,24 @@ import { Box, Grid, Divider, Typography, Modal, Fade, IconButton } from "@mui/ma
 import Slider from "react-slick";
 import Image from "next/image";
 import CloseIcon from "@mui/icons-material/Close";
-import windowBefore1 from "../assets/windows/Alside_Casement_Beauty4.jpg";
-import windowBefore2 from "../assets/windows/Alside_Casement_Beauty5.jpg";
+import sidingBefore1 from "../assets/siding/siding_before_1.png";
+import sidingAfter1 from "../assets/siding/siding_after_1.jpg";
+import windowBefore1 from "../assets/windows/before1.jpg";
+import windowAfter1 from "../assets/windows/after1.jpg";
 import windowBefore3 from "../assets/windows/Alside_Casement_Beauty6.jpg";
-import windowAfter1 from "../assets/windows/Alside_Mezzo_Slider_Beauty2.jpg";
 import windowAfter2 from "../assets/windows/Alside_Promenade_ClassicBeauty2.jpg";
 import windowAfter3 from "../assets/windows/Alside_Promenade_ContemporaryBeauty.jpg";
+import window1 from "../assets/windows/window1.png";
+import window2 from "../assets/windows/window2.png";
+import window3 from "../assets/windows/window3.jpg";
+import window4 from "../assets/windows/window4.jpg";
+import window5 from "../assets/windows/window5.jpg";
+import window6 from "../assets/windows/window6.jpg";
+import window7 from "../assets/windows/window7.jpg";
+import window8 from "../assets/windows/window8.jpg";
+import window9 from "../assets/windows/window9.jpg";
+import window10 from "../assets/windows/window10.jpg";
+import { useTheme } from "@mui/material/styles";
 
 const services = [
   {
@@ -16,80 +28,53 @@ const services = [
     description: "High-quality window replacement services.",
     progressImages: [
       { before: windowBefore1, after: windowAfter1 },
-      { before: windowBefore2, after: windowAfter2 },
       { before: windowBefore3, after: windowAfter3 },
     ],
     images: [
-      windowBefore1,
-      windowAfter1,
-      windowBefore2,
-      windowAfter2,
-      windowBefore3,
-      windowAfter3,
-      windowAfter2,
-      windowBefore3,
+      window1,
+      window2,
+      window3,
+      window4,
+      window5,
+      window6,
+      window7,
+      window8,
+      window9,
+      window10,
     ],
   },
   {
     name: "Premium Vinyl Siding",
     description: "High-quality window replacement services.",
     progressImages: [
-      { before: windowBefore1, after: windowAfter1 },
-      { before: windowBefore2, after: windowAfter2 },
+      { before: sidingBefore1, after: sidingAfter1 },
       { before: windowBefore3, after: windowAfter3 },
     ],
-    images: [
-      windowBefore1,
-      windowAfter1,
-      windowBefore2,
-      windowAfter2,
-      windowAfter2,
-      windowBefore3,
-      windowBefore3,
-      windowAfter3,
-    ],
+    images: [sidingBefore1, sidingAfter1],
   },
   {
     name: "Premium Roofing",
     description: "High-quality window replacement services.",
     progressImages: [
-      { before: windowBefore1, after: windowAfter1 },
-      { before: windowBefore2, after: windowAfter2 },
+      { before: windowBefore3, after: windowAfter3 },
       { before: windowBefore3, after: windowAfter3 },
     ],
-    images: [
-      windowBefore1,
-      windowAfter1,
-      windowBefore2,
-      windowAfter2,
-      windowAfter2,
-      windowBefore3,
-      windowBefore3,
-      windowAfter3,
-    ],
+    images: [windowAfter1, windowAfter1],
   },
   {
     name: "Premium Decking and Patio",
     description: "High-quality window replacement services.",
     progressImages: [
-      { before: windowBefore1, after: windowAfter1 },
-      { before: windowBefore2, after: windowAfter2 },
+      { before: windowBefore3, after: windowAfter3 },
       { before: windowBefore3, after: windowAfter3 },
     ],
-    images: [
-      windowBefore1,
-      windowAfter1,
-      windowBefore2,
-      windowAfter2,
-      windowAfter2,
-      windowBefore3,
-      windowBefore3,
-      windowAfter3,
-    ],
+    images: [windowBefore3, windowAfter3],
   },
 ];
 
 const ServiceCards = () => {
+  const theme = useTheme();
+
   const [loadedImages, setLoadedImages] = useState(
     new Array(services[0].progressImages.length).fill(false),
   );
@@ -172,9 +157,11 @@ const ServiceCards = () => {
                       <Image
                         src={image.before}
                         alt="Before"
+                        placeholder="blur"
                         fill
                         style={{ objectFit: "cover" }}
                         loading="lazy"
+                        sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 300px"
                         onLoad={() => handleSlideChange(index)}
                       />
                       <Typography
@@ -209,8 +196,10 @@ const ServiceCards = () => {
                       <Image
                         src={image.after}
                         alt="After"
+                        placeholder="blur"
                         fill
                         style={{ objectFit: "cover" }}
+                        sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 300px"
                         loading={loadedImages[index] ? "eager" : "lazy"}
                       />
                       <Typography
@@ -254,7 +243,9 @@ const ServiceCards = () => {
                   <Image
                     src={image}
                     alt="Additional"
+                    placeholder="blur"
                     fill
+                    sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 300px"
                     loading="lazy"
                     style={{
                       borderRadius: "8px",
@@ -279,8 +270,20 @@ const ServiceCards = () => {
             }}
           >
             <Box position="relative">
-              <Box p={1} maxWidth={800} onClick={handleImageClick}>
-                <Image src={selectedImage} alt="Selected" layout="responsive" loading="lazy" />
+              <Box p={1} onClick={handleImageClick}>
+                <Image
+                  src={selectedImage}
+                  alt="Selected"
+                  placeholder="blur"
+                  blurDataURL={selectedImage} // Specify blurDataURL for faster loading
+                  style={{
+                    height: "auto",
+                    maxHeight: "800px",
+                    width: "100%",
+                    maxWidth: "1000px", // Enclose maxWidth value in quotes
+                  }}
+                  loading="eager" // Load the image eagerly for faster loading
+                />
               </Box>
               <IconButton
                 onClick={closeModal}
