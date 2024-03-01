@@ -87,11 +87,11 @@ const page = {
     {
       name: "Patio Doors",
       description:
-        "Transform your room with these stunning windows that really bring out the character you want in your home! Be that " +
-        "be a cozy reading nook, a striking focal point, or bright display of your prized plants and flowers. Available in a " +
-        'variety of colors and finishes bay and bow windows feature a 1-1/4"  furniture-grade veneer standard construction in ' +
-        'the head, seatboard, and jams. Garden windows are a clear 1" thick insulated glass unit with fully welded mainframe ' +
-        "for greater strength and stability.",
+        "The greatest measurement for patio doors is their performance. Excellent construction combines with quality design, " +
+        "smooth operation, and everlasting beauty make our doors a premier choice. Offering classic style, contemporary, and French, " +
+        "you can't go wrong with our Premium Vinyl mainframes and sashes that will never peel, chip, warp, or crack. Steel " +
+        "reinforcements increase the structural integrity while the precision-engineered tandem roller system ensures easy and quiet " +
+        "door operation. Offering a variety of solid colors and woodgrain options, these are available in multiple panel style options.",
       images: [door1, door2],
     },
   ],
