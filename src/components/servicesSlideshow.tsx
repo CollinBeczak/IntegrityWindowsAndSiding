@@ -56,6 +56,7 @@ const ServiceCards: React.FC = () => {
                   >
                     <Image
                       src={image}
+                      placeholder="blur"
                       alt={`Image ${index + 1}`}
                       fill
                       sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 300px"

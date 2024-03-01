@@ -157,6 +157,7 @@ const ServiceCards = () => {
                       <Image
                         src={image.before}
                         alt="Before"
+                        placeholder="blur"
                         fill
                         style={{ objectFit: "cover" }}
                         loading="lazy"
@@ -195,6 +196,7 @@ const ServiceCards = () => {
                       <Image
                         src={image.after}
                         alt="After"
+                        placeholder="blur"
                         fill
                         style={{ objectFit: "cover" }}
                         sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 300px"
@@ -241,6 +243,7 @@ const ServiceCards = () => {
                   <Image
                     src={image}
                     alt="Additional"
+                    placeholder="blur"
                     fill
                     sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 300px"
                     loading="lazy"
@@ -271,13 +274,15 @@ const ServiceCards = () => {
                 <Image
                   src={selectedImage}
                   alt="Selected"
+                  placeholder="blur"
+                  blurDataURL={selectedImage} // Specify blurDataURL for faster loading
                   style={{
                     height: "auto",
                     maxHeight: "800px",
                     width: "100%",
-                    maxWidth: 1000,
+                    maxWidth: "1000px", // Enclose maxWidth value in quotes
                   }}
-                  loading="lazy"
+                  loading="eager" // Load the image eagerly for faster loading
                 />
               </Box>
               <IconButton

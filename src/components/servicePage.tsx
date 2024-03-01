@@ -71,6 +71,7 @@ const ServicesPage: React.FC<ServicesPageProps> = ({ page }) => {
         >
           <Image
             src={page.titleImage}
+            placeholder="blur"
             alt="image"
             fill
             style={{ objectFit: "cover" }}
@@ -142,6 +143,7 @@ const ServicesPage: React.FC<ServicesPageProps> = ({ page }) => {
                         >
                           <Image
                             src={image}
+                            placeholder="blur"
                             alt={`Image ${index + 1}`}
                             style={{ width: "100%", height: "100%", objectFit: "cover" }}
                             loading={currentSlideshowIndex === index ? "eager" : "lazy"}
