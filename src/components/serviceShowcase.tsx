@@ -275,7 +275,6 @@ const ServiceCards = () => {
                   src={selectedImage}
                   alt="Selected"
                   placeholder="blur"
-                  blurDataURL={selectedImage} // Specify blurDataURL for faster loading
                   style={{
                     height: "auto",
                     maxHeight: "800px",
