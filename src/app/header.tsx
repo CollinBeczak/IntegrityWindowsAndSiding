@@ -39,7 +39,7 @@ const Header = () => {
     { label: "- LP SmartSide", path: "/premium_vinyl_siding#lp_smartside" },
     { label: "- Hardie Board", path: "/premium_vinyl_siding#hardie_board" },
     { label: "Premium Roofing", path: "/premium_roofing" },
-    { label: "Premium Decking & Patio", path: "/premium_decking_and_patio" },
+    { label: "Premium Outdoor Living", path: "/premium_outdoor_living" },
   ];
 
   return (

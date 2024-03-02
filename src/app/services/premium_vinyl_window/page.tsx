@@ -2,24 +2,31 @@
 
 import React from "react";
 import ServicePage from "../../../components/servicePage";
-import MezzoSlider1 from "../../../assets/windows/Alside_Mezzo_Slider_Beauty-1.jpg";
-import MezzoSlider2 from "../../../assets/windows/Alside_Mezzo_Slider_Beauty2.jpg";
-import casement1 from "../../../assets/windows/Alside_Casement_Beauty3.jpg";
-import casement2 from "../../../assets/windows/Alside_Awning_Beauty3.jpg";
-import casement3 from "../../../assets/windows/Alside_Casement_Beauty2.jpg";
-import casement4 from "../../../assets/windows/Alside_Awning_Beauty4.jpg";
-import hung1 from "../../../assets/windows/Alside_ECMezzo_DH_Beauty.jpg";
-import hung2 from "../../../assets/windows/Alside_Mezzo_DH_Beauty2.jpg";
-import hung3 from "../../../assets/windows/Alside_ECMezzo_DH_Beauty3.jpg";
-import door1 from "../../../assets/windows/Alside_Promenade_ClassicBeauty2.jpg";
-import door2 from "../../../assets/windows/Alside_Promenade_ClassicBeauty-1.jpg";
-import bay1 from "../../../assets/windows/Alside_Garden_Exterior.jpg";
-import bay2 from "../../../assets/windows/Alside_Bow_Beauty5.jpg";
-import bay3 from "../../../assets/windows/Alside_Garden_Beauty2.jpg";
-import picture1 from "../../../assets/windows/Alside_Mezzo_SpecialShape_Beauty.jpg";
-import picture2 from "../../../assets/windows/Alside_Mezzo_Picture_Beauty.jpg";
-import picture3 from "../../../assets/windows/Alside_Mezzo_Picture_Beauty2.jpg";
-import mainImage from "../../../assets/windows/Alside_Promenade_ContemporaryBeauty.jpg";
+
+import MezzoSlider1 from "../../../assets/windows/mezzo1.jpg";
+import MezzoSlider2 from "../../../assets/windows/mezzo2.jpg";
+
+import casement1 from "../../../assets/windows/casement1.jpg";
+import casement2 from "../../../assets/windows/casement2.jpg";
+import casement3 from "../../../assets/windows/casement3.jpg";
+import casement4 from "../../../assets/windows/casement4.jpg";
+
+import hung1 from "../../../assets/windows/hung1.jpg";
+import hung2 from "../../../assets/windows/hung2.jpg";
+import hung3 from "../../../assets/windows/hung3.jpg";
+
+import door1 from "../../../assets/windows/door1.jpg";
+import door2 from "../../../assets/windows/door2.jpg";
+
+import bay1 from "../../../assets/windows/bay1.jpg";
+import bay2 from "../../../assets/windows/bay2.jpg";
+import bay3 from "../../../assets/windows/bay3.jpg";
+
+import picture1 from "../../../assets/windows/picture1.jpg";
+import picture2 from "../../../assets/windows/picture2.jpg";
+import picture3 from "../../../assets/windows/picture3.jpg";
+
+import mainImage from "../../../assets/windows/main.jpg";
 
 const page = {
   title: "Premium Vinyl Windows",

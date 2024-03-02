@@ -5,7 +5,7 @@ import { Box, Typography } from "@mui/material";
 import Image from "next/image";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import houseImage from "../../assets/windows/Alside_Awning_Beauty3.jpg";
+import houseImage from "../../assets/windows/casement2.jpg";
 import ShowcaseCards from "../../components/serviceShowcase";
 
 const Showcase = () => {
@@ -42,7 +42,7 @@ const Showcase = () => {
             alignItems: "center",
           }}
         >
-          <Typography variant="h2" gutterBottom>
+          <Typography variant="h3" gutterBottom>
             Showcase
           </Typography>
         </Box>

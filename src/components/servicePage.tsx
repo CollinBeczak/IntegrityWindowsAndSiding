@@ -25,8 +25,6 @@ interface ServicesPageProps {
 }
 
 const ServicesPage: React.FC<ServicesPageProps> = ({ page }) => {
-  const [currentSlideshowIndex, setCurrentSlideshowIndex] = useState(0);
-
   const settings = {
     infinite: true,
     arrows: false,
@@ -40,7 +38,6 @@ const ServicesPage: React.FC<ServicesPageProps> = ({ page }) => {
     slidesToScroll: 1,
     draggable: false,
     swipe: false,
-    afterChange: (currentIndex: number) => setCurrentSlideshowIndex(currentIndex),
   };
 
   return (
@@ -146,7 +143,7 @@ const ServicesPage: React.FC<ServicesPageProps> = ({ page }) => {
                             placeholder="blur"
                             alt={`Image ${index + 1}`}
                             style={{ width: "100%", height: "100%", objectFit: "cover" }}
-                            loading={currentSlideshowIndex === index ? "eager" : "lazy"}
+                            loading="lazy"
                           />
                         </Box>
                       ))}
