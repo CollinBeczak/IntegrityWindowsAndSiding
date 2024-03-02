@@ -2,9 +2,9 @@ import React from "react";
 import { Box, Button, Typography } from "@mui/material";
 import Slider from "react-slick";
 import Image from "next/image";
-import slide1 from "../assets//Alside_Promenade_ContemporaryBeauty.jpg";
-import slide2 from "../assets/Alside_SatinwoodSelect_Beauty3.jpg";
-import slide3 from "../assets/deck.jpg";
+import slide1 from "../assets//slide1.jpg";
+import slide2 from "../assets/slide2.jpg";
+import slide3 from "../assets/slide3.jpg";
 
 interface Service {
   name: string;
@@ -59,7 +59,6 @@ const ServiceCards: React.FC = () => {
                       placeholder="blur"
                       alt={`Image ${index + 1}`}
                       fill
-                      sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 300px"
                       style={{ objectFit: "cover" }}
                       loading="lazy"
                     />

@@ -2,15 +2,16 @@
 
 import React from "react";
 import ServicePage from "../../../components/servicePage";
-import windowBefore1 from "../../../assets/windows/Alside_Casement_Beauty4.jpg";
-import windowBefore2 from "../../../assets/windows/Alside_Casement_Beauty5.jpg";
-import houseImage from "../../../assets/windows/Alside_Casement_Beauty6.jpg";
-import windowBefore3 from "../../../assets/windows/Alside_Casement_Beauty6.jpg";
+import windowBefore1 from "../../../assets/windows/1.jpg";
+import windowBefore2 from "../../../assets/windows/1.jpg";
+import houseImage from "../../../assets/windows/1.jpg";
+import windowBefore3 from "../../../assets/windows/1.jpg";
 
 const page = {
   title: "Premium Roofing",
   titleImage: houseImage,
-  description: "N/A",
+  description:
+    "Integrity has 30 years of experience working with all major insurance companies offering premium roofing products from manufacturers such as TAMKO, CERTAINTEED, OWENS CORNING and MALARKEY.   ",
   learnMore: false,
   route: "",
   types: [

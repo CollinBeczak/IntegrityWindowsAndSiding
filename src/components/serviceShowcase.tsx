@@ -3,23 +3,49 @@ import { Box, Grid, Divider, Typography, Modal, Fade, IconButton } from "@mui/ma
 import Slider from "react-slick";
 import Image from "next/image";
 import CloseIcon from "@mui/icons-material/Close";
-import sidingBefore1 from "../assets/siding/siding_before_1.png";
-import sidingAfter1 from "../assets/siding/siding_after_1.jpg";
+import sidingBefore1 from "../assets/siding/before1.jpg";
+import sidingAfter1 from "../assets/siding/after1.jpg";
 import windowBefore1 from "../assets/windows/before1.jpg";
 import windowAfter1 from "../assets/windows/after1.jpg";
-import windowBefore3 from "../assets/windows/Alside_Casement_Beauty6.jpg";
-import windowAfter2 from "../assets/windows/Alside_Promenade_ClassicBeauty2.jpg";
-import windowAfter3 from "../assets/windows/Alside_Promenade_ContemporaryBeauty.jpg";
-import window1 from "../assets/windows/window1.png";
-import window2 from "../assets/windows/window2.png";
-import window3 from "../assets/windows/window3.jpg";
-import window4 from "../assets/windows/window4.jpg";
-import window5 from "../assets/windows/window5.jpg";
-import window6 from "../assets/windows/window6.jpg";
-import window7 from "../assets/windows/window7.jpg";
-import window8 from "../assets/windows/window8.jpg";
-import window9 from "../assets/windows/window9.jpg";
-import window10 from "../assets/windows/window10.jpg";
+import outdoor1 from "../assets/outdoor/1.jpg";
+import outdoor2 from "../assets/outdoor/2.jpg";
+import outdoor3 from "../assets/outdoor/3.jpg";
+import outdoor4 from "../assets/outdoor/4.jpg";
+import outdoor5 from "../assets/outdoor/5.jpg";
+import outdoor6 from "../assets/outdoor/6.jpg";
+import outdoor7 from "../assets/outdoor/7.jpg";
+import outdoor8 from "../assets/outdoor/8.jpg";
+import outdoor9 from "../assets/outdoor/9.jpg";
+import outdoor10 from "../assets/outdoor/10.jpg";
+import window1 from "../assets/windows/1.jpg";
+import window2 from "../assets/windows/2.jpg";
+import window3 from "../assets/windows/3.jpg";
+import window4 from "../assets/windows/4.jpg";
+import window5 from "../assets/windows/5.jpg";
+import window6 from "../assets/windows/6.jpg";
+import window7 from "../assets/windows/7.jpg";
+import window8 from "../assets/windows/8.jpg";
+import window9 from "../assets/windows/9.jpg";
+import window10 from "../assets/windows/10.jpg";
+// import roof1 from "../assets/roofing/1.jpg";
+// import roof2 from "../assets/roofing/2.jpg";
+// import roof3 from "../assets/roofing/3.jpg";
+// import roof4 from "../assets/roofing/4.jpg";
+// import roof5 from "../assets/roofing/5.jpg";
+// import roof6 from "../assets/roofing/6.jpg";
+// import roof7 from "../assets/roofing/7.jpg";
+// import roof8 from "../assets/roofing/8.jpg";
+// import roof9 from "../assets/roofing/9.jpg";
+// import roof10 from "../assets/roofing/9.jpg";
+import siding1 from "../assets/siding/1.jpg";
+import siding2 from "../assets/siding/2.jpg";
+import siding3 from "../assets/siding/3.jpg";
+import siding4 from "../assets/siding/4.jpg";
+import siding5 from "../assets/siding/5.jpg";
+import siding6 from "../assets/siding/6.jpg";
+import siding7 from "../assets/siding/7.jpg";
+import siding8 from "../assets/siding/8.jpg";
+
 import { useTheme } from "@mui/material/styles";
 
 const services = [
@@ -28,7 +54,7 @@ const services = [
     description: "High-quality window replacement services.",
     progressImages: [
       { before: windowBefore1, after: windowAfter1 },
-      { before: windowBefore3, after: windowAfter3 },
+      { before: sidingBefore1, after: sidingAfter1 },
     ],
     images: [
       window1,
@@ -47,34 +73,43 @@ const services = [
     name: "Premium Vinyl Siding",
     description: "High-quality window replacement services.",
     progressImages: [
-      { before: sidingBefore1, after: sidingAfter1 },
-      { before: windowBefore3, after: windowAfter3 },
+      { before: windowBefore1, after: windowAfter1 },
+      { before: windowBefore1, after: windowAfter1 },
     ],
-    images: [sidingBefore1, sidingAfter1],
+    images: [siding1, siding2, siding3, siding4, siding5, siding6, siding7, siding8],
   },
   {
     name: "Premium Roofing",
     description: "High-quality window replacement services.",
     progressImages: [
-      { before: windowBefore3, after: windowAfter3 },
-      { before: windowBefore3, after: windowAfter3 },
+      { before: sidingBefore1, after: sidingAfter1 },
+      { before: sidingBefore1, after: sidingAfter1 },
     ],
     images: [windowAfter1, windowAfter1],
   },
   {
-    name: "Premium Decking and Patio",
+    name: "Premium Outdoor Living",
     description: "High-quality window replacement services.",
     progressImages: [
-      { before: windowBefore3, after: windowAfter3 },
-      { before: windowBefore3, after: windowAfter3 },
+      { before: windowBefore1, after: windowAfter1 },
+      { before: sidingBefore1, after: sidingAfter1 },
     ],
-    images: [windowBefore3, windowAfter3],
+    images: [
+      outdoor1,
+      outdoor2,
+      outdoor3,
+      outdoor4,
+      outdoor5,
+      outdoor6,
+      outdoor7,
+      outdoor8,
+      outdoor9,
+      outdoor10,
+    ],
   },
 ];
 
 const ServiceCards = () => {
-  const theme = useTheme();
-
   const [loadedImages, setLoadedImages] = useState(
     new Array(services[0].progressImages.length).fill(false),
   );
@@ -161,7 +196,6 @@ const ServiceCards = () => {
                         fill
                         style={{ objectFit: "cover" }}
                         loading="lazy"
-                        sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 300px"
                         onLoad={() => handleSlideChange(index)}
                       />
                       <Typography
@@ -199,7 +233,6 @@ const ServiceCards = () => {
                         placeholder="blur"
                         fill
                         style={{ objectFit: "cover" }}
-                        sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 300px"
                         loading={loadedImages[index] ? "eager" : "lazy"}
                       />
                       <Typography
@@ -245,7 +278,6 @@ const ServiceCards = () => {
                     alt="Additional"
                     placeholder="blur"
                     fill
-                    sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 300px"
                     loading="lazy"
                     style={{
                       borderRadius: "8px",
@@ -279,9 +311,9 @@ const ServiceCards = () => {
                     height: "auto",
                     maxHeight: "800px",
                     width: "100%",
-                    maxWidth: "1000px", // Enclose maxWidth value in quotes
+                    maxWidth: "1000px",
                   }}
-                  loading="eager" // Load the image eagerly for faster loading
+                  loading="lazy"
                 />
               </Box>
               <IconButton

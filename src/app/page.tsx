@@ -5,7 +5,7 @@ import { Box, Typography, Button, Grid, Card, CardContent, Rating } from "@mui/m
 import Image from "next/image";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import homeImage from "../assets/landing_page_image.jpg";
+import homeImage from "../assets/landingImage.jpg";
 import ServiceCards from "../components/servicesSlideshow";
 import ShowcaseCards from "../components/showcaseSlideShow";
 

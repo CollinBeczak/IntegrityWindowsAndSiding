@@ -2,20 +2,17 @@ import React, { useState } from "react";
 import { Box, Button, Typography } from "@mui/material";
 import Slider from "react-slick";
 import Image from "next/image";
-import windowBefore1 from "../assets/windows/Alside_Casement_Beauty4.jpg";
-import windowBefore2 from "../assets/windows/Alside_Casement_Beauty5.jpg";
-import windowBefore3 from "../assets/windows/Alside_Casement_Beauty6.jpg";
-import windowAfter1 from "../assets/windows/Alside_Mezzo_Slider_Beauty2.jpg";
-import windowAfter2 from "../assets/windows/Alside_Promenade_ClassicBeauty2.jpg";
-import windowAfter3 from "../assets/windows/Alside_Promenade_ContemporaryBeauty.jpg";
+import windowBefore1 from "../assets/windows/8.jpg";
+import windowAfter1 from "../assets/windows/10.jpg";
+import sidingAfter1 from "../assets/outdoor/2.jpg";
+import sidingBefore1 from "../assets/siding/4.jpg";
 
 const services = [
   {
     name: "OUR SHOWCASE",
     images: [
       { before: windowBefore1, after: windowAfter1 },
-      { before: windowBefore2, after: windowAfter2 },
-      { before: windowBefore3, after: windowAfter3 },
+      { before: sidingBefore1, after: sidingAfter1 },
     ],
   },
 ];
@@ -78,7 +75,6 @@ const ServiceCards: React.FC = () => {
                         alt="Before"
                         placeholder="blur"
                         fill
-                        sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 300px"
                         style={{ objectFit: "cover" }}
                         loading="lazy"
                         onLoad={() => handleSlideChange(index)}
@@ -96,7 +92,6 @@ const ServiceCards: React.FC = () => {
                         alt="After"
                         placeholder="blur"
                         fill
-                        sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 300px"
                         style={{ objectFit: "cover" }}
                         loading={loadedImages[index] ? "eager" : "lazy"}
                       />

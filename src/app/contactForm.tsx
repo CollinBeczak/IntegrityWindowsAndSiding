@@ -18,7 +18,7 @@ import {
   Divider,
 } from "@mui/material";
 import Image from "next/image";
-import houseImage from "../assets/windows/Alside_Casement_Beauty4.jpg";
+import contactImage from "../assets/contact.jpg";
 import axios from "axios";
 
 const ContactForm = () => {
@@ -184,7 +184,7 @@ const ContactForm = () => {
         }}
       >
         <Image
-          src={houseImage}
+          src={contactImage}
           placeholder="blur"
           alt="image"
           fill
