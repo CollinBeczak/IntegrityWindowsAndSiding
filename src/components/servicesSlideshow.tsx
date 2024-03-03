@@ -14,7 +14,7 @@ interface Service {
 
 const services: Service[] = [
   {
-    name: "Premium Services",
+    name: "Integrity's Premium Services",
     description:
       "Exclusive Alside dealer offering lifetime warranty custom measured-to-fit Premium Vinyl Window & Patio door installation, " +
       "Premium Vinyl Siding installation, Premium Roofing, decking, and patio Builds.",
