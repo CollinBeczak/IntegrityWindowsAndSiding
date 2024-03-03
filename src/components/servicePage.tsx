@@ -169,20 +169,6 @@ const ServicesPage: React.FC<ServicesPageProps> = ({ page }) => {
                     <Typography variant="subtitle1" color="textSecondary" margin={"auto"}>
                       {service.description}
                     </Typography>
-                    {page.learnMore && (
-                      <Box sx={{ marginY: 2 }}>
-                        <Button
-                          href={`/services/${service.name
-                            .toLowerCase()
-                            .replace(/- /g, `${page.route}#`)
-                            .replace(/[^a-zA-Z0-9#]+/g, "_")}`}
-                          variant="contained"
-                          sx={{ color: "white" }}
-                        >
-                          Learn More
-                        </Button>
-                      </Box>
-                    )}
                   </Box>
                 </Box>
               </Box>

@@ -1,11 +1,15 @@
 import React, { useState } from "react";
 import { Box, Typography, Button } from "@mui/material";
 import Image from "next/image";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 interface Service {
   link: string;
   name: string;
   description: string;
+  images: any;
 }
 
 interface Page {
@@ -119,6 +123,28 @@ const ServicesPage: React.FC<ServicesPageProps> = ({ page }) => {
                   top: "-124px",
                 }}
               ></Box>
+              <Box width={"100%"} maxWidth={500} height={300} margin={"auto"}>
+                <Slider {...settings}>
+                  {service.images.map((image: any, index: any) => (
+                    <Box
+                      key={index}
+                      sx={{
+                        position: "relative",
+                        width: "100%",
+                        height: 300,
+                      }}
+                    >
+                      <Image
+                        src={image}
+                        placeholder="blur"
+                        alt={`Image ${index + 1}`}
+                        style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                        loading="lazy"
+                      />
+                    </Box>
+                  ))}
+                </Slider>
+              </Box>
               <Box
                 id={service.name.replace(/\s+/g, "-").toLowerCase()}
                 data-testid={service.name.replace(/\s+/g, "-").toLowerCase()}
