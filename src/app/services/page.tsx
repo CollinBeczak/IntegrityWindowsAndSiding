@@ -13,6 +13,7 @@ const page = {
   route: "",
   types: [
     {
+      link: "premium_vinyl_window",
       name: "Premium Vinyl Window",
       description:
         "There is so much more to the windows in your home than the frame, sashes, and glass. " +
@@ -25,20 +26,16 @@ const page = {
         "energy-engineered frame and sash and low-conductive composite reinforcements.",
     },
     {
+      link: "premium_vinyl_siding",
       name: "Premium Vinyl Siding",
       description:
         "Set the stage for your home with our versatile options for vinyl siding. They are all performance-engineered to protect your home from all of the elements; including pouring rain, high winds, and extreme heat cold. It only makes sense that vinyl siding wins America's popular choice with its superior durability, easy upkeep, green benefits, excellent value, and luxurious appearance. Our vinyl siding recreated the beauty of freshly pained wood siding without the negatives of chipping, splitting, rotting, or insect damage. It NEVER needs to be painted and only requires a rinse with a garden hose to remove most dirt and dust, restoring it to its like-new beauty and luxurious finish.",
     },
-    // {
-    //   name: "Premium Roofing",
-    //   description:
-    //     "Slider windows, also known as sliding windows, feature sashes that glide horizontally along tracks. They offer a contemporary look and are ideal for spaces where a projecting window could interfere with walkways, patios, or decks. Slider windows provide excellent ventilation and are easy to operate, making them a popular choice for modern homes.",
-    // },
-    // {
-    //   name: "Premium Decking and Patio",
-    //   description:
-    //     "Outdoor Living has become very popular over the years. Integrity can build you the outdoor living space of your dreams. From composite, to cedar, to pressure-treated! You can trust us with your project. The Simple to lavish enertainment Decks, large and airy pergolas, stick built patio covers, we have you covered.",
-    // },
+    {
+      link: "other_services",
+      name: "Integrity's Other Services",
+      description: "",
+    },
   ],
 };
 

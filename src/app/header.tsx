@@ -24,14 +24,23 @@ const Header = () => {
   ];
 
   const Services = [
-    { label: "View All Services", path: "/" },
-    { label: "Premium Vinyl Windows", path: "/premium_vinyl_window" },
-    { label: "- Patio Doors", path: "/premium_vinyl_window#patio_doors" },
-    { label: "Premium Vinyl Siding and Others", path: "/premium_vinyl_siding" },
-    { label: "- LP SmartSide", path: "/premium_vinyl_siding#lp_smartside" },
-    { label: "- Hardie Board", path: "/premium_vinyl_siding#hardie_board" },
-    // { label: "Premium Roofing", path: "/premium_roofing" },
-    // { label: "Premium Outdoor Living", path: "/premium_outdoor_living" },
+    { label: "View All Services", path: "/", sectionTitle: true },
+    { label: "Premium Vinyl Windows", path: "/premium_vinyl_window", sectionTitle: true },
+    {
+      label: "- Premium Vinyl Patio Doors",
+      path: "/premium_vinyl_window#premium_vinyl_patio_doors",
+      sectionTitle: false,
+    },
+    { label: "Premium Vinyl Siding", path: "/premium_vinyl_siding", sectionTitle: true },
+    { label: "- LP SmartSide", path: "/premium_vinyl_siding#lp_smartside", sectionTitle: false },
+    { label: "- Hardie Board", path: "/premium_vinyl_siding#hardie_board", sectionTitle: false },
+    { label: "Other Services", path: "/other_services", sectionTitle: true },
+    { label: "- Premium Roofing", path: "/other_services#premium_roofing", sectionTitle: false },
+    {
+      label: "- Premium Outdoor Living",
+      path: "/other_services#premium_outdoor_living",
+      sectionTitle: false,
+    },
   ];
 
   return (
@@ -116,8 +125,8 @@ const Header = () => {
                     : service.path.replace(/- /g, "#")
                 }
                 sx={{
-                  fontSize: 16,
-                  color: "text.primary",
+                  fontSize: service.sectionTitle ? 16 : 14,
+                  color: service.sectionTitle ? "text.primary" : "grey",
                 }}
                 onClick={handleClose}
               >
