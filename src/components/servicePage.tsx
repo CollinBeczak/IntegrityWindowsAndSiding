@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Box, Typography, Button } from "@mui/material";
 import Image from "next/image";
 import Slider from "react-slick";
@@ -53,7 +53,7 @@ const ServicesPage: React.FC<ServicesPageProps> = ({ page }) => {
           justifyContent: "center",
           alignItems: "center",
           width: "100%",
-          minHeight: { xs: "auto", sm: "650px" },
+          minHeight: { xs: "auto", sm: page.description ? "650px" : "250px" },
         }}
       >
         <Box
@@ -123,8 +123,11 @@ const ServicesPage: React.FC<ServicesPageProps> = ({ page }) => {
                 id={service.name.replace(/\s+/g, "-").toLowerCase()}
                 data-testid={service.name.replace(/\s+/g, "-").toLowerCase()}
                 margin="auto"
-                maxWidth={1200}
-                sx={{ marginY: { xs: 5, sm: 10 }, textAlign: { xs: "center", lg: "left" } }}
+                sx={{
+                  maxWidth: { sm: 700, lg: 1200 },
+                  marginY: { xs: 5, sm: 10 },
+                  textAlign: { xs: "center", lg: "left" },
+                }}
               >
                 <Box sx={{ display: { lg: "flex" } }}>
                   <Box width={"100%"} maxWidth={500} height={300} margin={"auto"}>

@@ -3,6 +3,7 @@ import { Box, Typography, Button } from "@mui/material";
 import Image from "next/image";
 
 interface Service {
+  link: string;
   name: string;
   description: string;
 }
@@ -122,8 +123,11 @@ const ServicesPage: React.FC<ServicesPageProps> = ({ page }) => {
                 id={service.name.replace(/\s+/g, "-").toLowerCase()}
                 data-testid={service.name.replace(/\s+/g, "-").toLowerCase()}
                 margin="auto"
-                maxWidth={1200}
-                sx={{ marginY: { xs: 5, sm: 10 }, textAlign: { xs: "center", lg: "left" } }}
+                sx={{
+                  maxWidth: { sm: 700, md: 1000 },
+                  marginY: { xs: 5, sm: 10 },
+                  textAlign: { xs: "center", lg: "left" },
+                }}
               >
                 <Box sx={{ display: { lg: "flex" } }}>
                   <Box
@@ -146,10 +150,7 @@ const ServicesPage: React.FC<ServicesPageProps> = ({ page }) => {
                     {page.learnMore && (
                       <Box sx={{ marginY: 2 }}>
                         <Button
-                          href={`/services/${service.name
-                            .toLowerCase()
-                            .replace(/- /g, `${page.route}#`)
-                            .replace(/[^a-zA-Z0-9#]+/g, "_")}`}
+                          href={`/services/${service.link}`}
                           variant="contained"
                           sx={{ color: "white" }}
                         >

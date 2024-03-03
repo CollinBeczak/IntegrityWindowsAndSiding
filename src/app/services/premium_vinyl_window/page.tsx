@@ -92,7 +92,7 @@ const page = {
       images: [bay1, bay2, bay3],
     },
     {
-      name: "Patio Doors",
+      name: "Premium Vinyl Patio Doors",
       description:
         "The greatest measurement for patio doors is their performance. Excellent construction combines with quality design, " +
         "smooth operation, and everlasting beauty make our doors a premier choice. Offering classic style, contemporary, and French, " +
