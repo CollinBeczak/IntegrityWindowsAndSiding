@@ -4,7 +4,7 @@ import Slider from "react-slick";
 import Image from "next/image";
 import windowBefore1 from "../assets/windows/8.jpg";
 import windowAfter1 from "../assets/windows/10.jpg";
-import sidingAfter1 from "../assets/outdoor/2.jpg";
+import sidingAfter1 from "../assets/other/2.jpg";
 import sidingBefore1 from "../assets/siding/4.jpg";
 
 const services = [
