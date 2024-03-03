@@ -384,13 +384,21 @@ const ContactForm = () => {
               </FormControl>
             </Grid>
             <Grid item xs={12} sm={6}>
-              <FormControl fullWidth sx={{ marginBottom: stateError ? 0 : "23px" }}>
+              <FormControl
+                fullWidth
+                error={!!stateError}
+                sx={{ marginBottom: stateError ? 0 : "23px" }}
+              >
                 <InputLabel id="state-label">State *</InputLabel>
                 <Select
                   label="state"
-                  id="state"
+                  id="state *"
+                  required
                   value={state}
-                  onChange={(e) => setState(e.target.value)}
+                  onChange={(e: any) => {
+                    setState(e.target.value);
+                    setStateError("");
+                  }}
                   onBlur={handleStateBlur}
                 >
                   {states.map((stateOption) => (
@@ -399,6 +407,7 @@ const ContactForm = () => {
                     </MenuItem>
                   ))}
                 </Select>
+                <FormHelperText>{stateError}</FormHelperText>
               </FormControl>
             </Grid>
             <Grid item xs={12} sm={6}>
