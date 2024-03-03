@@ -6,7 +6,6 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 interface Service {
-  link: string;
   name: string;
   description: string;
   images: any;
@@ -170,17 +169,6 @@ const ServicesPage: React.FC<ServicesPageProps> = ({ page }) => {
                     <Typography variant="subtitle1" color="textSecondary" margin={"auto"}>
                       {service.description}
                     </Typography>
-                    {page.learnMore && (
-                      <Box sx={{ marginY: 2 }}>
-                        <Button
-                          href={`/services/${service.link}`}
-                          variant="contained"
-                          sx={{ color: "white" }}
-                        >
-                          Learn More
-                        </Button>
-                      </Box>
-                    )}
                   </Box>
                 </Box>
               </Box>
