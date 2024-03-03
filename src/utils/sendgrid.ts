@@ -88,7 +88,7 @@ export const sendEmail = async (
   message: string,
 ) => {
   const msg = {
-    to: "ctbeczak08@gmail.com",
+    to: "Integrityofwichita@hotmail.com",
     from: "integrityhelper1@gmail.com",
     subject: selectedSubjectsTypes,
     html: emailTemplate(name, state, city, email, phoneNumber, selectedSubjectsTypes, message),

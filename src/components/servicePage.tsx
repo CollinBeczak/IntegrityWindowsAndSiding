@@ -6,6 +6,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 interface Service {
+  link: string;
   name: string;
   description: string;
   images: any;
@@ -172,10 +173,7 @@ const ServicesPage: React.FC<ServicesPageProps> = ({ page }) => {
                     {page.learnMore && (
                       <Box sx={{ marginY: 2 }}>
                         <Button
-                          href={`/services/${service.name
-                            .toLowerCase()
-                            .replace(/- /g, `${page.route}#`)
-                            .replace(/[^a-zA-Z0-9#]+/g, "_")}`}
+                          href={`/services/${service.link}`}
                           variant="contained"
                           sx={{ color: "white" }}
                         >
