@@ -8,19 +8,13 @@ import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import { Box } from "@mui/system";
 
 const Header = () => {
-  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const [servicesAnchorEl, setServicesAnchorEl] = useState<null | HTMLElement>(null);
-
-  const handleMenuClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-    setAnchorEl(event.currentTarget);
-  };
 
   const handleServicesClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     setServicesAnchorEl(event.currentTarget);
   };
 
   const handleClose = () => {
-    setAnchorEl(null);
     setServicesAnchorEl(null);
   };
 
@@ -36,8 +30,8 @@ const Header = () => {
     { label: "Premium Vinyl Siding and Others", path: "/premium_vinyl_siding" },
     { label: "- LP SmartSide", path: "/premium_vinyl_siding#lp_smartside" },
     { label: "- Hardie Board", path: "/premium_vinyl_siding#hardie_board" },
-    { label: "Premium Roofing", path: "/premium_roofing" },
-    { label: "Premium Outdoor Living", path: "/premium_outdoor_living" },
+    // { label: "Premium Roofing", path: "/premium_roofing" },
+    // { label: "Premium Outdoor Living", path: "/premium_outdoor_living" },
   ];
 
   return (
@@ -132,12 +126,7 @@ const Header = () => {
             ))}
           </Menu>
         </Box>
-        <IconButton
-          sx={{ display: { xs: "none" } }}
-          edge="end"
-          aria-label="menu"
-          onClick={handleMenuClick}
-        >
+        <IconButton sx={{ display: { xs: "none" } }} edge="end" aria-label="menu">
           <MenuIcon />
         </IconButton>
       </Toolbar>

@@ -24,7 +24,8 @@ const page = {
 };
 
 const Decking = () => {
-  return <ServicePage page={page} />;
+  return;
+  // return <ServicePage page={page} />;
 };
 
 export default Decking;

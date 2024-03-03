@@ -2,10 +2,17 @@
 
 import React from "react";
 import ServicePage from "../../../components/servicePage";
-import windowBefore1 from "../../../assets/windows/1.jpg";
-import windowBefore2 from "../../../assets/windows/1.jpg";
-import houseImage from "../../../assets/windows/1.jpg";
-import windowBefore3 from "../../../assets/windows/1.jpg";
+import houseImage from "../../../assets/siding/3.jpg";
+import board1 from "../../../assets/siding/board1.jpg";
+import board2 from "../../../assets/siding/board2.jpg";
+import harie1 from "../../../assets/siding/hardie.jpg";
+import hardie2 from "../../../assets/siding/hardie2.jpg";
+import smartside1 from "../../../assets/siding/smartside1.jpg";
+import smartside2 from "../../../assets/siding/smartside2.jpg";
+import soffit1 from "../../../assets/siding/soffit1.jpg";
+import soffit2 from "../../../assets/siding/soffit2.jpg";
+import vinylSiding1 from "../../../assets/siding/vinylSiding1.jpg";
+import vinylSiding2 from "../../../assets/siding/vinylSiding2.jpg";
 
 const page = {
   title: "Premium Vinyl Siding",
@@ -19,19 +26,31 @@ const page = {
       name: "Vinyl Siding",
       description:
         "Regardless of square footage, the outside of your home is an expression of your style. Your personal inspiration can be seen from the basic design to the most ambitious detail. Our vinyl siding options encompass all of the above, whether looking for modern and contemporary, traditional and historic, or urban to suburban.",
-      images: [windowBefore1, windowBefore2, windowBefore3],
+      images: [vinylSiding1, vinylSiding2],
+    },
+    {
+      name: "Charter Oak Vinyl Siding And Soffit",
+      description:
+        "Made to last and made to be the best! Offering performance and the beauty of natural wood, with the easy-care, durability, and convenience of Premium Vinyl Siding and soffit. An easy eco-friendly choice made to last a lifetime. Never paint, never stain, with this Alside product providing unparalleled quality and color range for you to take design control through various profiles and textures.",
+      images: [soffit1, soffit2],
+    },
+    {
+      name: "Board & Batten",
+      description:
+        "Bold, classically styled vertical lines, and eye-catching symmetry, attract homeowners who admire the distinctive architectural details that set the exterior of a home apart from the standard horizontal siding. Perfect for Victorian, Craftsman, Coastal, Classic Collonial, and Victorian homes....this Premium Vinyl Siding is guaranteed to stay straight  and even year after year with it's heavy duty panels ensuring greater strength, rigidity, and outstanding beauty.",
+      images: [board1, board2],
     },
     {
       name: "LP SmartSide",
       description:
         "One of the most durable siding solutions on the market today, thanks to the proprietary SmartGuard® process. Features engineered wood strand technology that offers superior protection against hail, wind, moisture, fungal decay, and termites. Available in 16 versatile refinished colors.",
-      images: [windowBefore1, windowBefore2, windowBefore3],
+      images: [smartside1, smartside2],
     },
     {
       name: "Hardie Board",
       description:
         "Traditional and timeless, sleek and strong cement siding. Hardie® Plank lap siding, shingle, trim boards, vertical panels... the possibilities are endless. It’s the most popular brand of concrete siding in North America, protecting and beautifying more homes from coast to coast.",
-      images: [windowBefore1, windowBefore2, windowBefore3],
+      images: [harie1, hardie2],
     },
   ],
 };

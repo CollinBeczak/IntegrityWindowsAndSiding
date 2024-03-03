@@ -46,8 +46,6 @@ import siding6 from "../assets/siding/6.jpg";
 import siding7 from "../assets/siding/7.jpg";
 import siding8 from "../assets/siding/8.jpg";
 
-import { useTheme } from "@mui/material/styles";
-
 const services = [
   {
     name: "Premium Vinyl Window",
@@ -78,15 +76,15 @@ const services = [
     ],
     images: [siding1, siding2, siding3, siding4, siding5, siding6, siding7, siding8],
   },
-  {
-    name: "Premium Roofing",
-    description: "High-quality window replacement services.",
-    progressImages: [
-      { before: sidingBefore1, after: sidingAfter1 },
-      { before: sidingBefore1, after: sidingAfter1 },
-    ],
-    images: [windowAfter1, windowAfter1],
-  },
+  // {
+  //   name: "Premium Roofing",
+  //   description: "High-quality window replacement services.",
+  //   progressImages: [
+  //     { before: sidingBefore1, after: sidingAfter1 },
+  //     { before: sidingBefore1, after: sidingAfter1 },
+  //   ],
+  //   images: [windowAfter1, windowAfter1],
+  // },
   {
     name: "Premium Outdoor Living",
     description: "High-quality window replacement services.",
