@@ -6,12 +6,10 @@ import { AppBar, Toolbar, Typography, Button, IconButton, Menu, MenuItem } from 
 import MenuIcon from "@mui/icons-material/Menu";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import { Box } from "@mui/system";
-import useClient from "../hooks/useClient";
 
 const Header = () => {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const [servicesAnchorEl, setServicesAnchorEl] = useState<null | HTMLElement>(null);
-  const isClient = useClient();
 
   const handleMenuClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     setAnchorEl(event.currentTarget);
