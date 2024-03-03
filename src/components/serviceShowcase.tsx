@@ -7,16 +7,18 @@ import sidingBefore1 from "../assets/siding/before1.jpg";
 import sidingAfter1 from "../assets/siding/after1.jpg";
 import windowBefore1 from "../assets/windows/before1.jpg";
 import windowAfter1 from "../assets/windows/after1.jpg";
-import outdoor1 from "../assets/outdoor/1.jpg";
-import outdoor2 from "../assets/outdoor/2.jpg";
-import outdoor3 from "../assets/outdoor/3.jpg";
-import outdoor4 from "../assets/outdoor/4.jpg";
-import outdoor5 from "../assets/outdoor/5.jpg";
-import outdoor6 from "../assets/outdoor/6.jpg";
-import outdoor7 from "../assets/outdoor/7.jpg";
-import outdoor8 from "../assets/outdoor/8.jpg";
-import outdoor9 from "../assets/outdoor/9.jpg";
-import outdoor10 from "../assets/outdoor/10.jpg";
+import windowBefore2 from "../assets/windows/before2.jpg";
+import windowAfter2 from "../assets/windows/after2.jpg";
+// import outdoor1 from "../assets/outdoor/1.jpg";
+// import outdoor2 from "../assets/outdoor/2.jpg";
+// import outdoor3 from "../assets/outdoor/3.jpg";
+// import outdoor4 from "../assets/outdoor/4.jpg";
+// import outdoor5 from "../assets/outdoor/5.jpg";
+// import outdoor6 from "../assets/outdoor/6.jpg";
+// import outdoor7 from "../assets/outdoor/7.jpg";
+// import outdoor8 from "../assets/outdoor/8.jpg";
+// import outdoor9 from "../assets/outdoor/9.jpg";
+// import outdoor10 from "../assets/outdoor/10.jpg";
 import window1 from "../assets/windows/1.jpg";
 import window2 from "../assets/windows/2.jpg";
 import window3 from "../assets/windows/3.jpg";
@@ -51,8 +53,8 @@ const services = [
     name: "Premium Vinyl Window",
     description: "High-quality window replacement services.",
     progressImages: [
+      { before: windowBefore2, after: windowAfter2 },
       { before: windowBefore1, after: windowAfter1 },
-      { before: sidingBefore1, after: sidingAfter1 },
     ],
     images: [
       window1,
@@ -71,8 +73,8 @@ const services = [
     name: "Premium Vinyl Siding",
     description: "High-quality window replacement services.",
     progressImages: [
-      { before: windowBefore1, after: windowAfter1 },
-      { before: windowBefore1, after: windowAfter1 },
+      { before: sidingBefore1, after: sidingAfter1 },
+      { before: sidingBefore1, after: sidingAfter1 },
     ],
     images: [siding1, siding2, siding3, siding4, siding5, siding6, siding7, siding8],
   },
@@ -85,26 +87,26 @@ const services = [
   //   ],
   //   images: [windowAfter1, windowAfter1],
   // },
-  {
-    name: "Premium Outdoor Living",
-    description: "High-quality window replacement services.",
-    progressImages: [
-      { before: windowBefore1, after: windowAfter1 },
-      { before: sidingBefore1, after: sidingAfter1 },
-    ],
-    images: [
-      outdoor1,
-      outdoor2,
-      outdoor3,
-      outdoor4,
-      outdoor5,
-      outdoor6,
-      outdoor7,
-      outdoor8,
-      outdoor9,
-      outdoor10,
-    ],
-  },
+  // {
+  //   name: "Premium Outdoor Living",
+  //   description: "High-quality window replacement services.",
+  //   progressImages: [
+  //     { before: windowBefore1, after: windowAfter1 },
+  //     { before: sidingBefore1, after: sidingAfter1 },
+  //   ],
+  //   images: [
+  //     outdoor1,
+  //     outdoor2,
+  //     outdoor3,
+  //     outdoor4,
+  //     outdoor5,
+  //     outdoor6,
+  //     outdoor7,
+  //     outdoor8,
+  //     outdoor9,
+  //     outdoor10,
+  //   ],
+  // },
 ];
 
 const ServiceCards = () => {
