@@ -9,7 +9,7 @@ import sidingBefore1 from "../assets/siding/4.jpg";
 
 const services = [
   {
-    name: "OUR SHOWCASE",
+    name: "Integrity's Showcase",
     images: [
       { before: windowBefore1, after: windowAfter1 },
       { before: sidingBefore1, after: sidingAfter1 },

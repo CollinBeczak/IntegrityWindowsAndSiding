@@ -118,29 +118,7 @@ const Home = () => {
           </Box>
         </Box>
       </Box>
-      <Box maxWidth={1200} margin="auto">
-        <Box
-          sx={{
-            display: "flex",
-            flexDirection: { xs: "column", md: "row" },
-            alignItems: "center",
-            paddingX: 3,
-            paddingY: { xs: 5, md: 6 },
-          }}
-        >
-          <Box sx={{ flex: 1 }}>
-            <Typography variant="h4" mb={2} textAlign={{ xs: "center", md: "left" }}>
-              Integrity Siding and window
-            </Typography>
-            <Typography variant="subtitle1" color="black" textAlign={{ xs: "center", md: "left" }}>
-              We pride ourselves on our highly competitive pricing and devoted approach to
-              accommodate our customers. We identify the needs and improvements that produce greater
-              efficiency – which save energy and money.
-            </Typography>
-          </Box>
-        </Box>
-      </Box>
-      <Box>
+      <Box mt={5}>
         <ServiceCards />
       </Box>
 
