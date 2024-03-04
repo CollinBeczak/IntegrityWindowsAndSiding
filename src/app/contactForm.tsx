@@ -20,6 +20,7 @@ import {
 import Image from "next/image";
 import contactImage from "../assets/contact.jpg";
 import axios from "axios";
+import ReCAPTCHA from "react-google-recaptcha";
 
 const ContactForm = () => {
   const [selectedSubjectsTypes, setSelectedSubjectsTypes]: any = useState([]);
@@ -38,6 +39,7 @@ const ContactForm = () => {
   const [subjectsError, setSubjectsError] = useState("");
   const [messageError, setMessageError] = useState("");
   const [buttonText, setButtonText] = useState("Send Message");
+  const [captchaValue, setCaptchaValue] = useState(null);
 
   const subjectsTypes = [
     { value: "Siding", label: "Siding" },
@@ -63,7 +65,8 @@ const ContactForm = () => {
     stateError === "" &&
     cityError === "" &&
     subjectsError === "" &&
-    messageError === "";
+    messageError === "" &&
+    captchaValue !== null;
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
@@ -78,6 +81,7 @@ const ContactForm = () => {
         city,
         selectedSubjectsTypes: selectedSubjectsTypes.join(", "),
         message,
+        captcha: captchaValue,
       });
 
       setButtonText("Message Sent!");
@@ -99,6 +103,7 @@ const ContactForm = () => {
       setSubjectsError("");
       setMessageError("");
     } catch (error) {
+      setButtonText("Please refresh the page and try again.");
       console.error("Error sending email:", error);
     } finally {
       setIsLoading(false);
@@ -160,10 +165,13 @@ const ContactForm = () => {
   const handleMessageBlur = () => {
     if (message.trim() === "") {
       setMessageError("Message is required");
-      console.log();
     } else {
       setMessageError("");
     }
+  };
+
+  const handleCaptchaChange = (value: any) => {
+    setCaptchaValue(value);
   };
 
   return (
@@ -450,7 +458,12 @@ const ContactForm = () => {
                 sx={{ marginBottom: messageError ? 0 : "22px" }}
               />
             </Grid>
-
+            <Grid item xs={12} ml={2}>
+              <ReCAPTCHA
+                sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ""}
+                onChange={handleCaptchaChange}
+              />
+            </Grid>
             <Grid item xs={12}>
               <Button
                 type="submit"
