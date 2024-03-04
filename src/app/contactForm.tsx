@@ -458,7 +458,7 @@ const ContactForm = () => {
                 sx={{ marginBottom: messageError ? 0 : "22px" }}
               />
             </Grid>
-            <Grid item xs={12} ml={2}>
+            <Grid item xs={12} mb={1}>
               <ReCAPTCHA
                 sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ""}
                 onChange={handleCaptchaChange}
