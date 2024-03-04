@@ -41,7 +41,7 @@ const Home = () => {
             left: 0,
             width: "100%",
             height: "100%",
-            backgroundColor: "rgba(0, 0, 0, 0.3)",
+            backgroundColor: "rgba(0, 0, 0, 0.1)",
             display: "flex",
             flexDirection: "column",
             justifyContent: "center",
@@ -59,7 +59,7 @@ const Home = () => {
               marginBottom: 5,
               fontFamily: "Comfortaa, sans-serif",
               fontWeight: "bold",
-              textShadow: "4px 4px 8px rgba(0,0,0,0.5)",
+              textShadow: "3px 1.5px 3px rgba(0,0,0,1)",
             }}
           >
             Integrity Siding and Window
@@ -73,7 +73,7 @@ const Home = () => {
             sx={{
               fontFamily: "Comfortaa, sans-serif",
               fontWeight: "bold",
-              textShadow: "4px 4px 8px rgba(0,0,0,0.5)",
+              textShadow: "3px 1.5px 3px rgba(0,0,0,1)",
             }}
           >
             Local family-owned company with over 30 years of construction, and remodel experience

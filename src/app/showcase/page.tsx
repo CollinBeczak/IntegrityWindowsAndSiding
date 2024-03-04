@@ -35,11 +35,12 @@ const Showcase = () => {
             left: 0,
             width: "100%",
             height: "100%",
-            backgroundColor: "rgba(0, 0, 0, 0.3)",
+            backgroundColor: "rgba(0, 0, 0, 0.1)",
             display: "flex",
             flexDirection: "column",
             justifyContent: "center",
             alignItems: "center",
+            textShadow: "3px 1.5px 3px rgba(0,0,0,1)",
           }}
         >
           <Typography variant="h3" gutterBottom>
