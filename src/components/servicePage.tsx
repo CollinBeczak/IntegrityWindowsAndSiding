@@ -95,7 +95,7 @@ const ServicesPage: React.FC<ServicesPageProps> = ({ page }) => {
             paddingX: 3,
             width: "100%",
             "& > *": {
-              textShadow: "2px 2px 4px rgba(0, 0, 0, 1)",
+              textShadow: "3px 1.5px 3px rgba(0,0,0,1)",
             },
           }}
         >
