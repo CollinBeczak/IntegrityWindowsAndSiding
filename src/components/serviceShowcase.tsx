@@ -126,7 +126,7 @@ const ServiceCards = () => {
               marginY: 2,
               fontSize: { xs: 24, sm: 30 },
               fontFamily: "Geologica, sans-serif",
-              fontWeight: 600,
+              fontWeight: 500,
             }}
           >
             Integrity&apos;s {service.name}

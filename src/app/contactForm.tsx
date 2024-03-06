@@ -262,7 +262,7 @@ const ContactForm = () => {
             <Typography
               sx={{
                 fontSize: { xs: 13, sm: 15 },
-                fontWeight: 900,
+                fontWeight: 500,
               }}
             >
               Call now

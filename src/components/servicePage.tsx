@@ -185,7 +185,7 @@ const ServicePage: React.FC<ServicesPageProps> = ({ page }) => {
                   >
                     <Typography
                       sx={{
-                        fontSize: { xs: 20, sm: 28 },
+                        fontSize: { xs: 20, md: 24, lg: 28 },
                         marginTop: { xs: 4, lg: 0 },
                         textAlign: { xs: "center", lg: "left" },
                         fontFamily: "Geologica, sans-serif",
@@ -195,10 +195,13 @@ const ServicePage: React.FC<ServicesPageProps> = ({ page }) => {
                       {service.name}
                     </Typography>
                     <Typography
-                      variant="subtitle1"
                       color="textSecondary"
                       margin={"auto"}
-                      sx={{ fontFamily: "Geologica, sans-serif" }}
+                      sx={{
+                        fontFamily: "Geologica, sans-serif",
+                        fontSize: { xs: 15, md: 16, lg: 18 },
+                        fontWeight: 300,
+                      }}
                     >
                       {service.description}
                     </Typography>

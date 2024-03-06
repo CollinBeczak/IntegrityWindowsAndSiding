@@ -59,8 +59,8 @@ const Header = () => {
           component={Link}
           href="/"
           sx={{
-            marginTop: { xs: 2, md: 0 },
-            marginBottom: { xs: 0.5, md: 0 },
+            marginTop: { xs: 2.5, md: 0 },
+            marginBottom: { xs: 1, md: 0 },
             fontSize: { xs: 19, sm: 25 },
             textDecoration: "none",
             textAlign: { xs: "center", md: "left" },
@@ -72,7 +72,13 @@ const Header = () => {
         >
           Integrity Siding and Window
         </Typography>
-        <Box sx={{ display: "flex", justifyContent: "space-between" }}>
+        <Box
+          sx={{
+            display: "flex",
+            marginBottom: { xs: 0.5, md: 0 },
+            justifyContent: "space-between",
+          }}
+        >
           <Button
             sx={{
               color: "text.primary",

@@ -114,7 +114,7 @@ const ServiceCards: React.FC = () => {
                   <Typography
                     sx={{
                       fontSize: { xs: 14, sm: 18 },
-                      fontWeight: 450,
+                      fontWeight: 400,
                       maxWidth: 600,
                       margin: "auto",
                       textShadow: "0px 0px 4px rgba(255,255,255,1)",

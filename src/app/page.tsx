@@ -21,7 +21,7 @@ const Home = () => {
       <Box
         sx={{
           position: "relative",
-          height: "85vh",
+          height: "80vh",
           color: "white",
           overflow: "hidden",
         }}
@@ -54,7 +54,7 @@ const Home = () => {
             sx={{
               mx: 4,
               marginBottom: 2,
-              fontSize: { xs: 24, sm: 30 },
+              fontSize: { xs: 24, sm: 34 },
               fontFamily: "Geologica, sans-serif",
               fontWeight: 700,
               textShadow: "3px 1.5px 3px rgba(0,0,0,1)",
@@ -65,14 +65,14 @@ const Home = () => {
 
           <Typography
             textAlign="center"
-            maxWidth={700}
+            maxWidth={{ xs: 700, sm: 1000 }}
             mb={2}
             gutterBottom
             sx={{
-              mx: 4,
-              fontSize: { xs: 18, sm: 20 },
+              mx: { xs: 4, sm: 10 },
+              fontSize: { xs: 18, sm: 24 },
               fontFamily: "Geologica, sans-serif",
-              fontWeight: 500,
+              fontWeight: 400,
               textShadow: "3px 1.5px 3px rgba(0,0,0,1)",
             }}
           >
@@ -143,7 +143,7 @@ const Home = () => {
             mx: 2,
           }}
         >
-          <Box sx={{ flex: 1, marginBottom: { xs: 5, md: 0 }, marginRight: { xs: 0, md: 3 } }}>
+          <Box sx={{ flex: 1, marginBottom: 4, marginRight: { xs: 0, md: 3 } }}>
             <Typography
               variant="h5"
               mb={2}
@@ -166,7 +166,7 @@ const Home = () => {
           </Box>
         </Box>
       </Box>
-      <Box mt={4}>
+      <Box>
         <ServiceCards />
       </Box>
 
