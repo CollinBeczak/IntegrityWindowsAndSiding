@@ -178,6 +178,7 @@ const ServiceCards = () => {
                             paddingY: 1,
                             paddingX: 3,
                             borderRadius: "0 0 0 4px",
+                            fontFamily: "Geologica, sans-serif",
                           }}
                         >
                           Before
@@ -217,6 +218,7 @@ const ServiceCards = () => {
                             paddingY: 1,
                             paddingX: { xs: 1, sm: 3 },
                             borderRadius: "0 0 0 4px",
+                            fontFamily: "Geologica, sans-serif",
                           }}
                         >
                           After

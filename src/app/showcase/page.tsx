@@ -43,7 +43,7 @@ const Showcase = () => {
             textShadow: "3px 1.5px 3px rgba(0,0,0,1)",
           }}
         >
-          <Typography variant="h3" gutterBottom>
+          <Typography variant="h3" gutterBottom sx={{ fontFamily: "Geologica, sans-serif" }}>
             Showcase
           </Typography>
         </Box>

@@ -119,6 +119,7 @@ const ServiceCards: React.FC = () => {
                       maxWidth: 600,
                       margin: "auto",
                       textShadow: "0px 0px 4px rgba(255,255,255,1)",
+                      fontFamily: "Geologica, sans-serif",
                     }}
                     color="black"
                   >

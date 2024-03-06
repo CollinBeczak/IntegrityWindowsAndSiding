@@ -96,7 +96,6 @@ const Home = () => {
               color="primary"
               sx={{
                 fontFamily: "Geologica, sans-serif",
-                fontWeight: 900,
                 margin: 1,
                 color: "white",
               }}
@@ -104,7 +103,7 @@ const Home = () => {
               <Typography
                 sx={{
                   fontSize: { xs: 11, sm: 13 },
-                  fontWeight: 900,
+                  fontWeight: 500,
                 }}
               >
                 View all services
@@ -116,7 +115,6 @@ const Home = () => {
               color="inherit"
               sx={{
                 fontFamily: "Geologica, sans-serif",
-                fontWeight: 900,
                 margin: 1,
                 color: "text.primary",
               }}
@@ -124,7 +122,7 @@ const Home = () => {
               <Typography
                 sx={{
                   fontSize: { xs: 11, sm: 13 },
-                  fontWeight: 900,
+                  fontWeight: 500,
                 }}
               >
                 Contact Us
@@ -212,9 +210,16 @@ const ReviewCard: React.FC<Review> = ({ name, rating, text }) => {
       }}
     >
       <CardContent>
-        <Typography variant="h6">{name}</Typography>
+        <Typography variant="h6" sx={{ fontFamily: "Geologica, sans-serif" }}>
+          {name}
+        </Typography>
         <Rating name="read-only" value={rating} readOnly />
-        <Typography variant="body1" gutterBottom textAlign={"center"}>
+        <Typography
+          variant="body1"
+          sx={{ fontFamily: "Geologica, sans-serif" }}
+          gutterBottom
+          textAlign={"center"}
+        >
           {text}
         </Typography>
       </CardContent>
