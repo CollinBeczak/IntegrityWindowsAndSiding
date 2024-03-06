@@ -24,30 +24,35 @@ const page = {
   types: [
     {
       name: "Vinyl Siding",
+      link: "",
       description:
         "Regardless of square footage, the outside of your home is an expression of your style. Your personal inspiration can be seen from the basic design to the most ambitious detail. Our vinyl siding options encompass all of the above, whether looking for modern and contemporary, traditional and historic, or urban to suburban.",
       images: [vinylSiding1, vinylSiding2],
     },
     {
       name: "Charter Oak Vinyl Siding And Soffit",
+      link: "",
       description:
         "Made to last and made to be the best! Offering performance and the beauty of natural wood, with the easy-care, durability, and convenience of Premium Vinyl Siding and soffit. An easy eco-friendly choice made to last a lifetime. Never paint, never stain, with this Alside product providing unparalleled quality and color range for you to take design control through various profiles and textures.",
       images: [soffit1, soffit2],
     },
     {
       name: "Board & Batten",
+      link: "",
       description:
         "Bold, classically styled vertical lines, and eye-catching symmetry, attract homeowners who admire the distinctive architectural details that set the exterior of a home apart from the standard horizontal siding. Perfect for Victorian, Craftsman, Coastal, Classic Collonial, and Victorian homes....this Premium Vinyl Siding is guaranteed to stay straight  and even year after year with it's heavy duty panels ensuring greater strength, rigidity, and outstanding beauty.",
       images: [board1, board2],
     },
     {
       name: "LP SmartSide",
+      link: "",
       description:
         "One of the most durable siding solutions on the market today, thanks to the proprietary SmartGuard® process. Features engineered wood strand technology that offers superior protection against hail, wind, moisture, fungal decay, and termites. Available in 16 versatile refinished colors.",
       images: [smartside1, smartside2],
     },
     {
       name: "Hardie Board",
+      link: "",
       description:
         "Traditional and timeless, sleek and strong cement siding. Hardie® Plank lap siding, shingle, trim boards, vertical panels... the possibilities are endless. It’s the most popular brand of concrete siding in North America, protecting and beautifying more homes from coast to coast.",
       images: [harie1, hardie2],

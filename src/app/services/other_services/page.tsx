@@ -19,12 +19,14 @@ const page = {
   types: [
     {
       name: "Premium Roofing",
+      link: "",
       description:
         "Integrity has 30 years of experience working with all major insurance companies offering premium roofing products from manufacturers such as TAMKO, CERTAINTEED, OWENS CORNING and MALARKEY.",
       images: [roof1, roof2, roof3],
     },
     {
       name: "Premium Outdoor Living",
+      link: "",
       description:
         "Outdoor Living has become very popular over the years. Integrity can build you the outdoor living space of your dreams. From composite, to cedar, to pressure-treated! You can trust us with your project. The Simple to lavish enertainment Decks, large and airy pergolas, stick built patio covers, we have you covered.",
       images: [outdoor1, outdoor2, outdoor3],

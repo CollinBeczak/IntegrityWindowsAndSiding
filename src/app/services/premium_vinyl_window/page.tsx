@@ -45,6 +45,7 @@ const page = {
   types: [
     {
       name: "Double Hung Windows",
+      link: "",
       description:
         "Built for everyday wear and tear, the expertly constructed sashes raise and lower easily on a constant force balance " +
         "system eliminating the need for sash cords, weights, and pulleys. These windows are such a simple pleasure, with their " +
@@ -54,6 +55,7 @@ const page = {
     },
     {
       name: "Sliding Windows",
+      link: "",
       description:
         "Known for their sleek and slim silhouette, these windows have ample glass area with quiet and smooth side-gliding action " +
         "for both opening and closing horizontally, as well as tilt-out easy cleaning all on a precision-engineered nylon-encased" +
@@ -63,6 +65,7 @@ const page = {
     },
     {
       name: "Picture Windows & Unique Shapes",
+      link: "",
       description:
         "The true beauty of these windows lies in their pure versatility. These windows invite true design and creativity while " +
         "designing your custom window-system. Big or small, alone or in combination with other window styles these windows will always " +
@@ -72,6 +75,7 @@ const page = {
     },
     {
       name: "Casement & Awning Windows",
+      link: "",
       description:
         "More than meets the eye while merging history and the practicality of old-world craftsmanship. Our casement " +
         "windows combine positive crank mechanism handles and modern advanced window technologies, our casement sashes " +
@@ -83,6 +87,7 @@ const page = {
     },
     {
       name: "Bay, Bow, and Garden Windows",
+      link: "",
       description:
         "Transform your room with these stunning windows that really bring out the character you want in your home! Be that " +
         "be a cozy reading nook, a striking focal point, or bright display of your prized plants and flowers. Available in a " +
@@ -93,6 +98,7 @@ const page = {
     },
     {
       name: "Premium Vinyl Patio Doors",
+      link: "",
       description:
         "The greatest measurement for patio doors is their performance. Excellent construction combines with quality design, " +
         "smooth operation, and everlasting beauty make our doors a premier choice. Offering classic style, contemporary, and French, " +

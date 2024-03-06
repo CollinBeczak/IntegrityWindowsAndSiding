@@ -9,6 +9,7 @@ interface Service {
   name: string;
   description: string;
   images: any;
+  link: string;
 }
 
 interface Page {
@@ -24,7 +25,7 @@ interface ServicesPageProps {
   page: Page;
 }
 
-const ServicesPage: React.FC<ServicesPageProps> = ({ page }) => {
+const ServicePage: React.FC<ServicesPageProps> = ({ page }) => {
   const settings = {
     infinite: true,
     arrows: false,
@@ -169,6 +170,17 @@ const ServicesPage: React.FC<ServicesPageProps> = ({ page }) => {
                     <Typography variant="subtitle1" color="textSecondary" margin={"auto"}>
                       {service.description}
                     </Typography>
+                    {page.learnMore && (
+                      <Box sx={{ marginY: 2 }}>
+                        <Button
+                          href={`/services/${service.link}`}
+                          variant="contained"
+                          sx={{ color: "white" }}
+                        >
+                          Learn More
+                        </Button>
+                      </Box>
+                    )}
                   </Box>
                 </Box>
               </Box>
@@ -180,4 +192,4 @@ const ServicesPage: React.FC<ServicesPageProps> = ({ page }) => {
   );
 };
 
-export default ServicesPage;
+export default ServicePage;
