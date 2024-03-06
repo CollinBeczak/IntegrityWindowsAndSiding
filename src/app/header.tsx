@@ -64,8 +64,8 @@ const Header = () => {
             fontSize: { xs: 19, sm: 25 },
             textDecoration: "none",
             textAlign: { xs: "center", md: "left" },
-            fontFamily: "Comfortaa, sans-serif",
-            fontWeight: "w400",
+            fontFamily: "Geologica, sans-serif",
+            fontWeight: 600,
             color: "text.primary",
             display: "block",
           }}
@@ -76,7 +76,6 @@ const Header = () => {
           <Button
             sx={{
               color: "text.primary",
-              fontSize: { xs: 13, sm: 15 },
               "& > span": {
                 marginLeft: 0,
               },
@@ -87,14 +86,22 @@ const Header = () => {
               <KeyboardArrowDownIcon
                 sx={{
                   mb: "1px",
-                  size: { xs: 13, sm: 15 },
+                  size: { xs: 12, sm: 12 },
                   transform: servicesAnchorEl ? "rotate(0deg)" : "rotate(270deg)",
                 }}
               />
             }
             onClick={handleServicesClick}
           >
-            Services
+            <Typography
+              sx={{
+                fontFamily: "Geologica, sans-serif",
+                fontSize: { xs: 13, sm: 15 },
+                fontWeight: 500,
+              }}
+            >
+              Services
+            </Typography>
           </Button>
           {menuItems.map((menuItem) => (
             <Button
@@ -103,10 +110,17 @@ const Header = () => {
               href={menuItem.path}
               sx={{
                 marginLeft: 2,
-                fontSize: { xs: 13, sm: 15 },
               }}
             >
-              {menuItem.label}
+              <Typography
+                sx={{
+                  fontFamily: "Geologica, sans-serif",
+                  fontSize: { xs: 12, sm: 14 },
+                  fontWeight: 500,
+                }}
+              >
+                {menuItem.label}
+              </Typography>
             </Button>
           ))}
           <Menu
@@ -130,7 +144,15 @@ const Header = () => {
                 }}
                 onClick={handleClose}
               >
-                {service.label}
+                <Typography
+                  sx={{
+                    fontFamily: "Geologica, sans-serif",
+                    fontSize: { xs: 12, sm: 14 },
+                    fontWeight: 500,
+                  }}
+                >
+                  {service.label}
+                </Typography>
               </MenuItem>
             ))}
           </Menu>

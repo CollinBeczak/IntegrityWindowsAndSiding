@@ -36,7 +36,7 @@ import siding8 from "../assets/siding/8.jpg";
 
 const services = [
   {
-    name: "Premium Vinyl Window",
+    name: "Premium Vinyl\u00A0Window",
     description: "High-quality window replacement services.",
     progressImages: [
       { before: windowBefore2, after: windowAfter2 },
@@ -45,7 +45,7 @@ const services = [
     images: [window1, window2, window3, window4, window7, window8, window9, window10],
   },
   {
-    name: "Premium Vinyl Siding",
+    name: `Premium Vinyl\u00A0Siding`,
     description: "High-quality window replacement services.",
     progressImages: [
       { before: sidingBefore1, after: sidingAfter1 },
@@ -54,7 +54,7 @@ const services = [
     images: [siding1, siding2, siding3, siding4, siding5, siding8],
   },
   {
-    name: "Other Work",
+    name: "Other\u00A0Work",
     description: "High-quality window replacement services.",
     disableBeforeAfter: true,
     progressImages: [
@@ -111,14 +111,24 @@ const ServiceCards = () => {
   return (
     <>
       {services.map((service, serviceIndex) => (
-        <Box key={serviceIndex} id={service.name.replace(/\s+/g, "-").toLowerCase()}>
+        <Box key={serviceIndex}>
           <Divider
             sx={{
               marginBottom: 1,
               boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.4)",
             }}
           />
-          <Typography variant="h4" sx={{ textAlign: "center", marginY: 2 }}>
+          <Typography
+            textAlign="center"
+            gutterBottom
+            sx={{
+              mx: 4,
+              marginY: 2,
+              fontSize: { xs: 24, sm: 30 },
+              fontFamily: "Geologica, sans-serif",
+              fontWeight: 600,
+            }}
+          >
             Integrity&apos;s {service.name}
           </Typography>
           <Box position="relative" m={2}>

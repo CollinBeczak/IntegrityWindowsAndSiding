@@ -215,9 +215,9 @@ const ContactForm = () => {
             variant="h5"
             component="h5"
             sx={{
-              fontSize: { xs: 25 },
-              fontFamily: "Comfortaa, sans-serif",
-              fontWeight: "bold",
+              fontSize: { xs: 20, sm: 24 },
+              fontFamily: "Geologica, sans-serif",
+              fontWeight: 500,
               color: "text.primary",
               display: "block",
               textAlign: "center",
@@ -243,9 +243,16 @@ const ContactForm = () => {
             fullWidth
             variant="contained"
             href="tel:+13167396106"
-            sx={{ maxWidth: 160, my: 1, px: 0, py: 0, color: "white" }}
+            sx={{ maxWidth: 160, my: 1, px: 0, py: 0.5, color: "white" }}
           >
-            Call now
+            <Typography
+              sx={{
+                fontSize: { xs: 13, sm: 15 },
+                fontWeight: 900,
+              }}
+            >
+              Call now
+            </Typography>
           </Button>
         </Box>
         <Box>
@@ -259,7 +266,7 @@ const ContactForm = () => {
             component="h1"
             sx={{
               fontSize: { xs: 20 },
-              fontFamily: "Comfortaa, sans-serif",
+              fontFamily: "Geologica, sans-serif",
               color: "grey",
               display: "block",
               textAlign: "center",
@@ -280,9 +287,9 @@ const ContactForm = () => {
           variant="h1"
           component="h1"
           sx={{
-            fontSize: { xs: 25, sm: 35 },
-            fontFamily: "Comfortaa, sans-serif",
-            fontWeight: "bold",
+            fontSize: { xs: 24, sm: 30 },
+            fontFamily: "Geologica, sans-serif",
+            fontWeight: 500,
             color: "text.primary",
             display: "block",
             textAlign: "center",
@@ -462,6 +469,7 @@ const ContactForm = () => {
               <ReCAPTCHA
                 sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ""}
                 onChange={handleCaptchaChange}
+                size={window.innerWidth <= 360 ? "compact" : "normal"}
               />
             </Grid>
             <Grid item xs={12}>

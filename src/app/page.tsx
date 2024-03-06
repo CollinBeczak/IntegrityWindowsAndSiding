@@ -49,30 +49,30 @@ const Home = () => {
           }}
         >
           <Typography
-            width={"100%"}
-            maxWidth={1000}
             textAlign="center"
-            variant="h4"
             gutterBottom
             sx={{
-              marginTop: 1,
+              mx: 4,
               marginBottom: 5,
-              fontFamily: "Comfortaa, sans-serif",
-              fontWeight: "bold",
+              fontSize: { xs: 24, sm: 30 },
+              fontFamily: "Geologica, sans-serif",
+              fontWeight: 900,
               textShadow: "3px 1.5px 3px rgba(0,0,0,1)",
             }}
           >
-            Integrity Siding and Window
+            Integrity Siding and&nbsp;Window
           </Typography>
+
           <Typography
             textAlign="center"
-            variant="h5"
             maxWidth={1000}
             mb={5}
             gutterBottom
             sx={{
-              fontFamily: "Comfortaa, sans-serif",
-              fontWeight: "bold",
+              mx: 4,
+              fontSize: { xs: 18, sm: 20 },
+              fontFamily: "Geologica, sans-serif",
+              fontWeight: 500,
               textShadow: "3px 1.5px 3px rgba(0,0,0,1)",
             }}
           >
@@ -82,10 +82,11 @@ const Home = () => {
           </Typography>
           <Box
             sx={{
-              fontFamily: "Comfortaa, sans-serif",
+              fontFamily: "Geologica, sans-serif",
               fontWeight: "bold",
               width: "100%",
               maxWidth: 1000,
+              mx: 4,
               textAlign: "center",
             }}
           >
@@ -94,26 +95,40 @@ const Home = () => {
               variant="contained"
               color="primary"
               sx={{
-                fontFamily: "Comfortaa, sans-serif",
+                fontFamily: "Geologica, sans-serif",
                 fontWeight: 900,
                 margin: 1,
                 color: "white",
               }}
             >
-              View all services
+              <Typography
+                sx={{
+                  fontSize: { xs: 11, sm: 13 },
+                  fontWeight: 900,
+                }}
+              >
+                View all services
+              </Typography>
             </Button>
             <Button
               href="/contact"
               variant="contained"
               color="inherit"
               sx={{
-                fontFamily: "Comfortaa, sans-serif",
+                fontFamily: "Geologica, sans-serif",
                 fontWeight: 900,
                 margin: 1,
                 color: "text.primary",
               }}
             >
-              Contact Us
+              <Typography
+                sx={{
+                  fontSize: { xs: 11, sm: 13 },
+                  fontWeight: 900,
+                }}
+              >
+                Contact Us
+              </Typography>
             </Button>
           </Box>
         </Box>
@@ -160,12 +175,13 @@ const ReviewCard: React.FC<Review> = ({ name, rating, text }) => {
         overflowY: "auto",
         boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.2)",
         borderRadius: "12px",
+        padding: 2,
       }}
     >
       <CardContent>
         <Typography variant="h6">{name}</Typography>
         <Rating name="read-only" value={rating} readOnly />
-        <Typography variant="body1" gutterBottom textAlign={"left"}>
+        <Typography variant="body1" gutterBottom textAlign={"center"}>
           {text}
         </Typography>
       </CardContent>

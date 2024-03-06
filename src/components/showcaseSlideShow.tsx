@@ -137,8 +137,8 @@ const ServiceCards: React.FC = () => {
                     mx={2}
                     sx={{
                       fontSize: { xs: "h5.fontSize", sm: "h4.fontSize" },
-                      fontWeight: "bold",
-                      fontFamily: "Comfortaa, sans-serif",
+                      fontWeight: 500,
+                      fontFamily: "Geologica, sans-serif",
                     }}
                     textAlign="center"
                   >
@@ -150,7 +150,14 @@ const ServiceCards: React.FC = () => {
                       variant="contained"
                       sx={{ color: "white", paddingX: 3, paddingY: 1 }}
                     >
-                      Check out our work
+                      <Typography
+                        sx={{
+                          fontSize: { xs: 11, sm: 13 },
+                          fontWeight: 900,
+                        }}
+                      >
+                        Check out our work
+                      </Typography>
                     </Button>
                   </Box>
                 </Box>

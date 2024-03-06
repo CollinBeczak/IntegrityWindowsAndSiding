@@ -85,7 +85,7 @@ const ServiceCards: React.FC = () => {
             >
               <Box
                 sx={{
-                  backgroundColor: "rgba(255, 255, 255, 0.7)",
+                  backgroundColor: "rgba(255, 255, 255, 0.8)",
                   width: "100%",
                   height: "100%",
                   maxWidth: 1000,
@@ -94,14 +94,16 @@ const ServiceCards: React.FC = () => {
                   textAlign: "center",
                   display: "flex",
                   flexDirection: "column",
-                  justifyContent: "space-between",
+                  justifyContent: "center",
                 }}
               >
                 <Box>
                   <Typography
                     sx={{
-                      fontSize: { xs: "h5.fontSize", sm: "h4.fontSize" },
-                      fontWeight: { xs: "h5.fontWeight", sm: "h4.fontWeight" },
+                      fontSize: { xs: 20, sm: 28 },
+                      fontFamily: "Geologica, sans-serif",
+                      fontWeight: 700,
+                      textShadow: "0px 0px 4px rgba(255,255,255,1)",
                     }}
                     color="primary"
                     mb={2}
@@ -111,23 +113,29 @@ const ServiceCards: React.FC = () => {
                   </Typography>
                   <Typography
                     sx={{
-                      fontSize: { xs: "subtitle1.fontSize", sm: "h6.fontSize", md: "h5.fontSize" },
-                      fontWeight: {
-                        xs: "subtitle1.fontWeight",
-                        sm: "h6.fontWeight",
-                        md: "h5.fontSize",
-                      },
+                      fontSize: { xs: 14, sm: 18 },
+                      fontWeight: 450,
+                      maxWidth: 600,
+                      margin: "auto",
+                      textShadow: "0px 0px 4px rgba(255,255,255,1)",
                     }}
                     color="black"
                   >
                     {service.description}
                   </Typography>
-                </Box>
-                <Box>
-                  <Box sx={{ marginY: 2 }}>
-                    <Button href="/services" variant="contained" sx={{ color: "white" }}>
-                      Learn More
-                    </Button>
+                  <Box>
+                    <Box sx={{ marginY: 2 }}>
+                      <Button href="/services" variant="contained" sx={{ color: "white" }}>
+                        <Typography
+                          sx={{
+                            fontSize: { xs: 11, sm: 13 },
+                            fontWeight: 900,
+                          }}
+                        >
+                          Learn More
+                        </Typography>
+                      </Button>
+                    </Box>
                   </Box>
                 </Box>
               </Box>
