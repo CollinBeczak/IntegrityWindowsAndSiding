@@ -246,7 +246,12 @@ const ContactForm = () => {
             pt={1}
             variant="body1"
             gutterBottom
-            sx={{ color: "text.secondary", textAlign: "center", fontSize: 12 }}
+            sx={{
+              fontFamily: "Geologica, sans-serif",
+              color: "text.secondary",
+              textAlign: "center",
+              fontSize: 12,
+            }}
           >
             Our business hours 8:00 AM – 8:00 PM Monday through Friday, 8:00 AM – 3:00 PM Saturday,
             and we are closed on Sundays.
@@ -504,7 +509,12 @@ const ContactForm = () => {
                 pt={1}
                 variant="body1"
                 gutterBottom
-                sx={{ color: "text.secondary", textAlign: "center", fontSize: 12 }}
+                sx={{
+                  fontFamily: "Geologica, sans-serif",
+                  color: "text.secondary",
+                  textAlign: "center",
+                  fontSize: 12,
+                }}
               >
                 We value your privacy and vow to never sell your information. Our business hours
                 8:00 AM – 8:00 PM Monday through Friday, 8:00 AM – 3:00 PM Saturday, and we are
