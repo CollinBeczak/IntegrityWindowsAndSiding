@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Container,
   Typography,
@@ -23,6 +23,20 @@ import axios from "axios";
 import ReCAPTCHA from "react-google-recaptcha";
 
 const ContactForm = () => {
+  const [size, setSize] = useState<"compact" | "normal">("normal");
+
+  useEffect(() => {
+    const handleResize = () => {
+      setSize(window.innerWidth <= 360 ? "compact" : "normal");
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
   const [selectedSubjectsTypes, setSelectedSubjectsTypes]: any = useState([]);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -469,7 +483,7 @@ const ContactForm = () => {
               <ReCAPTCHA
                 sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ""}
                 onChange={handleCaptchaChange}
-                size={window.innerWidth <= 360 ? "compact" : "normal"}
+                size={size}
               />
             </Grid>
             <Grid item xs={12}>

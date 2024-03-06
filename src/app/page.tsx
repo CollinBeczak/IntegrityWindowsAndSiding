@@ -53,10 +53,10 @@ const Home = () => {
             gutterBottom
             sx={{
               mx: 4,
-              marginBottom: 5,
+              marginBottom: 2,
               fontSize: { xs: 24, sm: 30 },
               fontFamily: "Geologica, sans-serif",
-              fontWeight: 900,
+              fontWeight: 700,
               textShadow: "3px 1.5px 3px rgba(0,0,0,1)",
             }}
           >
@@ -65,8 +65,8 @@ const Home = () => {
 
           <Typography
             textAlign="center"
-            maxWidth={1000}
-            mb={5}
+            maxWidth={700}
+            mb={2}
             gutterBottom
             sx={{
               mx: 4,
@@ -133,7 +133,40 @@ const Home = () => {
           </Box>
         </Box>
       </Box>
-      <Box mt={5}>
+      <Box maxWidth={1000} margin="auto" mt={3}>
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: { xs: "column", md: "row" },
+            alignItems: "center",
+            padding: 3,
+            mx: 2,
+          }}
+        >
+          <Box sx={{ flex: 1, marginBottom: { xs: 5, md: 0 }, marginRight: { xs: 0, md: 3 } }}>
+            <Typography
+              variant="h5"
+              mb={2}
+              sx={{ fontFamily: "Geologica, sans-serif", fontWeight: 500 }}
+              textAlign={{ xs: "center", md: "left" }}
+            >
+              Integrity Siding and window
+            </Typography>
+            <Typography
+              variant="subtitle1"
+              color="black"
+              sx={{ fontFamily: "Geologica, sans-serif", fontWeight: 400 }}
+              textAlign={{ xs: "center", md: "left" }}
+            >
+              We pride ourselves on our custom approach to all customers to best suit their needs
+              and budgets through our competitive pricing. We make the improvements to help save you
+              time, energy, and money while offering lifetime warranty products and financing
+              options.
+            </Typography>
+          </Box>
+        </Box>
+      </Box>
+      <Box mt={4}>
         <ServiceCards />
       </Box>
 
