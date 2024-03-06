@@ -153,7 +153,7 @@ const ServiceCards: React.FC = () => {
                       <Typography
                         sx={{
                           fontSize: { xs: 11, sm: 13 },
-                          fontWeight: 900,
+                          fontWeight: 500,
                         }}
                       >
                         Check out our work

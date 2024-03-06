@@ -262,7 +262,8 @@ const ContactForm = () => {
             <Typography
               sx={{
                 fontSize: { xs: 13, sm: 15 },
-                fontWeight: 500,
+                fontWeight: 400,
+                fontFamily: "Geologica, sans-serif",
               }}
             >
               Call now
