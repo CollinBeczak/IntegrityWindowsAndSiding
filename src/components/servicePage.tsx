@@ -106,7 +106,7 @@ const ServicePage: React.FC<ServicesPageProps> = ({ page }) => {
             sx={{
               marginBottom: 2,
               fontSize: { xs: 24, sm: 30 },
-              fontFamily: "Geologica, sans-serif",
+              fontFamily: "Comfortaa, sans-serif",
               fontWeight: 900,
               textShadow: "3px 1.5px 3px rgba(0,0,0,1)",
             }}
@@ -188,7 +188,7 @@ const ServicePage: React.FC<ServicesPageProps> = ({ page }) => {
                         fontSize: { xs: 20, md: 24, lg: 28 },
                         marginTop: { xs: 4, lg: 0 },
                         textAlign: { xs: "center", lg: "left" },
-                        fontFamily: "Geologica, sans-serif",
+                        fontFamily: "Comfortaa, sans-serif",
                         fontWeight: 600,
                       }}
                     >

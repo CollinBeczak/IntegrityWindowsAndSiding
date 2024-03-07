@@ -10,7 +10,11 @@ const Footer = () => {
         <Grid p={4} container spacing={2}>
           {/* Company title */}
           <Grid item xs={12} sm={4}>
-            <Typography variant="h6" align="left" sx={{ fontFamily: "Geologica, sans-serif" }}>
+            <Typography
+              variant="h6"
+              align="left"
+              sx={{ fontWeight: 600, fontFamily: "Comfortaa, sans-serif" }}
+            >
               Integrity Siding and&nbsp;Window
             </Typography>
           </Grid>
@@ -135,7 +139,7 @@ const Footer = () => {
           <Typography
             align="center"
             color="text.secondary"
-            sx={{ fontSize: 11, fontWeight: 300, fontFamily: "Geologica, sans-serif" }}
+            sx={{ fontSize: 11, fontWeight: 300, fontFamily: "Comfortaa, sans-serif" }}
           >
             &copy; 2024 Integrity Siding and Window. All rights reserved.
           </Typography>

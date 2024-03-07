@@ -55,7 +55,7 @@ const Home = () => {
               mx: 4,
               marginBottom: 2,
               fontSize: { xs: 24, sm: 34 },
-              fontFamily: "Geologica, sans-serif",
+              fontFamily: "Comfortaa, sans-serif",
               fontWeight: 700,
               textShadow: "3px 1.5px 3px rgba(0,0,0,1)",
             }}
@@ -103,7 +103,7 @@ const Home = () => {
               <Typography
                 sx={{
                   fontSize: { xs: 11, sm: 13 },
-                  fontWeight: 500,
+                  fontWeight: 600,
                 }}
               >
                 View all services
@@ -122,7 +122,7 @@ const Home = () => {
               <Typography
                 sx={{
                   fontSize: { xs: 11, sm: 13 },
-                  fontWeight: 500,
+                  fontWeight: 600,
                 }}
               >
                 Contact Us
@@ -145,7 +145,7 @@ const Home = () => {
             <Typography
               variant="h5"
               mb={2}
-              sx={{ fontFamily: "Geologica, sans-serif", fontWeight: 500 }}
+              sx={{ fontFamily: "Comfortaa, sans-serif", fontWeight: 700 }}
               textAlign={{ xs: "center", md: "left" }}
             >
               Integrity Siding and window
@@ -210,7 +210,7 @@ const ReviewCard: React.FC<Review> = ({ name, rating, text }) => {
       }}
     >
       <CardContent>
-        <Typography variant="h6" sx={{ fontFamily: "Geologica, sans-serif" }}>
+        <Typography variant="h6" sx={{ fontFamily: "Comfortaa, sans-serif" }}>
           {name}
         </Typography>
         <Rating name="read-only" value={rating} readOnly />

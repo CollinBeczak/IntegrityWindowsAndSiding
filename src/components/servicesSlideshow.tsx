@@ -100,11 +100,11 @@ const ServiceCards: React.FC = () => {
                 <Box>
                   <Typography
                     sx={{
-                      fontSize: { xs: 18, sm: 28 },
+                      fontSize: { xs: 22, sm: 28 },
                       marginX: 1,
-                      fontFamily: "Geologica, sans-serif",
-                      fontWeight: 700,
-                      textShadow: "0px 0px 4px rgba(255,255,255,1)",
+                      fontFamily: "Comfortaa, sans-serif",
+                      fontWeight: 900,
+                      textShadow: "1px 1px 2px rgba(255,255,255,1)",
                     }}
                     color="primary"
                     textAlign="center"

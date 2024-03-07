@@ -230,8 +230,8 @@ const ContactForm = () => {
             component="h5"
             sx={{
               fontSize: { xs: 20, sm: 24 },
-              fontFamily: "Geologica, sans-serif",
-              fontWeight: 500,
+              fontFamily: "Comfortaa, sans-serif",
+              fontWeight: 800,
               color: "text.primary",
               display: "block",
               textAlign: "center",
@@ -262,11 +262,11 @@ const ContactForm = () => {
             fullWidth
             variant="contained"
             href="tel:+13167396106"
-            sx={{ maxWidth: 160, my: 1, px: 0, py: 0.5, color: "white" }}
+            sx={{ maxWidth: 160, my: 1, px: 0, py: 0.2, color: "white" }}
           >
             <Typography
               sx={{
-                fontSize: { xs: 13, sm: 15 },
+                fontSize: { xs: 12, sm: 14 },
                 fontWeight: 400,
                 fontFamily: "Geologica, sans-serif",
               }}
@@ -286,7 +286,7 @@ const ContactForm = () => {
             component="h1"
             sx={{
               fontSize: { xs: 20 },
-              fontFamily: "Geologica, sans-serif",
+              fontFamily: "Comfortaa, sans-serif",
               color: "grey",
               display: "block",
               textAlign: "center",
@@ -308,8 +308,8 @@ const ContactForm = () => {
           component="h1"
           sx={{
             fontSize: { xs: 24, sm: 30 },
-            fontFamily: "Geologica, sans-serif",
-            fontWeight: 500,
+            fontFamily: "Comfortaa, sans-serif",
+            fontWeight: 700,
             color: "text.primary",
             display: "block",
             textAlign: "center",
@@ -511,7 +511,7 @@ const ContactForm = () => {
                 gutterBottom
                 sx={{
                   fontFamily: "Geologica, sans-serif",
-                  color: "text.secondary",
+                  color: "grey",
                   textAlign: "center",
                   fontSize: 12,
                 }}

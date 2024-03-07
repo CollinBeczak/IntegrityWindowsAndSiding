@@ -137,8 +137,8 @@ const ServiceCards: React.FC = () => {
                     mx={2}
                     sx={{
                       fontSize: { xs: "h5.fontSize", sm: "h4.fontSize" },
-                      fontWeight: 500,
-                      fontFamily: "Geologica, sans-serif",
+                      fontWeight: 700,
+                      fontFamily: "Comfortaa, sans-serif",
                     }}
                     textAlign="center"
                   >
@@ -154,6 +154,7 @@ const ServiceCards: React.FC = () => {
                         sx={{
                           fontSize: { xs: 11, sm: 13 },
                           fontWeight: 500,
+                          fontFamily: "Geologica, sans-serif",
                         }}
                       >
                         Check out our work

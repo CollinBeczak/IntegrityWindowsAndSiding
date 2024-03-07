@@ -115,7 +115,7 @@ const ServiceCards = () => {
           <Divider
             sx={{
               marginBottom: 1,
-              boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.4)",
+              boxShadow: "0px 1px 4px rgba(0, 0, 0, 0.4)",
             }}
           />
           <Typography
@@ -124,9 +124,9 @@ const ServiceCards = () => {
             sx={{
               mx: 4,
               marginY: 2,
-              fontSize: { xs: 24, sm: 30 },
-              fontFamily: "Geologica, sans-serif",
-              fontWeight: 500,
+              fontSize: { xs: 20, sm: 24 },
+              fontFamily: "Comfortaa, sans-serif",
+              fontWeight: 700,
             }}
           >
             Integrity&apos;s {service.name}
@@ -178,7 +178,7 @@ const ServiceCards = () => {
                             paddingY: 1,
                             paddingX: 3,
                             borderRadius: "0 0 0 4px",
-                            fontFamily: "Geologica, sans-serif",
+                            fontFamily: "Comfortaa, sans-serif",
                           }}
                         >
                           Before
@@ -218,7 +218,7 @@ const ServiceCards = () => {
                             paddingY: 1,
                             paddingX: { xs: 1, sm: 3 },
                             borderRadius: "0 0 0 4px",
-                            fontFamily: "Geologica, sans-serif",
+                            fontFamily: "Comfortaa, sans-serif",
                           }}
                         >
                           After

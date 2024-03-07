@@ -21,7 +21,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link
-          href="https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Geologica:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+          rel="stylesheet"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Geologica:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
           rel="stylesheet"
         />
 
@@ -67,7 +71,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             }}
           >
             <Header />
-            <Box sx={{ paddingTop: "64px" }}>{children}</Box>
+            <Box sx={{ paddingTop: { xs: "88px", sm: "96px", md: "64px" } }}>{children}</Box>
             <ContactForm />
             <Footer />
           </Box>

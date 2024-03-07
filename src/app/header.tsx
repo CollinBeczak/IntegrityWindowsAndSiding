@@ -64,7 +64,7 @@ const Header = () => {
             fontSize: { xs: 19, sm: 25 },
             textDecoration: "none",
             textAlign: { xs: "center", md: "left" },
-            fontFamily: "Geologica, sans-serif",
+            fontFamily: "Comfortaa, sans-serif",
             fontWeight: 600,
             color: "text.primary",
             display: "block",
@@ -101,9 +101,9 @@ const Header = () => {
           >
             <Typography
               sx={{
-                fontFamily: "Geologica, sans-serif",
+                fontFamily: "Comfortaa, sans-serif",
                 fontSize: { xs: 13, sm: 15 },
-                fontWeight: 500,
+                fontWeight: 600,
               }}
             >
               Services
@@ -120,9 +120,9 @@ const Header = () => {
             >
               <Typography
                 sx={{
-                  fontFamily: "Geologica, sans-serif",
+                  fontFamily: "Comfortaa, sans-serif",
                   fontSize: { xs: 12, sm: 14 },
-                  fontWeight: 500,
+                  fontWeight: 600,
                 }}
               >
                 {menuItem.label}
@@ -152,9 +152,9 @@ const Header = () => {
               >
                 <Typography
                   sx={{
-                    fontFamily: "Geologica, sans-serif",
+                    fontFamily: "Comfortaa, sans-serif",
                     fontSize: { xs: 12, sm: 14 },
-                    fontWeight: 500,
+                    fontWeight: 600,
                   }}
                 >
                   {service.label}
