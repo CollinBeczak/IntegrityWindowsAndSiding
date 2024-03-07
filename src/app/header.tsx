@@ -59,24 +59,29 @@ const Header = () => {
           component={Link}
           href="/"
           sx={{
-            marginTop: { xs: 2, md: 0 },
-            marginBottom: { xs: 0.5, md: 0 },
+            marginTop: { xs: 2.5, md: 0 },
+            marginBottom: { xs: 1, md: 0 },
             fontSize: { xs: 19, sm: 25 },
             textDecoration: "none",
             textAlign: { xs: "center", md: "left" },
             fontFamily: "Comfortaa, sans-serif",
-            fontWeight: "w400",
+            fontWeight: 600,
             color: "text.primary",
             display: "block",
           }}
         >
           Integrity Siding and Window
         </Typography>
-        <Box sx={{ display: "flex", justifyContent: "space-between" }}>
+        <Box
+          sx={{
+            display: "flex",
+            marginBottom: { xs: 0.5, md: 0 },
+            justifyContent: "space-between",
+          }}
+        >
           <Button
             sx={{
               color: "text.primary",
-              fontSize: { xs: 13, sm: 15 },
               "& > span": {
                 marginLeft: 0,
               },
@@ -87,14 +92,22 @@ const Header = () => {
               <KeyboardArrowDownIcon
                 sx={{
                   mb: "1px",
-                  size: { xs: 13, sm: 15 },
+                  size: { xs: 12, sm: 12 },
                   transform: servicesAnchorEl ? "rotate(0deg)" : "rotate(270deg)",
                 }}
               />
             }
             onClick={handleServicesClick}
           >
-            Services
+            <Typography
+              sx={{
+                fontFamily: "Comfortaa, sans-serif",
+                fontSize: { xs: 13, sm: 15 },
+                fontWeight: 600,
+              }}
+            >
+              Services
+            </Typography>
           </Button>
           {menuItems.map((menuItem) => (
             <Button
@@ -103,10 +116,17 @@ const Header = () => {
               href={menuItem.path}
               sx={{
                 marginLeft: 2,
-                fontSize: { xs: 13, sm: 15 },
               }}
             >
-              {menuItem.label}
+              <Typography
+                sx={{
+                  fontFamily: "Comfortaa, sans-serif",
+                  fontSize: { xs: 12, sm: 14 },
+                  fontWeight: 600,
+                }}
+              >
+                {menuItem.label}
+              </Typography>
             </Button>
           ))}
           <Menu
@@ -130,7 +150,15 @@ const Header = () => {
                 }}
                 onClick={handleClose}
               >
-                {service.label}
+                <Typography
+                  sx={{
+                    fontFamily: "Comfortaa, sans-serif",
+                    fontSize: { xs: 12, sm: 14 },
+                    fontWeight: 600,
+                  }}
+                >
+                  {service.label}
+                </Typography>
               </MenuItem>
             ))}
           </Menu>

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Container,
   Typography,
@@ -23,6 +23,20 @@ import axios from "axios";
 import ReCAPTCHA from "react-google-recaptcha";
 
 const ContactForm = () => {
+  const [size, setSize] = useState<"compact" | "normal">("normal");
+
+  useEffect(() => {
+    const handleResize = () => {
+      setSize(window.innerWidth <= 360 ? "compact" : "normal");
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
   const [selectedSubjectsTypes, setSelectedSubjectsTypes]: any = useState([]);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -215,9 +229,9 @@ const ContactForm = () => {
             variant="h5"
             component="h5"
             sx={{
-              fontSize: { xs: 25 },
+              fontSize: { xs: 20, sm: 24 },
               fontFamily: "Comfortaa, sans-serif",
-              fontWeight: "bold",
+              fontWeight: 800,
               color: "text.primary",
               display: "block",
               textAlign: "center",
@@ -232,7 +246,12 @@ const ContactForm = () => {
             pt={1}
             variant="body1"
             gutterBottom
-            sx={{ color: "text.secondary", textAlign: "center", fontSize: 12 }}
+            sx={{
+              fontFamily: "Geologica, sans-serif",
+              color: "text.secondary",
+              textAlign: "center",
+              fontSize: 12,
+            }}
           >
             Our business hours 8:00 AM – 8:00 PM Monday through Friday, 8:00 AM – 3:00 PM Saturday,
             and we are closed on Sundays.
@@ -243,9 +262,17 @@ const ContactForm = () => {
             fullWidth
             variant="contained"
             href="tel:+13167396106"
-            sx={{ maxWidth: 160, my: 1, px: 0, py: 0, color: "white" }}
+            sx={{ maxWidth: 160, my: 1, px: 0, py: 0.2, color: "white" }}
           >
-            Call now
+            <Typography
+              sx={{
+                fontSize: { xs: 12, sm: 14 },
+                fontWeight: 400,
+                fontFamily: "Geologica, sans-serif",
+              }}
+            >
+              Call now
+            </Typography>
           </Button>
         </Box>
         <Box>
@@ -280,9 +307,9 @@ const ContactForm = () => {
           variant="h1"
           component="h1"
           sx={{
-            fontSize: { xs: 25, sm: 35 },
+            fontSize: { xs: 24, sm: 30 },
             fontFamily: "Comfortaa, sans-serif",
-            fontWeight: "bold",
+            fontWeight: 700,
             color: "text.primary",
             display: "block",
             textAlign: "center",
@@ -462,6 +489,7 @@ const ContactForm = () => {
               <ReCAPTCHA
                 sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ""}
                 onChange={handleCaptchaChange}
+                size={size}
               />
             </Grid>
             <Grid item xs={12}>
@@ -481,7 +509,12 @@ const ContactForm = () => {
                 pt={1}
                 variant="body1"
                 gutterBottom
-                sx={{ color: "text.secondary", textAlign: "center", fontSize: 12 }}
+                sx={{
+                  fontFamily: "Geologica, sans-serif",
+                  color: "grey",
+                  textAlign: "center",
+                  fontSize: 12,
+                }}
               >
                 We value your privacy and vow to never sell your information. Our business hours
                 8:00 AM – 8:00 PM Monday through Friday, 8:00 AM – 3:00 PM Saturday, and we are

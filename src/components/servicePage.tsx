@@ -93,23 +93,45 @@ const ServicePage: React.FC<ServicesPageProps> = ({ page }) => {
             zIndex: 1,
             maxWidth: 1200,
             paddingY: 6,
-            paddingX: 3,
+            paddingX: 4,
             width: "100%",
             "& > *": {
               textShadow: "3px 1.5px 3px rgba(0,0,0,1)",
             },
           }}
         >
-          <Typography sx={{ fontSize: { xs: 25, sm: 46 } }} gutterBottom>
+          <Typography
+            textAlign="center"
+            gutterBottom
+            sx={{
+              marginBottom: 2,
+              fontSize: { xs: 24, sm: 30 },
+              fontFamily: "Comfortaa, sans-serif",
+              fontWeight: 900,
+              textShadow: "3px 1.5px 3px rgba(0,0,0,1)",
+            }}
+          >
             {page.title}
           </Typography>
-          <Typography sx={{ fontSize: { xs: 17, sm: 24 } }} gutterBottom>
+          <Typography
+            textAlign="center"
+            maxWidth={1000}
+            mb={5}
+            gutterBottom
+            sx={{
+              margin: "auto",
+              fontSize: { xs: 16, sm: 20 },
+              fontFamily: "Geologica, sans-serif",
+              fontWeight: 500,
+              textShadow: "3px 1.5px 3px rgba(0,0,0,1)",
+            }}
+          >
             {page.description}
           </Typography>
         </Box>
       </Box>
 
-      <Box px={2}>
+      <Box px={4}>
         <Box>
           {page.types.map((service, index) => (
             <Box key={index} width={1} mb={5}>
@@ -131,7 +153,11 @@ const ServicePage: React.FC<ServicesPageProps> = ({ page }) => {
                 }}
               >
                 <Box sx={{ display: { lg: "flex" } }}>
-                  <Box width={"100%"} maxWidth={500} height={300} margin={"auto"}>
+                  <Box
+                    width={"100%"}
+                    maxWidth={500}
+                    sx={{ height: { xs: 250, lg: 300 }, margin: { xs: "auto", lg: "inherit" } }}
+                  >
                     <Slider {...settings}>
                       {service.images.map((image: any, index: any) => (
                         <Box
@@ -139,7 +165,7 @@ const ServicePage: React.FC<ServicesPageProps> = ({ page }) => {
                           sx={{
                             position: "relative",
                             width: "100%",
-                            height: 300,
+                            height: { xs: 250, lg: 300 },
                           }}
                         >
                           <Image
@@ -159,15 +185,24 @@ const ServicePage: React.FC<ServicesPageProps> = ({ page }) => {
                   >
                     <Typography
                       sx={{
-                        fontSize: { xs: "h5.fontSize", sm: "h4.fontSize" },
+                        fontSize: { xs: 20, md: 24, lg: 28 },
                         marginTop: { xs: 4, lg: 0 },
                         textAlign: { xs: "center", lg: "left" },
+                        fontFamily: "Comfortaa, sans-serif",
+                        fontWeight: 600,
                       }}
-                      gutterBottom
                     >
                       {service.name}
                     </Typography>
-                    <Typography variant="subtitle1" color="textSecondary" margin={"auto"}>
+                    <Typography
+                      color="textSecondary"
+                      margin={"auto"}
+                      sx={{
+                        fontFamily: "Geologica, sans-serif",
+                        fontSize: { xs: 15, md: 16, lg: 18 },
+                        fontWeight: 300,
+                      }}
+                    >
                       {service.description}
                     </Typography>
                     {page.learnMore && (
@@ -177,7 +212,15 @@ const ServicePage: React.FC<ServicesPageProps> = ({ page }) => {
                           variant="contained"
                           sx={{ color: "white" }}
                         >
-                          Learn More
+                          <Typography
+                            sx={{
+                              fontSize: { xs: 13, sm: 15 },
+                              fontWeight: 600,
+                              fontFamily: "Geologica, sans-serif",
+                            }}
+                          >
+                            Learn More
+                          </Typography>
                         </Button>
                       </Box>
                     )}

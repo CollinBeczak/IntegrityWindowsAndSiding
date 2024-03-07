@@ -14,7 +14,7 @@ const Showcase = () => {
       <Box
         sx={{
           position: "relative",
-          height: "30vh",
+          height: "20vh",
           textAlign: "center",
           color: "white",
           overflow: "hidden",
@@ -43,7 +43,11 @@ const Showcase = () => {
             textShadow: "3px 1.5px 3px rgba(0,0,0,1)",
           }}
         >
-          <Typography variant="h3" gutterBottom>
+          <Typography
+            variant="h4"
+            gutterBottom
+            sx={{ fontWeight: 900, fontFamily: "Comfortaa, sans-serif" }}
+          >
             Showcase
           </Typography>
         </Box>
