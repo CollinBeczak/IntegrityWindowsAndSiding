@@ -14,7 +14,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <title>Integrity Siding and Window, LLC - Home Improvement Services</title>
         <meta
           name="description"
-          content="In the business for over 20 years. Offering high-quality siding and window replacement services in Kansas."
+          content="Local family-owned company with over 30 years of construction, and remodel experience
+          with commercial and residential properties. Commercial class-A contractor proudly
+          serving all of Kansas, Oklahoma, and Missouri."
         />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="icon" href="/favicon.ico" />
@@ -39,7 +41,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           content="In the business for over 20 years. Offering high-quality siding and window replacement services in Kansas."
         />
         <meta property="og:image" content="https://integritysidingandwindow.com/landingImage.jpg" />
-        <meta property="og:url" content="https://IntegritySidingAndWindows.com/" />
+        <meta property="og:url" content="https://integritysidingandwindow.com/" />
         <meta property="og:type" content="website" />
 
         {/* Twitter Card meta tags */}
@@ -49,13 +51,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
         <meta
           name="twitter:description"
-          content="In the business for over 20 years. Offering high-quality siding and window replacement services in Kansas."
+          content="Local family-owned company with over 30 years of construction, and remodel experience
+          with commercial and residential properties. Commercial class-A contractor proudly
+          serving all of Kansas, Oklahoma, and Missouri."
         />
         <meta
           name="twitter:image"
           content="https://integritysidingandwindow.com/landingImage.jpg"
         />
-        <meta name="twitter:site" content="https://IntegritySidingAndWindows.com/" />
+        <meta name="twitter:site" content="https://integritysidingandwindow.com/" />
       </head>
       <body>
         <ThemeProvider>
