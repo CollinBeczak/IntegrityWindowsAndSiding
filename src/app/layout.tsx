@@ -38,10 +38,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           property="og:description"
           content="In the business for over 20 years. Offering high-quality siding and window replacement services in Kansas."
         />
-        <meta
-          property="og:image"
-          content="https://IntegritySidingAndWindows.com/landingImage.jpg"
-        />
+        <meta property="og:image" content="https://integritysidingandwindow.com/landingImage.jpg" />
         <meta property="og:url" content="https://IntegritySidingAndWindows.com/" />
         <meta property="og:type" content="website" />
 
@@ -56,7 +53,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
         <meta
           name="twitter:image"
-          content="https://IntegritySidingAndWindows.com/landingImage.jpg"
+          content="https://integritysidingandwindow.com/landingImage.jpg"
         />
         <meta name="twitter:site" content="https://IntegritySidingAndWindows.com/" />
       </head>
