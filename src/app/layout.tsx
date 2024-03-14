@@ -40,7 +40,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
         <meta
           property="og:image"
-          content="https://IntegritySidingAndWindows.com/filler-house-img.jpeg"
+          content="https://IntegritySidingAndWindows.com/landingImage.jpg"
         />
         <meta property="og:url" content="https://IntegritySidingAndWindows.com/" />
         <meta property="og:type" content="website" />
@@ -56,7 +56,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
         <meta
           name="twitter:image"
-          content="https://IntegritySidingAndWindows.com/filler-house-img.jpeg"
+          content="https://IntegritySidingAndWindows.com/landingImage.jpg"
         />
         <meta name="twitter:site" content="https://IntegritySidingAndWindows.com/" />
       </head>
