@@ -38,7 +38,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
         <meta
           property="og:description"
-          content="In the business for over 20 years. Offering high-quality siding and window replacement services in Kansas."
+          content="Local family-owned company with over 30 years of construction, and remodel experience
+          with commercial and residential properties. Commercial class-A contractor proudly
+          serving all of Kansas, Oklahoma, and Missouri."
         />
         <meta property="og:image" content="https://integritysidingandwindow.com/landingImage.jpg" />
         <meta property="og:url" content="https://integritysidingandwindow.com/" />
