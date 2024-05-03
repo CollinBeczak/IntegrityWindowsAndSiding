@@ -1,6 +1,7 @@
 import React from "react";
 
 import ThemeProvider from "../components/themeProvider";
+import LogRocketProvider from "@/components/logRocketProvider";
 import Header from "./header";
 import { Box } from "@mui/material";
 import ContactForm from "./contactForm";
@@ -65,6 +66,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body>
         <ThemeProvider>
+          <LogRocketProvider />
           <Box
             sx={{
               minHeight: "100vh",
